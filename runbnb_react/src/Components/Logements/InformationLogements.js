@@ -71,9 +71,7 @@ class InformationLogements extends React.Component {
                   </div>
                 </div>
               </div>
-              <div>
-                <button type="submit" className="bg-blue-400 hover:bg-blue-500 text-white rounded shadow-lg px-4 py-2">Etape Suivante</button>
-              </div>
+           
             </div>
           </Form>
          )}
