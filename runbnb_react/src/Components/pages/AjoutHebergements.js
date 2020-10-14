@@ -14,7 +14,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
-import Map from '../Logements/Map';
+import MapContainers from '../Logements/MapContainers';
 
 
 
@@ -25,6 +25,7 @@ const QontoConnector = withStyles({
     top: 10,
     left: 'calc(-50% + 16px)',
     right: 'calc(50% + 16px)',
+    width:33,
   },
   active: {
     '& $line': {
@@ -93,29 +94,7 @@ QontoStepIcon.propTypes = {
   completed: PropTypes.bool,
 };
 
-const ColorlibConnector = withStyles({
-  alternativeLabel: {
-    top: 22,
-  },
-  active: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-    },
-  },
-  completed: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-    },
-  },
-  line: {
-    height: 3,
-    border: 0,
-    backgroundColor: '#eaeaf0',
-    borderRadius: 1,
-  },
-})(StepConnector);
+
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -191,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['', '', ''];
+  return ['', '', '',''];
 }
 
 
@@ -201,8 +180,10 @@ function getStepContent(step) {
       return <InformationLogements/>;
     case 1:
       return <Localisation/>;
-  
-
+    case 2:
+      return <MapContainers />;
+    case 3:
+      return 'manaraka'
     default:
       return 'Carte ny ato ...';
   }
