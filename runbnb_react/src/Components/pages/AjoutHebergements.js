@@ -3,6 +3,7 @@ import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import MapContainers from '../Logements/MapContainers';
 import StepProgress from './components/StepProgress';
+import EquipementContainers from '../Logements/EquipementContainers';
 
 
 
@@ -28,7 +29,8 @@ export default function CustomizedSteppers() {
         return <Localisation/>;
       case 2:
         return <MapContainers />;    
-  
+      case 3:
+        return <EquipementContainers/>
       default:
         return 'Carte ny ato ...';
     }

@@ -62,7 +62,7 @@ class Localisation extends React.Component {
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                     Adresse (ligne 1)                  
               </label>
-              <Field name="adresse" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="adresse" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse" />
               { errors.adresse && touched.adresse ? (
                 <div>{errors.adresse}</div>
               ) : null }
@@ -72,7 +72,7 @@ class Localisation extends React.Component {
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                   Adresse (ligne 2)
               </label>
-              <Field name="adresse2 " class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="adresse2 " class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse" />
               { errors.adresse2   && touched.adresse2   ? (
                 <div>{errors.adresse2  }</div>
               ) : null }
@@ -82,7 +82,7 @@ class Localisation extends React.Component {
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                   code postal
               </label>
-              <Field name="code " class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="code " class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Code Postal" />
               { errors.code  && touched.code  ? (
                 <div>{errors.code }</div>
               ) : null }

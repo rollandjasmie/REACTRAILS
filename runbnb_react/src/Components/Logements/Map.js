@@ -46,13 +46,14 @@ const long = 55.53817922704148
 const lat = -21.121661209928707
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "60vh"}}>
       <MapGL
         ref={mapRef}
         mapStyle="mapbox://styles/mapbox/streets-v11"
         {...viewport}
-        width="50%"
-        height="50%"
+        width="400px"
+        height="330px"
+        
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
@@ -67,7 +68,7 @@ const lat = -21.121661209928707
     latitude= { lat }
   ></Marker>
       </MapGL>
-      <button onClick={deleteMap}>Delete</button>
+      
     </div>
   );
 };
