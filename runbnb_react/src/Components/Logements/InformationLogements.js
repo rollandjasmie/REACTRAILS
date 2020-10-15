@@ -30,7 +30,7 @@ class InformationLogements extends React.Component {
 
           
         <h1 className="text-2ml font-bold mt-10 pl-10 ml-10">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
-            <div className=".w-auto on inline-block element mt-15 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
+            <div className=".w-auto on inline-block element mt-15 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
               <div class="w-full mb-6 md:mb-0">
 
                 <label class="block uppercase tracking-wide text-gray-700 text-xs  font-bold mb-2" for="grid-city">

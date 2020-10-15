@@ -11,33 +11,49 @@ import { AppBar } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    checked={checked}
+    onChange={handleChange}
+    inputProps={{ 'aria-label': 'primary checkbox' }}
   },
   formControl: {
-    margin: theme.spacing(3),
+    margin: theme.spacing(2),
   },
 }));
 
 export default function CheckboxesGroup() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    Bar: true,
-    Sauna:true,
-    Jardin: true,
-    antoine:true,
+    Bar: false,
+    Sauna:false,
+    Jardin: false,
+    Terrasse:false,
+    Bain:false,
+    Connexion:false,
+    Plage:false,
+     Borne:false,
+    Piscine:false,
+    Parking:false,
   });
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const { Bar, Sauna, Jardin, antoine } = state;
+  const { Bar, Sauna, Jardin, Terrasse,Bain,Connexion,Plage,Borne,Piscine,Parking } = state;
   //const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
 
   return (
     <div className={classes.root}>
+        
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
       <FormControl component="fieldset" className={classes.formControl}>
           
-        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormLabel component="legend" className="text-2ml font-bold mt-10 pl-10 ml-10">Quels équipements proposez-vous ?
+         </FormLabel>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox checked={Bar} onChange={handleChange} name="Bar" />}
@@ -52,31 +68,31 @@ export default function CheckboxesGroup() {
             label="Jardin"
           />
           <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Terrasse" />}
-            label="Terrasse"
+            control={<Checkbox checked={Terrasse} onChange={handleChange} name="Terrasse" />}
+            label="Térrasse"
           />
           <FormControlLabel
-          control={<Checkbox checked={antoine} onChange={handleChange} name="Bain à reumous/Jacuzzi" />}
+          control={<Checkbox checked={Bain} onChange={handleChange} name="Bain" />}
           label="Bain à reumous/Jacuzzi"
         />
             <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Connexion Wi-Fi gratuite" />}
+            control={<Checkbox checked={Connexion} onChange={handleChange} name="Connexion" />}
             label="Connexion Wi-Fi gratuite"
         />
         <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Plage" />}
+            control={<Checkbox checked={Plage} onChange={handleChange} name="Plage" />}
             label="Plage"
         />
             <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Borne de recharge pour voiture électrique" />}
+            control={<Checkbox checked={Borne} onChange={handleChange} name="Borne" />}
             label="Borne de recharge pour voiture électrique"
         />
             <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Piscine" />}
+            control={<Checkbox checked={Piscine} onChange={handleChange} name="Piscine" />}
             label="Piscine"
         />
                <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="Parking" />}
+            control={<Checkbox checked={Parking} onChange={handleChange} name="Parking" />}
             label="Parking"
         />
         </FormGroup>
