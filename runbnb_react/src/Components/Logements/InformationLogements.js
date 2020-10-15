@@ -26,19 +26,21 @@ class InformationLogements extends React.Component {
        >
          {({ values, errors, touched, setFieldValue }) => (
            <Form>
-            <div className="px-8 py-4">
+              <h1 className="text-2ml font-bold mt-10 pl-10 ml-10">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
+
+            <div className=".w-auto on inline-block element mt-15 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
               <div class="w-full mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+
+                <label class="block uppercase tracking-wide text-gray-700 text-xs  font-bold mb-2" for="grid-city">
                   Quel est le nom de votre hébergement?
                 </label>
                 <Field name="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Nom de l'hébergement" />
                 { errors.name && touched.name ? (
                   <div>{errors.name}</div>
                 ) : null }
-              </div>
+              </div><br></br>
               
               <div class="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-bold">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                   Choisissez le type d’hébergement que vous souhaitez inscrire sur RunBnB
                 </label>
@@ -54,7 +56,7 @@ class InformationLogements extends React.Component {
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                   </div>
                 </div>
-              </div>
+              </div><br></br>
   
               <div class="w-full mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">

@@ -35,7 +35,7 @@ export default function CustomizedSteppers() {
   }
 
   const stepList = [{
-    title: 'Information Logement',
+    title: 'Nom et emplacement',
     sections: [{
       step: 0
     }, {
@@ -44,8 +44,9 @@ export default function CustomizedSteppers() {
       step: 2
     }]
   }, {
+ 
+    title: "Configuration de l'hébergement",
 
-    title: 'Map',
     sections: [{
       step: 3
     }, {
@@ -59,8 +60,10 @@ export default function CustomizedSteppers() {
     <>
       <StepProgress stepList={stepList} activeStep={activeStep} />
       { getStepContent() }
-      <button onClick={previousStep}>Précedent</button>
-      <button onClick={nextStep}>Suivant</button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-10 rounded" onClick={previousStep}>Précedent</button>
+      <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-10 rounded" onClick={nextStep}>Suivant</button>
+
+
     </>
   );
 }
