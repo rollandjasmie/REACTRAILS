@@ -11,9 +11,9 @@ import { AppBar } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    checked={checked}
-    onChange={handleChange}
-    inputProps={{ 'aria-label': 'primary checkbox' }}
+    
+    
+  
   },
   formControl: {
     margin: theme.spacing(2),
@@ -46,9 +46,7 @@ export default function CheckboxesGroup() {
     <div className={classes.root}>
         
       <Checkbox
-        checked={checked}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'primary checkbox' }}
+      
       />
       <FormControl component="fieldset" className={classes.formControl}>
           

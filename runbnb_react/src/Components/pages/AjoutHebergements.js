@@ -24,7 +24,13 @@ import EquipementContainers from '../Logements/EquipementContainers';
 
 export default function CustomizedSteppers() {
   const [activeStep, setActiveStep] = React.useState(0);
-  
+  const [formValue, setFormValue] = React.useState({
+    hebergement: {
+      name: '',
+      type: '',
+      categorie: '',
+    }
+  });
 
   const nextStep = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -34,22 +40,33 @@ export default function CustomizedSteppers() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  const saveHebergement = () => {
+    /*axios.post('/logement', formValue).then(response => {
+      
+    })*/
+  }
+
   const getStepContent = () => {
     switch (activeStep) {
       case 0:
-        return <InformationLogements/>;
+        return <InformationLogements 
+                  nextStep={nextStep}
+                  formValue={formValue}
+                  setFormValue={setFormValue}/>;
       case 1:
-        return <Localisation/>;
+        return <Localisation
+                  previousStep={previousStep}
+                  nextStep={nextStep}
+                  formValue={formValue}
+                  setFormValue={setFormValue}/>;
       case 2:
         return <MapContainers />;  
         case 3:
           return <Chambres/>;
       case 4:
         return <EquipementContainers/>
-      default:
-        return 'Carte ny ato ...';
-      
-      
+      case 5:
+        return  console.log(< InformationLogements />);
     }
   }
 
@@ -79,10 +96,6 @@ export default function CustomizedSteppers() {
     <>
       <StepProgress stepList={stepList} activeStep={activeStep} />
       { getStepContent() }
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-10 rounded" onClick={previousStep}>Précedent</button>
-      <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 ml-10 rounded" onClick={nextStep}>Suivant</button>
-
-
     </>
   );
 }
