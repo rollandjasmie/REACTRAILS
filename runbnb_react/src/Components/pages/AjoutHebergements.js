@@ -1,7 +1,20 @@
 import React from 'react';
+
+/*import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import Check from '@material-ui/icons/Check';
+import SettingsIcon from '@material-ui/icons/Settings';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import VideoLabelIcon from '@material-ui/icons/VideoLabel';
+import StepConnector from '@material-ui/core/StepConnector';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
-import MapContainers from '../Logements/MapContainers';
+import Chambres from '../Logements/Chambres';
+import MapContainers from '../Logements/MapContainers'
+// import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 
 
@@ -28,9 +41,9 @@ export default function CustomizedSteppers() {
         return <Localisation/>;
       case 2:
         return <MapContainers />;    
-  
-      default:
-        return 'Carte ny ato ...';
+      
+        case 3:
+          return <Chambres/>;
     }
   }
 
@@ -67,3 +80,5 @@ export default function CustomizedSteppers() {
     </>
   );
 }
+
+
