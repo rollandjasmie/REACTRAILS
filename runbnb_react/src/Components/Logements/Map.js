@@ -2,7 +2,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import React, { useState, useRef, useCallback } from "react";
 import MapGL, { Marker }  from "react-map-gl";
-import Geocoder from "react-map-gl-geocoder";
+import Pin from './pin';
 
 // Please be a decent human and don't abuse my Mapbox API token.
 // If you fork this sandbox, replace my API token with your own.
@@ -40,11 +40,14 @@ const Map = () => {
     console.log(mapRef.current);
     //mapRef.current.remove();
   }
- 
+  const [position, setPosition] = useState({
+  longitude: 55.53817922704148,
+  latitude: -21.121661209928707
+});
 
-const long = 55.53817922704148
-const lat = -21.121661209928707
 
+ const onMarkerDragStart = event => {
+  };
   return (
     <div style={{ height: "100vh" }}>
       <MapGL
@@ -56,16 +59,19 @@ const lat = -21.121661209928707
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
-        <Geocoder
-          mapRef={mapRef}
-          onViewportChange={handleGeocoderViewportChange}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-          position="top-left"
-        />
-         <Marker
-    longitude={ long }
-    latitude= { lat }
-  ></Marker>
+     
+        <Marker
+          longitude={position.longitude}
+          latitude={position.latitude}
+          offsetTop={-20}
+          offsetLeft={-10}
+          draggable
+          onDragEnd={onMarkerDragStart}
+
+        
+        >
+          <Pin size={20} />
+        </Marker>
       </MapGL>
       <button onClick={deleteMap}>Delete</button>
     </div>
