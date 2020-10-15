@@ -23,13 +23,14 @@ export default function CheckboxesGroup() {
     Bar: true,
     Sauna:true,
     Jardin: true,
+    antoine:true,
   });
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const { Bar, Sauna, Jardin } = state;
+  const { Bar, Sauna, Jardin, antoine } = state;
   //const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
 
   return (
