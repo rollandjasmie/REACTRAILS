@@ -32,21 +32,11 @@ class Localisation extends React.Component {
      >
        {({ values, errors, touched, setFieldValue }) => (
          <Form>
-<<<<<<< HEAD
-          <div className="px-8 py-4">
-            <h1 className="text-2xl font-bold">Localisation</h1>
-            <div className="w-full mb-6 md:mb-0">
-              <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-=======
 
         <div className=".w-auto on inline-block element mt-5 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10  ">
         <h1 className="text-2ml font-bold  mb-10 ">Où se situe l’hébergement que vous inscrivez ?</h1>
-
-       
-        
             <div class="w-full mb-6 md:mb-0">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
->>>>>>> db3185ef906ca0794f5b939f0ec868fd6635d615
                 Pays
               </label>
               <Field name="pays" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Pays" />

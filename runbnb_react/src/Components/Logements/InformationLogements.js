@@ -27,18 +27,13 @@ class InformationLogements extends React.Component {
        >
          {({ values, errors, touched, setFieldValue }) => (
            <Form>
-<<<<<<< HEAD
-            <div className="px-8 py-4">
-              <div className="w-full mb-6 md:mb-0">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-=======
-              <h1 className="text-2ml font-bold mt-10 pl-10 ml-10">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
 
+          
+        <h1 className="text-2ml font-bold mt-10 pl-10 ml-10">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
             <div className=".w-auto on inline-block element mt-15 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
               <div class="w-full mb-6 md:mb-0">
 
                 <label class="block uppercase tracking-wide text-gray-700 text-xs  font-bold mb-2" for="grid-city">
->>>>>>> db3185ef906ca0794f5b939f0ec868fd6635d615
                   Quel est le nom de votre hébergement?
                 </label>
                 <Field name="name" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Nom de l'hébergement" />
@@ -47,14 +42,8 @@ class InformationLogements extends React.Component {
                 ) : null }
               </div><br></br>
               
-<<<<<<< HEAD
-              <div className="w-full mb-6 md:mb-0">
-              <h1 className="text-2xl font-bold">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-=======
               <div class="w-full mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
->>>>>>> db3185ef906ca0794f5b939f0ec868fd6635d615
                   Choisissez le type d’hébergement que vous souhaitez inscrire sur RunBnB
                 </label>
                 <div className="relative">
