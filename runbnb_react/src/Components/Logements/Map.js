@@ -49,13 +49,14 @@ const Map = () => {
  const onMarkerDragStart = event => {
   };
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "60vh"}}>
       <MapGL
         ref={mapRef}
         mapStyle="mapbox://styles/mapbox/streets-v11"
         {...viewport}
-        width="50%"
-        height="50%"
+        width="400px"
+        height="330px"
+        
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
@@ -73,7 +74,7 @@ const Map = () => {
           <Pin size={20} />
         </Marker>
       </MapGL>
-      <button onClick={deleteMap}>Delete</button>
+      
     </div>
   );
 };

@@ -4,9 +4,11 @@ import Map from './Map';
 export default class MapContainers extends Component {
     render() {
         return (
-            <>
-              <Map />  
-            </>
+            <div class=" .w-1/3 mr-0 mt-5 pl-10 ml-10 bg-white shadow-md rounded pt-6 pb-8 mb-10">
+         
+                <Map />  
+           
+            </div>
         )
     }
 }
