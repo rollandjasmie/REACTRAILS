@@ -2,7 +2,7 @@
 @import '~tailwindcss/dist/utilities.css';
 @import '~tailwindcss/dist/components.css';
 
-
+*{overflow-x: hidden;}
 .App {
   text-align: center;
 }
@@ -40,4 +40,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+.sidebarStyle {
+  display: inline-block;
+  top: 0px;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+  top: 10%;
+  left: 10%;
+}
+
+.mapContainer {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+  height: 400px;
 }

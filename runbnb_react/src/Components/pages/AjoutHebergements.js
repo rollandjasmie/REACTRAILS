@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
+
 /*import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -14,6 +12,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
+import Chambres from '../Logements/Chambres';
+import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 
@@ -39,10 +39,11 @@ export default function CustomizedSteppers() {
         return <InformationLogements/>;
       case 1:
         return <Localisation/>;
-    
-  
-      default:
-        return 'Carte ny ato ...';
+      case 2:
+        return <MapContainers />;    
+      
+        case 3:
+          return <Chambres/>;
     }
   }
 
@@ -58,6 +59,7 @@ export default function CustomizedSteppers() {
   }, {
  
     title: "Configuration de l'hébergement",
+
     sections: [{
       step: 3
     }, {
@@ -78,3 +80,5 @@ export default function CustomizedSteppers() {
     </>
   );
 }
+
+

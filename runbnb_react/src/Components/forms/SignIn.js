@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import NavbarUp from './Navbar/NavbarUp';
+import Navbarin from './Navbar/Navbarin';
 
 
 class SignIn extends React.Component{
@@ -9,7 +9,7 @@ class SignIn extends React.Component{
      
         <Formik>
            <>
-           <NavbarUp />
+           <Navbarin/>
             <div className="flex">
               <div className=" flex w-4/6 py-40 px-10">
                 <h1 className="text-5xl w-4/6  font-bold ">Inscrivez votre <span className="text-orange-500">hébergement</span> sur Runbnb.com</h1>
@@ -20,9 +20,9 @@ class SignIn extends React.Component{
               <div className="  w-2/6 py-10 ">
               <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <form className="py-5  px-10">
+                    <form className="  px-10">
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Créer un profil partenaire</h1>
-                        <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-5" for="grid-city">
+                        <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-2" for="grid-city">
                          Nom
                         </label>
                         <Field className=" w-full  appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3

@@ -14,18 +14,18 @@ class HomePage extends React.Component{
             <div className="w-full">
                 <Navbar/>
                 <div className="">
-                  <div className="with-bg container mx-auto flex flex-wrap flex-col md:flex-row mx-12 my-8 py-6 
+                  <div className="with-bg container mx-auto flex flex-wrap flex-col md:flex-row mx-12 my-5 py-6 
                   w-11/12 h-64 flex justify-center container">
                   <input  className="appearance-none block w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-5" placeholder="Nom" />
+                  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2" placeholder="Nom" />
 
                   <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-5 "></input>
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2 "></input>
                     <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-5 "></input>   
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2 "></input>   
 
                       <select className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-5  ">
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2  ">
                         <option value="green">1 voyageur</option>
                         <option value="blue">Plusieurs voyageurs</option>
                       </select>

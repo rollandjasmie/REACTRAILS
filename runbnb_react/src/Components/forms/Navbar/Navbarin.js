@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import DropDown from '../DropDown/DropDown';
 
-export default class NavbarUp extends Component {
+export default class Navbarin extends Component {
     render() {
         return (
             <>
@@ -12,13 +12,13 @@ export default class NavbarUp extends Component {
                       <img className="w-40" src="./images/logo.jpg"></img>
                     </NavLink>
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                      <a className="mr-5 hover:text-gray-900"></a>
+                      <a className="mr-5 hover:text-gray-900">Déjà partenaire ?</a>
                     </nav>
                     <form>
                     <div className="flex">
-                    <NavLink to="/signin">  
-                   <button className="border-2 border-orange-500 text-orange-500
-                      rounded hover:text-white hover:bg-orange-500 shadow-lg px-4 py-2">S'inscrire</button>
+                    <NavLink to="/signup">  
+                   <button className=" border-2 border-orange-500
+                      rounded hover:bg-orange-500 hover:text-white text-orange-500 shadow-lg px-4 py-2">Se connecter</button>
                     </NavLink>   
                     </div>
                     
