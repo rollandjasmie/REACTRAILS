@@ -17,10 +17,11 @@ class App extends React.Component {
       <>
         <Router>
          
-            {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
+          <div className="bg-gray-100">
+            
+            
               <Switch>
-                <Route exact path='/AjoutHebeherrgements'>
+                <Route path='/AjoutHebergements'>
                     <AjoutHebergements/>
                 </Route>
                 <Route exact path='/'>
@@ -29,7 +30,8 @@ class App extends React.Component {
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signup" component={Signup} />
               </Switch>
-        
+            </div>
+
         </Router>
       </>);
   }

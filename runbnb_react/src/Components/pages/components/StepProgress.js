@@ -4,7 +4,7 @@ class StepProgress extends Component {
     render() {
         return (
             <>
-                <nav className="bg-gray-800">
+                <nav className="bg-blue-500">
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                         <div className="relative flex items-center justify-between h-16">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -28,9 +28,9 @@ class StepProgress extends Component {
                                             <div
                                                 className="text-center ml-10 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">
                                                 { stepItem.title }
-                                                <div className="flex mt-1 justify-center items-center">
+                                                <div className="flex mt-2 justify-center items-center">
                                                     { stepItem.sections && stepItem.sections.map(section => {
-                                                        return (<div className={`py-1 px-4 ml-2 ${section.step <= this.props.activeStep ? 'bg-green-500' : 'bg-white'}`}></div>)
+                                                        return (<div className={`h-1 px-4 ml-2 ${section.step <= this.props.activeStep ? 'bg-green-600' : 'bg-gray-400'}`}></div>)
                                                     }) }
                                                 </div>
                                             </div>

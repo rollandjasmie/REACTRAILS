@@ -26,8 +26,15 @@ class Localisation extends React.Component {
        }}
        validationSchema={LocalisationSchema}
        onSubmit={values => {
-         // same shape as initial values
-         console.log(values);
+          let { formValue, setFormValue } = this.props;
+
+          formValue = {...formValue, localisation: values};
+
+          setFormValue(formValue);
+
+          console.log(formValue);
+
+          this.props.nextStep();
        }}
      >
        {({ values, errors, touched, setFieldValue }) => (
@@ -59,7 +66,7 @@ class Localisation extends React.Component {
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                     Adresse (ligne 1)                  
               </label>
-              <Field name="adresse" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="adresse" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse" />
               { errors.adresse && touched.adresse ? (
                 <div>{errors.adresse}</div>
               ) : null }
@@ -69,7 +76,7 @@ class Localisation extends React.Component {
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                   Adresse (ligne 2)
               </label>
-              <Field name="adresse2 " className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="adresse2 " class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse" />
               { errors.adresse2   && touched.adresse2   ? (
                 <div>{errors.adresse2  }</div>
               ) : null }
@@ -79,13 +86,18 @@ class Localisation extends React.Component {
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                   code postal
               </label>
-              <Field name="code " className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Ville" />
+              <Field name="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Code Postal" />
               { errors.code  && touched.code  ? (
                 <div>{errors.code }</div>
               ) : null }
             </div>
 
-        
+            <hr className="my-4"/> 
+            <div className="flex items-end justify-end">
+
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
+              <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
+            </div>
       
           </div>
         </Form>
