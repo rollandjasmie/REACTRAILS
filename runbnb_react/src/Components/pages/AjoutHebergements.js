@@ -18,13 +18,17 @@ import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
+import CalendrierContainer from '../Logements/CalendrierContainer';
+import Verification from '../Logements/Verification'
+
+
 
 
 
 
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(3);
+  const [activeStep, setActiveStep] = React.useState(8);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -70,6 +74,10 @@ export default function CustomizedSteppers() {
         return  console.log(< InformationLogements />);
         case 6:
           return <Regle/>
+          case 7:
+            return <CalendrierContainer/>
+            case 8:
+              return <Verification/>
         default:
           return <Chambres/>
        
