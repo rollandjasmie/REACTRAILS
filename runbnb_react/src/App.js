@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <div>
+          <div class="bg-gray-100">
               <ul>
                 <li>
                   <Link to="/AjoutHebergements">Hebergement</Link>
