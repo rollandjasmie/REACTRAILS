@@ -1,7 +1,6 @@
 import React  from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Field, Form } from 'formik';
-import Timepiker from './Timepiker'
 
 const Checkboxregle = () => (
     <div>
