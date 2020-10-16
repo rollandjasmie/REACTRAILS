@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
