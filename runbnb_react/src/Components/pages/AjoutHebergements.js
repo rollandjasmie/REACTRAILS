@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
+import Regle from '../Logements/Regle';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
@@ -46,8 +47,9 @@ export default function CustomizedSteppers() {
           return <Chambres/>;
       case 4:
         return <EquipementContainers/>
-      default:
-        return 'Carte ny ato ...';
+        case 5:
+          return <Regle/>
+       
       
       
     }
