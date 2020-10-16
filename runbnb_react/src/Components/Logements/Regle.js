@@ -31,9 +31,6 @@ const Checkboxregle = () => (
              <Field type="checkbox" name="regle" value="   Fête / évènements autorisés" />
              Fête / évènements autorisés
            </label>
-            <div className="">
-                    <Timepiker/>
-            </div>
            </div>
           </Form>
 
