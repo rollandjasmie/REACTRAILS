@@ -2,7 +2,7 @@
 @import '~tailwindcss/dist/utilities.css';
 @import '~tailwindcss/dist/components.css';
 
-
+*{overflow-x: hidden;}
 .App {
   text-align: center;
 }
