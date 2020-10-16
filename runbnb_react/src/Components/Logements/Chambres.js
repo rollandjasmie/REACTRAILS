@@ -36,18 +36,21 @@ import { Formik, Field, Form } from 'formik';
               lits: '',
             }}
           >
-          <Modal.Body>..
+          <Modal.Body>
 
-}
+
 
 
 
             <Form>
               <div className="col-5">
+              <Field type="checkbox" className="mr-2"name="lits" value="Lits double"/>
+
               <label>
-                <Field type="checkbox" name="lits" value="Lits double"/>
                 Lits double
               </label>
+
+
               <label>
                 <Field type="checkbox" name="lits" value="Lits Simples"/>
                 Lits simples
@@ -78,6 +81,8 @@ import { Formik, Field, Form } from 'formik';
               </label>
               </div> 
             </Form>
+
+
             .</Modal.Body>
           </Formik>
         </Modal>
