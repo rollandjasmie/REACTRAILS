@@ -3,8 +3,7 @@ import AjoutHebergements from "./Components/pages/AjoutHebergements";
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
+  Switch,Route
 } from "react-router-dom";
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
@@ -16,7 +15,7 @@ class App extends React.Component {
       <>
         <Router>
          
-          <div className="bg-gray-100">
+          <div className="bg-gray-100 h-screen">
             
             
               <Switch>

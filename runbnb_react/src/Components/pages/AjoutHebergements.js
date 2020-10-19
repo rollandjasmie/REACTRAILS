@@ -13,23 +13,20 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
+import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
 import CalendrierContainer from '../Logements/CalendrierContainer';
-import Verification from '../Logements/Verification'
+import Conditions from '../Logements/Conditions'
 import Regle from '../Logements/Regle'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
 
-
-
-
-
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(3);
+  const [activeStep, setActiveStep] = React.useState(8);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -66,26 +63,37 @@ export default function CustomizedSteppers() {
                   formValue={formValue}
                   setFormValue={setFormValue}/>;
       case 2:
-        return <MapContainers />;  
+        return <MapContainers 
+                previousStep={previousStep}
+                nextStep={nextStep}
+                formValue={formValue}
+                setFormValue={setFormValue}
+                   />;
         case 3:
           return <Chambres/>;
       case 4:
         return <EquipementContainers/>
-      case 5:
-        return  console.log(< InformationLogements />);
-        case 9:
-          return <Regle/>
+
+        case 5:
+              return   <Reglecontainer/>    
+        case 6:
+              return  (<Uploadphoto />) ;
+      
+        
           case 7:
-            return <CalendrierContainer/>
-            case 8:
-              return <Verification/>
-        default:
-          return <Chambres/>
-       
+               return <CalendrierContainer/>
+          case 8:
+                return <Conditions/>
+              
+           case 9:
+              return <Regle/>
+          default:
+                return <Chambres/> 
+
+
+
+
       
-      
-      case 6:
-        return  (<Uploadphoto />) ;
     }
   }
 
