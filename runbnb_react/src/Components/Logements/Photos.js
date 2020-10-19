@@ -17,6 +17,7 @@ class Photos extends Component{
     this.setState({
       files: files
     });
+    console.log(files[1])
   }
   render(){
     return (
@@ -24,8 +25,8 @@ class Photos extends Component{
         onChange={this.handleChange.bind(this)}
         showPreviewsInDropzone={false}
         showPreviews={true}
-        filesLimit={500}
-        
+        filesLimit={50}
+        maxFileSize={5000000}
 
         />
     )
