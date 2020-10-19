@@ -13,22 +13,15 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
-<<<<<<< HEAD
-=======
 import Reglecontainer from '../Logements/Reglecontainer';
->>>>>>> reglepa
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
 import Uploadphoto from "../Logements/Uploadphoto";
 
-
-
-
-
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(6);
+  const [activeStep, setActiveStep] = React.useState(0);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -53,7 +46,7 @@ export default function CustomizedSteppers() {
 
   const getStepContent = () => {
     switch (activeStep) {
-      case 6:
+      case 0:
         return <InformationLogements 
                   nextStep={nextStep}
                   formValue={formValue}
@@ -72,21 +65,15 @@ export default function CustomizedSteppers() {
                 setFormValue={setFormValue}
                    />;
         case 3:
-          return <Chambres/>;
-      case 4:
-        return <EquipementContainers/>
-<<<<<<< HEAD
-      case 6:
-        return  (<Uploadphoto />) ;
-=======
-      case 5:
-        return  console.log(< InformationLogements />);
-        case 0:
-          return <Reglecontainer/>
-       
+              return <Chambres/>;
+        case 4:
+              return <EquipementContainers/>
+        case 5:
+              return   <Reglecontainer/>    
+        case 6:
+              return  (<Uploadphoto />) ;
       
       
->>>>>>> reglepa
     }
   }
 

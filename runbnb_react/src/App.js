@@ -3,7 +3,7 @@ import AjoutHebergements from "./Components/pages/AjoutHebergements";
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Switch,Route
 } from "react-router-dom";
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
