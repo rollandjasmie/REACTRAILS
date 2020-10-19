@@ -78,7 +78,7 @@ export default function CheckboxesGroup() {
                 step: 300, // 5 min
               }}
             />
-          
+            <span className='ml-10 mr-10'>à</span>
             <TextField
               id="time"
               h1="Arrivé"
@@ -110,6 +110,7 @@ export default function CheckboxesGroup() {
                 step: 300, // 5 min
               }}
             />
+             <span className='ml-10 mr-10'>à</span>
             <TextField
               id="time"
               h1="Arrivé"

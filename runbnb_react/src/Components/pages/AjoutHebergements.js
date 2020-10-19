@@ -26,7 +26,7 @@ import Regle from '../Logements/Regle'
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(8);
+  const [activeStep, setActiveStep] = React.useState(9);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
