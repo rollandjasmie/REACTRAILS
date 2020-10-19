@@ -13,18 +13,18 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
-import Regle from '../Logements/Regle';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
+import Uploadphoto from "../Logements/Uploadphoto";
 
 
 
 
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(6);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -66,37 +66,47 @@ export default function CustomizedSteppers() {
           return <Chambres/>;
       case 4:
         return <EquipementContainers/>
-      case 5:
-        return  console.log(< InformationLogements />);
-        case 6:
-          return <Regle/>
-       
-      
-      
+      case 6:
+        return  (<Uploadphoto />) ;
     }
   }
 
-  const stepList = [{
-    title: 'Nom et emplacement',
-    sections: [{
-      step: 0
-    }, {
-      step: 1
-    }, {
-      step: 2
-    }]
-  }, {
- 
-    title: "Configuration de l'hébergement",
+  const stepList = [
+  
+    {
+      title: 'Nom et emplacement',
+      sections: [{
+        step: 0
+      }, {
+        step: 1
+      }, {
+        step: 2
+      }]
+    }, 
+    
+    {
+  
+      title: "Configuration de l'hébergement",
 
-    sections: [{
-      step: 3
-    }, {
-      step: 4
-    }, {
-      step: 5
-    }]
-  }]
+      sections: [{
+        step: 3
+      }, {
+        step: 4
+      }, {
+        step: 5
+      }]
+    },
+
+     {
+  
+      title: "Photos",
+
+      sections: [{
+        step: 6
+      }]
+    }
+  
+  ]
 
   return (
     <>

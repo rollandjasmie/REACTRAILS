@@ -43,9 +43,8 @@ export default function CheckboxesGroup() {
   return (
     <div className={classes.root}>
         
-      <Checkbox
       
-      />
+  
       <FormControl component="fieldset" className={classes.formControl}>
           
         <FormLabel component="legend" className="text-2ml font-bold mt-10 pl-10 ml-10">Quels équipements proposez-vous ?
