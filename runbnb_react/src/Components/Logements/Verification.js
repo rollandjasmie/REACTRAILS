@@ -6,11 +6,8 @@ export default class Verification extends Component {
 
          <>
          
-<div>
-    <p>bgdksudfgkdufgvdk</p>
-</div>
 
-
+       
          </>
               
            

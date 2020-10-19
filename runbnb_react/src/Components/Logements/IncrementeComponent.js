@@ -45,7 +45,7 @@ class IncrementComponent extends React.Component {
 
   render() {
 
-    return ( <span className="float-right mr-20">
+    return ( <span className=" mr-20">
       <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-1 rounded-full rounded ml-4 shadow" onClick={this.IncrementItem}>+</button>
       <input className="w-10 justify-content-center" value={this.state.quantity} onChange={this.handleChange}/>
       <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-1 rounded-full rounded  shadow" onClick = {this.DecreaseItem}>-</button>

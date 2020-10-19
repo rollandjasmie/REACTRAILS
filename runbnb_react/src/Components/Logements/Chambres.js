@@ -46,7 +46,7 @@ import IncrementeComponent from './IncrementeComponent';
 
 
             <Form>
-              <div className="w-full float-left">
+              <div className="w-full ">
               <label>
 
               <Field type="checkbox" className="mr-2"name="lits" value="Lits double"/>

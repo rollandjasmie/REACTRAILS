@@ -28,7 +28,7 @@ import Verification from '../Logements/Verification'
 
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(8);
+  const [activeStep, setActiveStep] = React.useState(3);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',

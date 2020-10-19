@@ -1,15 +1,6 @@
 import React from "react";
 import { DateRangePicker } from "materialui-daterange-picker";
-interface DateRange {
-    startDate?: Date,
-    endDate?: Date
-}
- 
-interface DefinedRange {
-    label: string,
-    startDate: Date,
-    endDate: Date
-}
+
 const CalendrierComponent = props => {
   const [open, setOpen] = React.useState(true);
   const [dateRange, setDateRange] = React.useState({});
