@@ -11,13 +11,13 @@ import Pin from './pin';
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic21peWFrYXdhIiwiYSI6ImNqcGM0d3U4bTB6dWwzcW04ZHRsbHl0ZWoifQ.X9cvdajtPbs9JDMG-CMDsA";
 
+
 const Map = () => {
   const [viewport, setViewport] = useState({
     longitude:55.53817922704148,
     latitude:-21.121661209928707,
     zoom: 8.56
   });
-
   const mapRef = useRef();
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),

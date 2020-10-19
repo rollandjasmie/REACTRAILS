@@ -13,18 +13,15 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
+import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
 import Uploadphoto from "../Logements/Uploadphoto";
 
-
-
-
-
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(6);
+  const [activeStep, setActiveStep] = React.useState(0);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -61,13 +58,22 @@ export default function CustomizedSteppers() {
                   formValue={formValue}
                   setFormValue={setFormValue}/>;
       case 2:
-        return <MapContainers />;  
+        return <MapContainers 
+                previousStep={previousStep}
+                nextStep={nextStep}
+                formValue={formValue}
+                setFormValue={setFormValue}
+                   />;
         case 3:
-          return <Chambres/>;
-      case 4:
-        return <EquipementContainers/>
-      case 6:
-        return  (<Uploadphoto />) ;
+              return <Chambres/>;
+        case 4:
+              return <EquipementContainers/>
+        case 5:
+              return   <Reglecontainer/>    
+        case 6:
+              return  (<Uploadphoto />) ;
+      
+      
     }
   }
 
