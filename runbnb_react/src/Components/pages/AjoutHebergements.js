@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
-import Regle from '../Logements/Regle';
+import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
@@ -49,7 +49,7 @@ export default function CustomizedSteppers() {
 
   const getStepContent = () => {
     switch (activeStep) {
-      case 0:
+      case 6:
         return <InformationLogements 
                   nextStep={nextStep}
                   formValue={formValue}
@@ -61,15 +61,20 @@ export default function CustomizedSteppers() {
                   formValue={formValue}
                   setFormValue={setFormValue}/>;
       case 2:
-        return <MapContainers />;  
+        return <MapContainers 
+                previousStep={previousStep}
+                nextStep={nextStep}
+                formValue={formValue}
+                setFormValue={setFormValue}
+                   />;
         case 3:
           return <Chambres/>;
       case 4:
         return <EquipementContainers/>
       case 5:
         return  console.log(< InformationLogements />);
-        case 6:
-          return <Regle/>
+        case 0:
+          return <Reglecontainer/>
        
       
       
