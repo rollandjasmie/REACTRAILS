@@ -44,6 +44,7 @@ export default function CheckboxesGroup() {
     <div className={classes.root}>
         
   
+      
   
       <FormControl component="fieldset" className={classes.formControl}>
           
