@@ -15,7 +15,7 @@ class App extends React.Component {
       <>
         <Router>
          
-          <div className="bg-gray-100">
+          <div className="bg-gray-100 h-screen">
             
             
               <Switch>

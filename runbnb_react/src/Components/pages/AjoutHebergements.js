@@ -17,11 +17,16 @@ import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
-import Equipement from '../Logements/Equipement';
+import EquipementContainers from '../Logements/EquipementContainers';
+import CalendrierContainer from '../Logements/CalendrierContainer';
+import Conditions from '../Logements/Conditions'
+import Reglecontainer from '../Logements/Reglecontainer'
+
+
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(9);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -66,20 +71,20 @@ export default function CustomizedSteppers() {
                 formValue={formValue}
                 setFormValue={setFormValue}
                    />;
-         case 3:
-                         return <Equipement
-                         previousStep={previousStep}
-                         nextStep={nextStep}
-                         formValue={formValue}
-                         setFormValue={setFormValue}
-                         />;
-        case 4:
+        case 3:
               return <Chambres
               previousStep={previousStep}
               nextStep={nextStep}
               formValue={formValue}
               setFormValue={setFormValue}
               />;
+      case 4:
+        return <EquipementContainers
+        previousStep={previousStep}
+        nextStep={nextStep}
+        formValue={formValue}
+        setFormValue={setFormValue}/>
+
         case 5:
               return   <Reglecontainer
               previousStep={previousStep}
@@ -90,6 +95,16 @@ export default function CustomizedSteppers() {
         case 6:
               return  (<Uploadphoto />) ;
       
+        
+        case 7:
+            return <Conditions/>
+        case 8:
+            return <CalendrierContainer/>
+    
+
+
+
+
       
     }
   }
