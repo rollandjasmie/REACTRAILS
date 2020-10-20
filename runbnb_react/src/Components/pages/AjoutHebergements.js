@@ -31,7 +31,13 @@ import PageCharte from '../Logements/PageCharte';
 
 
 export default function CustomizedSteppers() {
+<<<<<<< HEAD
   const [activeStep, setActiveStep] = React.useState(4);
+=======
+
+  const [activeStep, setActiveStep] = React.useState(5);
+
+>>>>>>> a89ffb6e69606fca43e9b81e2afa97781617057b
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
