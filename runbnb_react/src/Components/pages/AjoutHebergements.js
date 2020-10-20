@@ -76,13 +76,13 @@ export default function CustomizedSteppers() {
         case 6:
               return <Uploadphoto />
       
-        case 7:
+        case 9:
               return <InformationHeb/>
         
-        case 8:
+        case 10:
              return <InfoRunbnb/>
         
-       case 9:
+       case 11:
               return <PageCharte/>            
     }
   }
@@ -127,11 +127,11 @@ export default function CustomizedSteppers() {
       title: "Révision et finalisation",
 
       sections: [{
-        step: 7
-      },{
-        step: 8
-      },{
         step: 9
+      },{
+        step: 10
+      },{
+        step: 11
       }]
     }
 
