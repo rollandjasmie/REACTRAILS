@@ -31,7 +31,7 @@ import PageCharte from '../Logements/PageCharte';
 
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(6);
+  const [activeStep, setActiveStep] = React.useState(3);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -130,7 +130,12 @@ export default function CustomizedSteppers() {
       
         
         case 7:
-            return <Conditions/>
+              return <Conditions
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />
         case 8:
             return <CalendrierContainer/> 
         case 9:
