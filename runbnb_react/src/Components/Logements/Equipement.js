@@ -19,55 +19,75 @@ class Equipement extends React.Component {
           >
          {({ values, errors,handleSubmit, touched, setFieldValue }) => (
             <Form onSubmit={handleSubmit}>
-              <div className=".w-auto on  element mt-5 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10 ">
+              <div className="w-1/3  mt-5 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10 ">
+                <p className="text-2ml font-bold  mb-10 ">Quels équipements proposez-vous ?</p>
                 <label>
-                  <Field type="checkbox" name="title" value="Bar"/>
+                  <Field className="mr-1" type="checkbox" name="title" value="Bar"/>
                   Bar
-                </label>
+                </label><br></br>
+
+
                 <label>
-                  <Field type="checkbox" name="title" value="Sauna"/>
+                  <Field className="mr-1" type="checkbox" name="title" value="Sauna"/>
                   Sauna
-                </label>
+                </label><br></br>
+
+
+
                 <label>
-                  <Field type="checkbox" name="title" value="jardin" />
+                  <Field className="mr-1" type="checkbox" name="title" value="jardin" />
                   Jardin
-                </label>
+                </label><br></br>
+
+
                 <label>
-                  <Field type="checkbox" name="title" value="Terrasse" />
+                  <Field className="mr-1" type="checkbox" name="title" value="Terrasse" />
                   Terrasse
-                </label>
+                </label><br></br>
+
+
                 <label>
-                  <Field type="checkbox" name="title"  value="Bain amous /jacuzzi"/>
+                  <Field className="mr-1" type="checkbox" name="title"  value="Bain amous /jacuzzi"/>
                   Bain amous /jacuzzi
-                </label>
+                </label><br></br>
+                
                 <label>
-                  <Field type="checkbox" name="title"  value="Connexion wifi gratuit"/>
-                  Connexion wifi gratuit              </label>
+                  <Field className="mr-1" type="checkbox" name="title"  value="Connexion wifi gratuit"/>
+                  Connexion wifi gratuit  
+                </label><br></br>
+
                 <label>
-                  <Field type="checkbox" name="title"  value="Climatisation"/>
+                  <Field className="mr-1" type="checkbox" name="title"  value="Climatisation"/>
                   Climatisation
-                </label>
+                </label><br></br>
+
                 <label>
-                  <Field type="checkbox" name="title" value="plage" />
+                  <Field className="mr-1" type="checkbox" name="title" value="plage" />
                   Plage
-                </label>
+                </label><br></br>
+
                 <label>
-                  <Field type="checkbox" name="title" value="Borne de recharge pour voiture électrique" />
+                  <Field className="mr-1" type="checkbox" name="title" value="Borne de recharge pour voiture électrique" />
                   Borne de recharge pour voiture électrique
-                </label>
+                </label><br></br>
+
                 <label>
-                  <Field type="checkbox" name="title" value="Piscine" />
+                  <Field className="mr-1" type="checkbox" name="title" value="Piscine" />
                   Piscine
-                </label>
+                </label><br></br>
+                
                 <label>
-                  <Field type="checkbox" name="title" value="Parking" />
+                  <Field className="mr-1"  type="checkbox" name="title" value="Parking" />
                   Parking
-                </label>
-              </div> 
-              <div className="flex items-end justify-end">
+                </label><br></br>
+
+
+                <div className="flex items-end justify-end">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
                   <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
               </div>
+              </div> 
+           
 
             </Form>
          )}

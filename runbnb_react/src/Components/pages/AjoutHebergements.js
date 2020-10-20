@@ -21,11 +21,14 @@ import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 
+import ShowUser from '../Logements/ShowUser'
+
 
 import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+
 
 export default function CustomizedSteppers() {
 
@@ -121,12 +124,19 @@ export default function CustomizedSteppers() {
               />;    
         case 6:
               return  (<Uploadphoto />) ;
-      
+              case 7:
+                return <Conditions/>
+            case 8:
+                return <CalendrierContainer/>
         
-        case 7:
-            return <Conditions/>
-        case 8:
-            return <CalendrierContainer/>
+           case 9:
+              return <Regle/>
+      
+          case 10:
+                  return <ShowUser/>
+
+           default:
+                return <Chambres/>      
     
 
 
