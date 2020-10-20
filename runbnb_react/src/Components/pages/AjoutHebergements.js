@@ -28,7 +28,7 @@ import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(3);
+  const [activeStep, setActiveStep] = React.useState(5);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
