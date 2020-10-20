@@ -47,68 +47,84 @@ import IncrementeComponent from './IncrementeComponent';
 
             <Form>
               <div className="w-full ">
-              <label>
+              <label className="flex">
+                <div className="w-1/2">
 
               <Field type="checkbox" className="mr-2"name="lits" value="Lits double"/>
-                Lits double 1
+                Lits double 
+                </div>
+            
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
-            
               </label>
 
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox"className="mr-2" name="lits" value="Lits Simples"/>
                 Lits simples
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox"className="mr-2" name="lits" value="Lits King size" />
                 Lits King size
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox" className="mr-2"name="lits" value="Grand lits King size" />
                 Grand lits King size
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox" className="mr-2"name="lits"  value="Lits Lits superposé"/>
                 Lits superposé
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox"className="mr-2" name="lits"  value="Canapé lits"/>
                 Canapé lits
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox" className="mr-2"name="lits"  value="Canpé lits double"/>
                 Canapé lits double
+                </div>  
                 <span className="">
                 <IncrementeComponent />
 
                 </span>
               </label>
-              <label>
+              <label className="flex">
+              <div className="w-1/2">
                 <Field type="checkbox" className="mr-2"name="lits" value="Futon" />
                 Futon
+              </div>  
                 <span className="">
                 <IncrementeComponent />
 

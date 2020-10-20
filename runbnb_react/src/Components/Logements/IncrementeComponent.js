@@ -45,10 +45,10 @@ class IncrementComponent extends React.Component {
 
   render() {
 
-    return ( <span className=" mr-20">
-      <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-1 rounded-full rounded ml-4 shadow" onClick={this.IncrementItem}>+</button>
-      <input className="w-10 justify-content-center" value={this.state.quantity} onChange={this.handleChange}/>
-      <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-1 rounded-full rounded  shadow" onClick = {this.DecreaseItem}>-</button>
+    return ( <span className="">
+      <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 mx-4 rounded-full rounded  shadow" onClick = {this.DecreaseItem}>-</button>
+      <input className="w-10" value={this.state.quantity} onChange={this.handleChange}/>
+      <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 rounded-full rounded shadow" onClick={this.IncrementItem}>+</button>
       </span>
     );
   }
