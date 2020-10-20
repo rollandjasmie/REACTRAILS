@@ -35,7 +35,7 @@ export default function CheckboxesGroup() {
 
 
   return (
-    <div className=" w-1/2 mt-10 ml-20 bg-white shadow-md rounded h-screen">
+    <div className=" w-1/2 mt-10 ml-10 bg-white shadow-md rounded h-screen">
     <div className="mt-2 font-bold ml-4 font-22">Rèlgle de maison</div>
     <div className="{classes.root} .w auto mt-2">
       <FormControl  className={classes.formControl}>
@@ -131,6 +131,9 @@ export default function CheckboxesGroup() {
           </div>
       </div>
       </div>
+
+      
+     
     </div>
   );
 }

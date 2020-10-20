@@ -20,6 +20,7 @@ class Equipement extends React.Component {
          {({ values, errors,handleSubmit, touched, setFieldValue }) => (
             <Form onSubmit={handleSubmit}>
               <div className="w-1/3  mt-5 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10 ">
+                <p className="text-2ml font-bold  mb-10 ">Quels équipements proposez-vous ?</p>
                 <label>
                   <Field className="mr-1" type="checkbox" name="title" value="Bar"/>
                   Bar
