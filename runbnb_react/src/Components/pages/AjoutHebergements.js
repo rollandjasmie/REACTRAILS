@@ -21,12 +21,14 @@ import EquipementContainers from '../Logements/EquipementContainers';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 import Regle from '../Logements/Regle'
+import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
 
+
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(9);
+  const [activeStep, setActiveStep] = React.useState(10);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -89,6 +91,8 @@ export default function CustomizedSteppers() {
               return <Regle/>
           default:
                 return <Chambres/> 
+                case 10:
+                  return <ShowUser/>
 
 
 

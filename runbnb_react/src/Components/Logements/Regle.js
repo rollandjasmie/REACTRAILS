@@ -63,8 +63,12 @@ export default function CheckboxesGroup() {
       </FormControl>
       <div className=" flex-4  mb-4 ml-3">
         <div className=''>
+          <span className="pb-10">    
             <h2>Arrivé</h2> 
             <h2>De</h2> 
+            
+            </span>
+        
             <TextField
               id="time"
               h1="Arrivé"
