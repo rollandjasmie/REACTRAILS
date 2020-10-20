@@ -7,7 +7,7 @@ const InformationSchema = Yup.object().shape({
       .required('Champs obligatoire'),
     type: Yup.string()
       .required('Champs obligatoire'),
-    categorie: Yup.string().required('Required'),
+    categorie: Yup.string().required('Champs obligatoire'),
 });
 
 class InformationLogements extends React.Component {
@@ -30,16 +30,16 @@ class InformationLogements extends React.Component {
            <Form>
 
           
-            <h1 className="text-2ml font-bold mt-10 pl-10 ml-10">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
-            <div className=".w-auto on inline-block element mt-15 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
+            <h1 className="text-xl font-bold mt-10 pl-5  pt-5">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
+            <div className=".w-auto on inline-block element mt-15 pl-10 my-5 mx-5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10">
               <div class="w-full mb-6 md:mb-0">
 
-                <label class="block uppercase tracking-wide text-gray-700 text-xs  font-bold mb-2" for="grid-city">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs  font-bold my-3" for="grid-city">
                   Quel est le nom de votre hébergement?
                 </label>
                 <Field name="name" id="12" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Nom de l'hébergement" />
                 { errors.name && touched.name ? (
-                  <div>{errors.name}</div>
+                  <div className="text-red-600 text-sm font-bold">{errors.name}</div>
                 ) : null }
               </div><br></br>
               
@@ -61,7 +61,7 @@ class InformationLogements extends React.Component {
                   </div>
                 </div>
                 { errors.type && touched.type ? (
-                  <div>{errors.type}</div>
+                  <div className="text-red-600 text-sm font-bold">{errors.type}</div>
                 ) : null }
               </div><br></br>
   
@@ -80,7 +80,7 @@ class InformationLogements extends React.Component {
                   </div>
                 </div>
                 { errors.categorie && touched.categorie ? (
-                  <div>{errors.categorie}</div>
+                  <div className="text-red-600 text-sm font-bold">{errors.categorie}</div>
                 ) : null }
               </div>
               <hr className="my-4"/> 
