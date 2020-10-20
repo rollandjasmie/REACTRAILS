@@ -17,15 +17,12 @@ class Localisation extends React.Component {
   render() {
     return (
       <Formik
-       initialValues={{
-         pays: '',
-         ville: '',
-         adresse:'',
-         code: '',
-         adresse2: ''
-       }}
+  
        validationSchema={LocalisationSchema}
+        initialValues={this.props.formValue.localisation}
+
        onSubmit={values => {
+
           let { formValue, setFormValue } = this.props;
 
           formValue = {...formValue, localisation: values};

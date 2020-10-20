@@ -21,13 +21,26 @@ import EquipementContainers from '../Logements/EquipementContainers';
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(2  );
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
       type: '',
       categorie: '',
-    }
+    },
+    localisation:{
+      pays: '',
+      ville: '',
+      adresse:'',
+      code: '',
+    },
+    map:{
+      longitude:"",
+      latitude:""
+    },
+    lits:{},  
+    canapes:{},
+    autres:{}
   });
 
   const nextStep = () => {
@@ -64,8 +77,15 @@ export default function CustomizedSteppers() {
                 formValue={formValue}
                 setFormValue={setFormValue}
                    />;
-        case 3:
-              return <Chambres/>;
+       
+     
+      case 3:  
+              return  <Chambres
+                  previousStep={previousStep}
+                  nextStep={nextStep}
+                  formValue={formValue}
+                  setFormValue={setFormValue}
+                  /> 
         case 4:
               return <EquipementContainers/>
         case 5:
