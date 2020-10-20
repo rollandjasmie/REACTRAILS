@@ -17,8 +17,15 @@ import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
-import EquipementContainers from '../Logements/EquipementContainers';
+import Equipement from '../Logements/Equipement';
+import CalendrierContainer from '../Logements/CalendrierContainer';
+import Conditions from '../Logements/Conditions'
+
+
 import Uploadphoto from "../Logements/Uploadphoto";
+import InformationHeb from "../Logements/InformationHeb";
+import InfoRunbnb from '../Logements/InfoRunbnb';
+import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -27,8 +34,7 @@ export default function CustomizedSteppers() {
       name: '',
       type: '',
       categorie: '',
-    },
-    localisation:{
+    },localisation:{
       pays: '',
       ville: '',
       adresse:'',
@@ -40,7 +46,9 @@ export default function CustomizedSteppers() {
     },
     lits:{},  
     canapes:{},
-    autres:{}
+    autres:{},
+      title: {},
+  
   });
 
   const nextStep = () => {
@@ -86,14 +94,38 @@ export default function CustomizedSteppers() {
                   formValue={formValue}
                   setFormValue={setFormValue}
                   /> 
-        case 4:
-              return <EquipementContainers/>
+       
+
+      case 4:
+        return <Equipement
+        previousStep={previousStep}
+        nextStep={nextStep}
+        formValue={formValue}
+        setFormValue={setFormValue}/>
+
         case 5:
-              return   <Reglecontainer/>    
+              return   <Reglecontainer
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />;    
         case 6:
               return  (<Uploadphoto />) ;
       
-      
+        
+        case 7:
+            return <Conditions/>
+        case 8:
+            return <CalendrierContainer/> 
+        case 9:
+              return <InformationHeb/>
+        
+        case 10:
+             return <InfoRunbnb/>
+        
+       case 11:
+              return <PageCharte/>            
     }
   }
 
@@ -130,7 +162,27 @@ export default function CustomizedSteppers() {
       sections: [{
         step: 6
       }]
+    },
+
+    {
+  
+      title: "Révision et finalisation",
+
+      sections: [{
+        step: 9
+      },{
+        step: 10
+      },{
+        step: 11
+      }]
     }
+
+    
+  
+  
+
+
+    
   
   ]
 

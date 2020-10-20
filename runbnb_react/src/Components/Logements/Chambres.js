@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
+
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Field, Form } from 'formik';
+import IncrementeComponent from './IncrementeComponent';
 
 
 
@@ -61,40 +64,91 @@ import { Formik, Field, Form } from 'formik';
               <div>
               
               <Form onSubmit={handleSubmit}>
-                <div className="col-5">
-                <label>
-            <Field type="checkbox" name="lits" value="Lits double"/>
-                  Lits double
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits" value="Lits Simples"/>
-                  Lits simples
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits" value="Lits King size" />
-                  Lits King size
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits" value="Grand lits King size" />
-                  Grand lits King size
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits"  value="Lits Lits superposé"/>
-                  Lits superposé
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits"  value="Canapé lits"/>
-                  Canapé lits
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits"  value="Canpé lits double"/>
-                  Canapé lits double
-                </label>
-                <label>
-                  <Field type="checkbox" name="lits" value="Futon" />
-                  Futon
-                </label>
-                </div> 
+               <div className="w-full ">
+              <label className="flex">
+                <div className="w-1/2">
+
+              <Field type="checkbox" className="mr-2"name="lits" value="Lits double"/>
+                Lits double 
+                </div>
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+            
+              </label>
+
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox"className="mr-2" name="lits" value="Lits Simples"/>
+                Lits simples
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox"className="mr-2" name="lits" value="Lits King size" />
+                Lits King size
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox" className="mr-2"name="lits" value="Grand lits King size" />
+                Grand lits King size
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox" className="mr-2"name="lits"  value="Lits Lits superposé"/>
+                Lits superposé
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox"className="mr-2" name="lits"  value="Canapé lits"/>
+                Canapé lits
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox" className="mr-2"name="lits"  value="Canpé lits double"/>
+                Canapé lits double
+                </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              <label className="flex">
+              <div className="w-1/2">
+                <Field type="checkbox" className="mr-2"name="lits" value="Futon" />
+                Futon
+              </div>  
+                <span className="">
+                <IncrementeComponent />
+
+                </span>
+              </label>
+              </div> 
                 <Button type="submit">Enregistré</Button>
               </Form>
               </div>
@@ -200,7 +254,6 @@ import { Formik, Field, Form } from 'formik';
                )}
           </Formik>
         </Modal>
-    
       </>
     ); 
   }
