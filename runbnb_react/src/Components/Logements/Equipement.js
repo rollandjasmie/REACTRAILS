@@ -1,101 +1,79 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Formik, Field, Form } from 'formik';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    
-    
-  
-  },
-  formControl: {
-    margin: theme.spacing(2),
-  },
-}));
+class Equipement extends React.Component {
+  render() {
+    return (
+   <Formik
+              initialValues={this.props.formValue.title}
+              onSubmit={values => {
+                 let { formValue, setFormValue } = this.props;
+                 formValue = {...formValue, title: values};
+                 setFormValue(formValue);
 
-export default function CheckboxesGroup() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    Bar: false,
-    Sauna:false,
-    Jardin: false,
-    Terrasse:false,
-    Bain:false,
-    Connexion:false,
-    Plage:false,
-     Borne:false,
-    Piscine:false,
-    Parking:false,
-  });
+                 this.props.nextStep();
+                 console.log(formValue)
+              }}
+          >
+         {({ values, errors,handleSubmit, touched, setFieldValue }) => (
+            <Form onSubmit={handleSubmit}>
+              <div className=".w-auto on  element mt-5 pl-10 ml-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10 ">
+                <label>
+                  <Field type="checkbox" name="title" value="Bar"/>
+                  Bar
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="Sauna"/>
+                  Sauna
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="jardin" />
+                  Jardin
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="Terrasse" />
+                  Terrasse
+                </label>
+                <label>
+                  <Field type="checkbox" name="title"  value="Bain amous /jacuzzi"/>
+                  Bain amous /jacuzzi
+                </label>
+                <label>
+                  <Field type="checkbox" name="title"  value="Connexion wifi gratuit"/>
+                  Connexion wifi gratuit              </label>
+                <label>
+                  <Field type="checkbox" name="title"  value="Climatisation"/>
+                  Climatisation
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="plage" />
+                  Plage
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="Borne de recharge pour voiture électrique" />
+                  Borne de recharge pour voiture électrique
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="Piscine" />
+                  Piscine
+                </label>
+                <label>
+                  <Field type="checkbox" name="title" value="Parking" />
+                  Parking
+                </label>
+              </div> 
+              <div className="flex items-end justify-end">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
+                  <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
+              </div>
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
-  const { Bar, Sauna, Jardin, Terrasse,Bain,Connexion,Plage,Borne,Piscine,Parking } = state;
-  //const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
-
-  return (
-    <div className={classes.root}>
-        
-      
-  
-      <FormControl component="fieldset" className={classes.formControl}>
-          
-        <FormLabel component="legend" className="text-2ml font-bold mt-10 pl-10 ml-10">Quels équipements proposez-vous ?
-         </FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={Bar} onChange={handleChange} name="Bar" />}
-            label="Bar"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={Sauna} onChange={handleChange} name="Sauna" />}
-            label="Sauna"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={Jardin} onChange={handleChange} name="Jardin" />}
-            label="Jardin"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={Terrasse} onChange={handleChange} name="Terrasse" />}
-            label="Térrasse"
-          />
-          <FormControlLabel
-          control={<Checkbox checked={Bain} onChange={handleChange} name="Bain" />}
-          label="Bain à reumous/Jacuzzi"
-        />
-            <FormControlLabel
-            control={<Checkbox checked={Connexion} onChange={handleChange} name="Connexion" />}
-            label="Connexion Wi-Fi gratuite"
-        />
-        <FormControlLabel
-            control={<Checkbox checked={Plage} onChange={handleChange} name="Plage" />}
-            label="Plage"
-        />
-            <FormControlLabel
-            control={<Checkbox checked={Borne} onChange={handleChange} name="Borne" />}
-            label="Borne de recharge pour voiture électrique"
-        />
-            <FormControlLabel
-            control={<Checkbox checked={Piscine} onChange={handleChange} name="Piscine" />}
-            label="Piscine"
-        />
-               <FormControlLabel
-            control={<Checkbox checked={Parking} onChange={handleChange} name="Parking" />}
-            label="Parking"
-        />
-        </FormGroup>
-       
-      </FormControl>
-     
-    </div>
-  );
+            </Form>
+         )}
+     </Formik>
+    )
+  }
 }
 
-
+export default Equipement;

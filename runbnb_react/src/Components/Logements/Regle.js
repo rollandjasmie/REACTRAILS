@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+
   
   },
   root: {
@@ -34,13 +35,13 @@ export default function CheckboxesGroup() {
 
 
   return (
-    <div className="   bg-white shadow-md rounded ">
+    <div className=" w-1/2 mt-10 ml-20 bg-white shadow-md rounded h-screen">
     <div className="mt-2 font-bold ml-4 font-22">Rèlgle de maison</div>
     <div className="{classes.root} .w auto mt-2">
       <FormControl  className={classes.formControl}>
         <FormGroup className="float-right">
           <FormControlLabel
-            control={<Checkbox   name="regle" className="float-rigth"/>}
+            control={<Checkbox   name="regle" />}
             label="Hébergement fumeur"
            
           />
@@ -57,10 +58,13 @@ export default function CheckboxesGroup() {
             label="Fêtes/événements autorisés"
           />
         </FormGroup>
+
+        
       </FormControl>
-      <div className=" flex-4  mb-4 ml">
+      <div className=" flex-4  mb-4 ml-3">
         <div className=''>
-            <h2>Arrivé</h2>  
+            <h2>Arrivé</h2> 
+            <h2>De</h2> 
             <TextField
               id="time"
               h1="Arrivé"
@@ -74,6 +78,7 @@ export default function CheckboxesGroup() {
                 step: 300, // 5 min
               }}
             />
+            <span className='ml-10 mr-10'>à</span>
             <TextField
               id="time"
               h1="Arrivé"
@@ -88,8 +93,10 @@ export default function CheckboxesGroup() {
               }}
             />
         </div> 
-          <div className="mt-7">
+          <div className="mt-10">
             <h2>Depart</h2>
+            <h2>De</h2>
+
             <TextField
               id="time"
               h1="Arrivé"
@@ -103,6 +110,7 @@ export default function CheckboxesGroup() {
                 step: 300, // 5 min
               }}
             />
+             <span className='ml-10 mr-10'>à</span>
             <TextField
               id="time"
               h1="Arrivé"
