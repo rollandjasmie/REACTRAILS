@@ -13,14 +13,14 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
-import Reglecontainer from '../Logements/Reglecontainer';
+import Regle from '../Logements/Regle';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
 import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
-import Regle from '../Logements/Regle'
+
 import ShowUser from '../Logements/ShowUser'
 
 
@@ -51,6 +51,13 @@ export default function CustomizedSteppers() {
     canapes:{},
     autres:{},
       title: {},
+      regles: {
+        regle: '',
+        arrive1:'',
+        arrive2:'',
+        depart1:'',
+        depart2:'',
+      },
   
   });
 
@@ -107,7 +114,7 @@ export default function CustomizedSteppers() {
         setFormValue={setFormValue}/>
 
         case 5:
-              return   <Reglecontainer
+              return   <Regle
               previousStep={previousStep}
               nextStep={nextStep}
               formValue={formValue}
