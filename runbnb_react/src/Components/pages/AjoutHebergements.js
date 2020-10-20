@@ -25,6 +25,9 @@ import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
+import InformationHeb from "../Logements/InformationHeb";
+import InfoRunbnb from '../Logements/InfoRunbnb';
+import PageCharte from '../Logements/PageCharte';
 
 
 export default function CustomizedSteppers() {
@@ -34,7 +37,19 @@ export default function CustomizedSteppers() {
       name: '',
       type: '',
       categorie: '',
+    },localisation:{
+      pays: '',
+      ville: '',
+      adresse:'',
+      code: '',
     },
+    map:{
+      longitude:"",
+      latitude:""
+    },
+    lits:{},  
+    canapes:{},
+    autres:{},
       title: {},
   
   });
@@ -73,13 +88,17 @@ export default function CustomizedSteppers() {
                 formValue={formValue}
                 setFormValue={setFormValue}
                    />;
-        case 3:
-              return <Chambres
-              previousStep={previousStep}
-              nextStep={nextStep}
-              formValue={formValue}
-              setFormValue={setFormValue}
-              />;
+       
+     
+      case 3:  
+              return  <Chambres
+                  previousStep={previousStep}
+                  nextStep={nextStep}
+                  formValue={formValue}
+                  setFormValue={setFormValue}
+                  /> 
+       
+
       case 4:
         return <Equipement
         previousStep={previousStep}
@@ -115,6 +134,14 @@ export default function CustomizedSteppers() {
 
 
       
+        case 9:
+              return <InformationHeb/>
+        
+        case 10:
+             return <InfoRunbnb/>
+        
+       case 11:
+              return <PageCharte/>            
     }
   }
 
@@ -151,7 +178,27 @@ export default function CustomizedSteppers() {
       sections: [{
         step: 6
       }]
+    },
+
+    {
+  
+      title: "Révision et finalisation",
+
+      sections: [{
+        step: 9
+      },{
+        step: 10
+      },{
+        step: 11
+      }]
     }
+
+    
+  
+  
+
+
+    
   
   ]
 

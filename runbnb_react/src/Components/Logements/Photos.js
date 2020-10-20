@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
 import {DropzoneArea} from 'material-ui-dropzone'
-const dropzoneStyle = {
-    width  : "0%",
-    height : "20%",
-    border : "1px solid black"
-};
+
 
 class Photos extends Component{
   constructor(props){

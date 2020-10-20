@@ -12,7 +12,7 @@ const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic21peWFrYXdhIiwiYSI6ImNqcGM0d3U4bTB6dWwzcW04ZHRsbHl0ZWoifQ.X9cvdajtPbs9JDMG-CMDsA";
 
 
-const Map = () => {
+const Map = (props) => {
   const [viewport, setViewport] = useState({
     longitude:55.53817922704148,
     latitude:-21.121661209928707,
@@ -46,16 +46,22 @@ const Map = () => {
     longitude: 55.53817922704148,
     latitude: -21.121661209928707
   });
+ 
+  const onMarkerDragStart = event => {
+    const longitude = event.lngLat[0];
+    const latitude = event.lngLat[1];
 
+    setPosition({
+      longitude: longitude,
+      latitude: latitude
+    });
+    
+    props.setPosition({
+      longitude: longitude,
+      latitude: latitude
+    })
+    console.log(props.state)
 
- const onMarkerDragStart = event => {
-   const longitude = event.lngLat[0];
-   const latitude = event.lngLat[1];
-
-   setPosition({
-     longitude: longitude,
-     latitude: latitude
-   });
   };
   return (
     <div>
@@ -81,8 +87,6 @@ const Map = () => {
           offsetLeft={-10}
           draggable
           onDragEnd={onMarkerDragStart}
-
-        
         >
           <Pin size={20} />
         </Marker>
