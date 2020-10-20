@@ -28,7 +28,7 @@ import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(6);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -47,7 +47,8 @@ export default function CustomizedSteppers() {
     lits:{},  
     canapes:{},
     autres:{},
-      title: {},
+    title: {},
+    photo:[],
   
   });
 
@@ -111,7 +112,11 @@ export default function CustomizedSteppers() {
               setFormValue={setFormValue}
               />;    
         case 6:
-              return  (<Uploadphoto />) ;
+              return  (<Uploadphoto
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue} />) ;
       
         
         case 7:
@@ -163,7 +168,16 @@ export default function CustomizedSteppers() {
         step: 6
       }]
     },
-
+    
+    {
+     title: "tarifs et calendrier",
+        sections: [{
+          step: 7
+        },
+        {
+        step: 8
+      }]
+    },
     {
   
       title: "Révision et finalisation",
