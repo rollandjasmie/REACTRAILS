@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';*/
 import InformationLogements from '../Logements/InformationLogements';
 import Localisation from '../Logements/Localisation';
 import Chambres from '../Logements/Chambres';
-import Reglecontainer from '../Logements/Reglecontainer';
+import Regle from '../Logements/Regle';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
@@ -28,7 +28,11 @@ import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
+<<<<<<< HEAD
   const [activeStep, setActiveStep] = React.useState(5);
+=======
+  const [activeStep, setActiveStep] = React.useState(0);
+>>>>>>> 09c13a7548c0abb31846ebae8c8891aca429ac83
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -48,6 +52,13 @@ export default function CustomizedSteppers() {
     canapes:{},
     autres:{},
       title: {},
+      regles: {
+        regle: '',
+        arrive1:'',
+        arrive2:'',
+        depart1:'',
+        depart2:'',
+      },
   
   });
 
@@ -104,7 +115,7 @@ export default function CustomizedSteppers() {
         setFormValue={setFormValue}/>
 
         case 5:
-              return   <Reglecontainer
+              return   <Regle
               previousStep={previousStep}
               nextStep={nextStep}
               formValue={formValue}
