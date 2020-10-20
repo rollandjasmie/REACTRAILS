@@ -17,7 +17,7 @@ import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
-import EquipementContainers from '../Logements/EquipementContainers';
+import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 import Regle from '../Logements/Regle'
@@ -28,13 +28,15 @@ import Uploadphoto from "../Logements/Uploadphoto";
 
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(10);
+  const [activeStep, setActiveStep] = React.useState(4);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
       type: '',
       categorie: '',
-    }
+    },
+      title: {},
+  
   });
 
   const nextStep = () => {
@@ -72,27 +74,42 @@ export default function CustomizedSteppers() {
                 setFormValue={setFormValue}
                    />;
         case 3:
-          return <Chambres/>;
+              return <Chambres
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />;
       case 4:
-        return <EquipementContainers/>
+        return <Equipement
+        previousStep={previousStep}
+        nextStep={nextStep}
+        formValue={formValue}
+        setFormValue={setFormValue}/>
 
         case 5:
-              return   <Reglecontainer/>    
+              return   <Reglecontainer
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />;    
         case 6:
               return  (<Uploadphoto />) ;
-      
-        
-          case 7:
-               return <CalendrierContainer/>
-          case 8:
+              case 7:
                 return <Conditions/>
-              
+            case 8:
+                return <CalendrierContainer/>
+        
            case 9:
               return <Regle/>
-          default:
-                return <Chambres/> 
-                case 10:
+      
+          case 10:
                   return <ShowUser/>
+
+           default:
+                return <Chambres/>      
+    
 
 
 

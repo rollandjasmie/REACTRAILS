@@ -11,7 +11,7 @@ import IncrementeComponent from './IncrementeComponent';
 
 
   function Chambres() {
-
+ 
     const [smShow, setSmShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
     const  [ lgshowautre, setlgshowautre] = useState(false);
@@ -202,7 +202,6 @@ import IncrementeComponent from './IncrementeComponent';
           </Modal.Body>
           </Formik>
         </Modal>
-    
       </>
     ); 
 }
