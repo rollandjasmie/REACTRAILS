@@ -19,9 +19,12 @@ import MapContainers from '../Logements/MapContainers'
 import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
 import Uploadphoto from "../Logements/Uploadphoto";
+import InformationHeb from "../Logements/InformationHeb";
+import InfoRunbnb from '../Logements/InfoRunbnb';
+import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(9);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -65,15 +68,22 @@ export default function CustomizedSteppers() {
                 setFormValue={setFormValue}
                    />;
         case 3:
-              return <Chambres/>;
+              return <Chambres/>
         case 4:
               return <EquipementContainers/>
         case 5:
-              return   <Reglecontainer/>    
+              return   <Reglecontainer/> 
         case 6:
-              return  (<Uploadphoto />) ;
+              return <Uploadphoto />
       
-      
+        case 7:
+              return <InformationHeb/>
+        
+        case 8:
+             return <InfoRunbnb/>
+        
+       case 9:
+              return <PageCharte/>            
     }
   }
 
@@ -110,7 +120,27 @@ export default function CustomizedSteppers() {
       sections: [{
         step: 6
       }]
+    },
+
+    {
+  
+      title: "Révision et finalisation",
+
+      sections: [{
+        step: 7
+      },{
+        step: 8
+      },{
+        step: 9
+      }]
     }
+
+    
+  
+  
+
+
+    
   
   ]
 
