@@ -17,7 +17,7 @@ import Reglecontainer from '../Logements/Reglecontainer';
 import MapContainers from '../Logements/MapContainers'
 // import Map from '../Logements/Map';
 import StepProgress from './components/StepProgress';
-import EquipementContainers from '../Logements/EquipementContainers';
+import Equipement from '../Logements/Equipement';
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
@@ -27,7 +27,9 @@ export default function CustomizedSteppers() {
       name: '',
       type: '',
       categorie: '',
-    }
+    },
+      title: {},
+  
   });
 
   const nextStep = () => {
@@ -64,12 +66,27 @@ export default function CustomizedSteppers() {
                 formValue={formValue}
                 setFormValue={setFormValue}
                    />;
-        case 3:
-              return <Chambres/>;
+         case 3:
+                         return <Equipement
+                         previousStep={previousStep}
+                         nextStep={nextStep}
+                         formValue={formValue}
+                         setFormValue={setFormValue}
+                         />;
         case 4:
-              return <EquipementContainers/>
+              return <Chambres
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />;
         case 5:
-              return   <Reglecontainer/>    
+              return   <Reglecontainer
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />;    
         case 6:
               return  (<Uploadphoto />) ;
       

@@ -8,7 +8,7 @@ import { Formik, Field, Form } from 'formik';
 
 
   function Chambres() {
-
+ 
     const [smShow, setSmShow] = useState(false);
     const [lgShow, setLgShow] = useState(false);
     const  [ lgshowautre, setlgshowautre] = useState(false);
@@ -16,13 +16,12 @@ import { Formik, Field, Form } from 'formik';
     return (
       <>
 
-<div className="container col-4 flow-root on inline-block element mt-5 pl-10 ml-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10   ">
+   <div className="container col-4 flow-root on inline-block element mt-5 pl-10 ml-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10   ">
         <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setSmShow(true)} >Chambre 1</Button>
         <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setLgShow(true)} > Salon</Button>
         <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setlgshowautre(true)} > Autres espaces</Button>
-  </div>
-
-  
+    </div>
+        
 
   
         <Modal
@@ -156,7 +155,6 @@ import { Formik, Field, Form } from 'formik';
           </Modal.Body>
           </Formik>
         </Modal>
-    
       </>
     ); 
 }

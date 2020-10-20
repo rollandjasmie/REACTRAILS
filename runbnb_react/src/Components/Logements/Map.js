@@ -58,7 +58,7 @@ const Map = () => {
    });
   };
   return (
-    <div      >
+    <div>
       <MapGL
         ref={mapRef}
         mapStyle="mapbox://styles/mapbox/streets-v11"
