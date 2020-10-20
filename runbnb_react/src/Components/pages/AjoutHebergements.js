@@ -21,7 +21,7 @@ import EquipementContainers from '../Logements/EquipementContainers';
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(2  );
+  const [activeStep, setActiveStep] = React.useState(0);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
