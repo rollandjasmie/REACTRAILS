@@ -20,13 +20,12 @@ import StepProgress from './components/StepProgress';
 import EquipementContainers from '../Logements/EquipementContainers';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
-import Reglecontainer from '../Logements/Reglecontainer'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(9);
+  const [activeStep, setActiveStep] = React.useState(0);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
