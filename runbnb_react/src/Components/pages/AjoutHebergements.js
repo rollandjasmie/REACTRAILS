@@ -23,9 +23,12 @@ import Conditions from '../Logements/Conditions'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
+import InformationHeb from "../Logements/InformationHeb";
+import InfoRunbnb from '../Logements/InfoRunbnb';
+import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(9);
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -105,6 +108,14 @@ export default function CustomizedSteppers() {
 
 
       
+        case 9:
+              return <InformationHeb/>
+        
+        case 10:
+             return <InfoRunbnb/>
+        
+       case 11:
+              return <PageCharte/>            
     }
   }
 
@@ -141,7 +152,27 @@ export default function CustomizedSteppers() {
       sections: [{
         step: 6
       }]
+    },
+
+    {
+  
+      title: "Révision et finalisation",
+
+      sections: [{
+        step: 9
+      },{
+        step: 10
+      },{
+        step: 11
+      }]
     }
+
+    
+  
+  
+
+
+    
   
   ]
 
