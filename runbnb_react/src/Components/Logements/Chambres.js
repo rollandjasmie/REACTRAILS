@@ -186,7 +186,7 @@ import IncrementeComponent from './IncrementeComponent';
                   Canapé lits
                 </label>
                 </div>
-                                <Button type="submit">Enregistré</Button>
+               <Button type="submit">Enregistré</Button>
 
               </Form>
             </Modal.Body>
