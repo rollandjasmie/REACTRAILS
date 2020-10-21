@@ -76,3 +76,6 @@
   text-transform: uppercase;
   outline: none;
 }
+
+.plus{position: relative;
+top: 0.1rem;}
