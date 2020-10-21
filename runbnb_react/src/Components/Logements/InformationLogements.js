@@ -27,7 +27,7 @@ class InformationLogements extends React.Component {
          }}
        >
          {({ values, errors, touched, setFieldValue }) => (
-           <Form>
+          <Form>
 
           
             <h1 className="text-xl font-bold mt-10 pl-5  pt-5">Incrivez votre hebergement et commencer à  recevoir des clients en un rien de temps</h1>
