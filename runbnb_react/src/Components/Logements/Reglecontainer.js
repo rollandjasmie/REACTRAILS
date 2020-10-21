@@ -7,7 +7,7 @@ export default class Reglecontainer extends Component {
         return ( 
             <div className="  mr-0 mt-5 pl-3 ml-10  pt-6 pb-8 mb-10 ">
                 <Regle /> 
-            
+            s
             </div>
              
         )
