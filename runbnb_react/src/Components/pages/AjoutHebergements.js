@@ -62,6 +62,9 @@ export default function CustomizedSteppers() {
         depart1:'',
         depart2:'',
       },
+    date:{
+    },
+    conditions:{},
   
   });
 
@@ -140,7 +143,11 @@ export default function CustomizedSteppers() {
               setFormValue={setFormValue}
               />
         case 8:
-            return <CalendrierContainer/> 
+            return <CalendrierContainer
+            previousStep={previousStep}
+            nextStep={nextStep}
+            formValue={formValue}
+            setFormValue={setFormValue}/>    
         case 9:
               return <InformationHeb/>
         

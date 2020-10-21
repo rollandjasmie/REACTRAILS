@@ -10,6 +10,19 @@ const theme = createMuiTheme({
   },
 }, frFR);
 export default class CalendrierContainer extends Component {
+  state={
+
+  }
+
+  dateRange = (range)=>{
+    this.setState({ date:range});
+ 
+    let { formValue, setFormValue } = this.props;
+        formValue = {...formValue, date: range};
+        setFormValue(formValue);
+       
+    console.log(formValue)
+  }
     render() {
         return (
        
@@ -17,9 +30,10 @@ export default class CalendrierContainer extends Component {
                           <h2 className="text-2ml font-bold  mb-10 ">A quelle date souhaitez-vous ouvrir votre hébergement à la réservation ? </h2>
                            <h2 className="text-1ml mb-10">Cliquez sur chaque date individuellement. Toutes les dates colorés sont disponibles à la réservation. Ne vous inquitez pas, vous pourrez toujours ajouter ou supprimer des dates plus tard.</h2>
                <ThemeProvider theme={theme}>
-                <CalendrierComponent/>  
-
+                <CalendrierComponent dateRange={this.dateRange}/>  
                 </ThemeProvider>
+                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
+              <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={this.props.nextStep}>Suivant</button>
             </div>
         )
     }
