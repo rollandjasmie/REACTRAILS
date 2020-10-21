@@ -59,7 +59,9 @@ export default function CustomizedSteppers() {
         depart1:'',
         depart2:'',
       },
-    dateRange:{},
+    date:{
+    },
+    conditions:{},
   
   });
 
@@ -142,7 +144,7 @@ export default function CustomizedSteppers() {
             previousStep={previousStep}
             nextStep={nextStep}
             formValue={formValue}
-            setFormValue={setFormValue}/>      
+            setFormValue={setFormValue}/>    
         case 9:
               return <InformationHeb/>
         

@@ -5,9 +5,17 @@ import { DateRangePicker } from "materialui-daterange-picker";
 
 const CalendrierComponent = props => {
   const [open, setOpen] = React.useState(true);
-  const [dateRange, setDateRange] = React.useState({});
+  const [dateRange, setDateRange] = React.useState();
   
-  console.log(dateRange)
+  
+   let date = (range)=>{
+     setDateRange({
+       range
+     })
+    props.dateRange({
+      range
+    })
+   } 
   const toggle = () => setOpen(open);
 
   return (
@@ -15,7 +23,7 @@ const CalendrierComponent = props => {
     <DateRangePicker
       open={open}
       toggle={toggle}
-      onChange={(range) => setDateRange(range)}
+      onChange={(range) => date(range)}
 
     />
   );

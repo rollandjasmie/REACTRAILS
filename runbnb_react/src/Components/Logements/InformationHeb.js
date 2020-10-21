@@ -10,17 +10,13 @@ class InformationHeb extends React.Component {
       <Formik
        initialValues={{
         info: false,
-         pays: '',
-         ville: '',
-         adresse:'',
-         code: '',
-         adresse2: ''
+        
        }}
      
        onSubmit={values => {
           let { formValue, setFormValue } = this.props;
 
-          formValue = {...formValue, localisation: values};
+          formValue = {...formValue, informations: values};
 
           setFormValue(formValue);
 
@@ -81,17 +77,13 @@ class InformationHeb extends React.Component {
             <div className="my-5 md:mb-0">
             
               <label className="block  tracking-wide text-gray-700 text-xs mb-2" for="grid-city">
-              <input type="checkbox"></input>
+              <input type="checkbox" name="informations" value="Je confirme que ces informations sont correctes"></input>
               Je confirme que ces informations sont correctes
               </label>
              
               <hr className="w-full mt-5"></hr>
              
             </div>
-
-        
-
-           
             <div className="flex items-end justify-end">
 
               <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
