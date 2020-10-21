@@ -31,9 +31,7 @@ import PageCharte from '../Logements/PageCharte';
 
 
 export default function CustomizedSteppers() {
-
   const [activeStep, setActiveStep] = React.useState(0);
-
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
@@ -52,8 +50,9 @@ export default function CustomizedSteppers() {
     lits:{},  
     canapes:{},
     autres:{},
-      title: {},
-      regles: {
+    title: {},
+    photo:[],
+    regles: {
         regle: '',
         arrive1:'',
         arrive2:'',
@@ -123,26 +122,22 @@ export default function CustomizedSteppers() {
               setFormValue={setFormValue}
               />;    
         case 6:
-              return  (<Uploadphoto />) ;
-              case 7:
-                return <Conditions/>
-            case 8:
-                return <CalendrierContainer/>
+              return  (<Uploadphoto
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue} />) ;
+      
         
-           case 9:
-              return <Regle/>
-      
-          case 10:
-                  return <ShowUser/>
-
-           default:
-                return <Chambres/>      
-    
-
-
-
-
-      
+        case 7:
+              return <Conditions
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />
+        case 8:
+            return <CalendrierContainer/> 
         case 9:
               return <InformationHeb/>
         
@@ -188,7 +183,16 @@ export default function CustomizedSteppers() {
         step: 6
       }]
     },
-
+    
+    {
+     title: "tarifs et calendrier",
+        sections: [{
+          step: 7
+        },
+        {
+        step: 8
+      }]
+    },
     {
   
       title: "Révision et finalisation",

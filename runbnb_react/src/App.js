@@ -1,10 +1,12 @@
 import React from 'react';
 import AjoutHebergements from "./Components/pages/AjoutHebergements";
+import Dashboard from "./Components/user/ShowUser"
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route
+  
 } from "react-router-dom";
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
@@ -23,13 +25,16 @@ class App extends React.Component {
                 <Route path='/AjoutHebergements'>
                     <AjoutHebergements/>
                 </Route>
+                
+                <Route exact path="/Dashboard" component={Dashboard} />
+
                 <Route exact path='/'>
                     <HomePage/>
                 </Route>
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signup" component={Signup} />
               </Switch>
-            </div>
+          </div>
 
         </Router>
       </>);
