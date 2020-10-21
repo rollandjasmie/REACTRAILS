@@ -21,11 +21,14 @@ import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 
+import ShowUser from '../Logements/ShowUser'
+
 
 import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+
 
 export default function CustomizedSteppers() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -47,8 +50,9 @@ export default function CustomizedSteppers() {
     lits:{},  
     canapes:{},
     autres:{},
-      title: {},
-      regles: {
+    title: {},
+    photo:[],
+    regles: {
         regle: '',
         arrive1:'',
         arrive2:'',
@@ -119,23 +123,26 @@ export default function CustomizedSteppers() {
               setFormValue={setFormValue}
               />;    
         case 6:
-              return  (<Uploadphoto />) ;
+              return  (<Uploadphoto
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue} />) ;
       
         
         case 7:
-            return <Conditions/>
+              return <Conditions
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}
+              />
         case 8:
             return <CalendrierContainer
             previousStep={previousStep}
             nextStep={nextStep}
             formValue={formValue}
-            setFormValue={setFormValue}/>
-    
-
-
-
-
-      
+            setFormValue={setFormValue}/>      
         case 9:
               return <InformationHeb/>
         
@@ -181,7 +188,16 @@ export default function CustomizedSteppers() {
         step: 6
       }]
     },
-
+    
+    {
+     title: "tarifs et calendrier",
+        sections: [{
+          step: 7
+        },
+        {
+        step: 8
+      }]
+    },
     {
   
       title: "Révision et finalisation",
