@@ -33,8 +33,8 @@ import IncrementeComponent from './IncrementeComponent';
               <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setlgshowautre(true)} > Autres espaces</Button>
                <div className="flex items-end justify-end">
 
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={props.previousStep}>Précedent</button>
-              <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={next}>Suivant</button>
+              <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={props.previousStep}>Précedent</button>
+              <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={next}>Suivant</button>
             </div>
       
           </div>
