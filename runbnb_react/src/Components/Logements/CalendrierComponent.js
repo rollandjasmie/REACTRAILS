@@ -19,13 +19,14 @@ const CalendrierComponent = props => {
   const toggle = () => setOpen(open);
 
   return (
-  
+    
     <DateRangePicker
       open={open}
       toggle={toggle}
       onChange={(range) => date(range)}
 
     />
+    
   );
 
   

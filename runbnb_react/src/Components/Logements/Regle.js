@@ -49,12 +49,12 @@ class Regle extends React.Component {
                     <h2 className="text-md font-bold">Arrivé</h2>
                     <h2 className="my-2 text-sm font-medium">De</h2>
                     <label>
-                    <Field  className="mt-3 "type="time" name="arrive1"  min="01:00" max="23:00"/>   
+                    <Field  className="mt-3 "type="time" name="arrive1"  min="00:00" max="23:59"/>   
                   
 
                     <span className="ml-20 mr-20 text-sm font-medium">à</span>
                  
-                          <Field  className="" type="time" name="arrive2"  min="01:00" max="23:00"/>   
+                          <Field  className="" type="time" name="arrive2"  min="00:00" max="23:59"/>   
                         </label>
               
                     </span>
@@ -62,12 +62,12 @@ class Regle extends React.Component {
                       <h2 className="text-md font-bold pt-4">Départ</h2>
                       <h2 className="my-2 text-sm font-medium">De</h2>
                       <label>
-                      <Field  className="mt-3" type="time" name="depart1" min="01:00" max="23:00"/>   
+                      <Field  className="mt-3" type="time" name="depart1" min="00:00" max="23:59"/>   
                   
                           
                       <span className="ml-20 mr-20 text-sm font-medium">à</span>
                   
-                        <Field className=""type="time" name="depart2"  min="01:00" max="23:00"/>   
+                        <Field className=""type="time" name="depart2"  min="00:00" max="23:59"/>   
                       </label>
                   </span>
                 </div>
