@@ -1,51 +1,64 @@
-import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Formik, Field, Form } from 'formik';
+import '../../App.css';
 
+class Conditions extends React.Component {
+  render() {
+    return (
+      <>
+       <p className="text-2ml font-bold  px-5 py-5 ">Quels équipements proposez-vous ?</p>
+     < div className="w-2/4 on inline-block element h-200 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-20 ">
+     <p className="text-2ml  px-2  "><span className="uppercase">à</span> quelle dates les clients peuvent-ils annuler leur réservations ?</p>
+        <Formik
+        initialValues={{
+          conditions: '',
+        }}
+        onSubmit={values => {
+          let { formValue, setFormValue } = this.props;
 
+          formValue = {...formValue, conditions: values};
 
+          setFormValue(formValue);
 
-export default class Conditions extends Component {
-    render() {
-        return (
+          console.log(formValue);
 
-         <>
-            <p className="text-2ml font-bold mt-20 pl-10 ml-10">Conditions d’annulation : </p>
-            <div className="w-auto on inline-block element h-200 pl-10 ml-10 mt-20  bg-white shadow-md rounded px-8 pt-20 pb-8 mb-10">
-              <div class="inline-flex">
-                <button  type='radio' class="bg-orange-400 focus:focus:bg-orange-500 hover:bg-orange-600 text-gray-800 shadow border-2 border-gray-500 font-bold py-2 px-4 rounded-r">
-                  1Jour
-                </button>
-                <button  type='radio' class="bg-orange-400 focus:focus:bg-orange-500 hover:bg-orange-600 text-gray-800 shadow border-2 border-gray-500 font-bold py-2 px-4 rounded-r">
-                  7Jours
-                </button>
-                <button  type='radio' class="bg-orange-400 focus:focus:bg-orange-500 hover:bg-orange-600 text-gray-800 shadow border-2 border-gray-500 font-bold py-2 px-4 rounded-r">
-                  14Jours
-                </button>
-                <button  type='radio' class="bg-orange-400 focus:focus:bg-orange-500 hover:bg-orange-600 text-gray-800 shadow border-2 border-gray-500 font-bold py-2 px-4 rounded-r">
-                  30Jours
-                </button>
-              </div><br /><br />
-
-              <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
-              <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={this.props.nextStep}>Suivant</button>
+          this.props.nextStep();
+       }}
+        >
+          <Form>
+            <div className="w-full flex py-5" >
+              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
+               hover:text-white hover:font-bold" >
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+                1 jours
+              </label>
+              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold">
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+                7 jours
+              </label>
+              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold">
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+                14 jours
+              </label>
+              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
+               hover:text-white hover:font-bold">
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+                30 jours
+              </label>
             </div>
-
-         </>
-
-
-
- 
-
-
-  
-
- 
-
-              
-           
-          
-        )
-    }
+            <div className="flex items-end justify-end my-5">
+              <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>
+              <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
+            </div>
+          </Form>
+        </Formik>
+        </div>
+       </> 
+    )
+  }
 }
 
+export default Conditions;

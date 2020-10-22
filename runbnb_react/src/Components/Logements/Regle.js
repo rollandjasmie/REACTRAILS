@@ -43,28 +43,29 @@ class Regle extends React.Component {
                       Fête / évènements autorisés
                     </label><br></br>
                   </div><br></br>
-                <div>
+                  <hr></hr>
+                <div className="my-5">
                   <span>
-                    <h2>Arrivé</h2>
-                    <h2>De</h2>
+                    <h2 className="text-md font-bold">Arrivé</h2>
+                    <h2 className="my-2 text-sm font-medium">De</h2>
                     <label>
                     <Field  className="mt-3 "type="time" name="arrive1"  min="01:00" max="23:00"/>   
                   
 
-                    <span className="ml-20 mr-20">à</span>
+                    <span className="ml-20 mr-20 text-sm font-medium">à</span>
                  
                           <Field  className="" type="time" name="arrive2"  min="01:00" max="23:00"/>   
                         </label>
               
                     </span>
                   <span>
-                      <h2>Départ</h2>
-                      <h2>De</h2>
+                      <h2 className="text-md font-bold pt-4">Départ</h2>
+                      <h2 className="my-2 text-sm font-medium">De</h2>
                       <label>
                       <Field  className="mt-3" type="time" name="depart1" min="01:00" max="23:00"/>   
                   
                           
-                      <span className="ml-20 mr-20">à</span>
+                      <span className="ml-20 mr-20 text-sm font-medium">à</span>
                   
                         <Field className=""type="time" name="depart2"  min="01:00" max="23:00"/>   
                       </label>
