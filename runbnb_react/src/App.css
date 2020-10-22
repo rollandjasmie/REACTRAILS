@@ -76,3 +76,9 @@
   text-transform: uppercase;
   outline: none;
 }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
