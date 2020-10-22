@@ -8,8 +8,7 @@ import Pin from './pin';
 // Please be a decent human and don't abuse my Mapbox API token.
 // If you fork this sandbox, replace my API token with your own.
 // Ways to set Mapbox token: https://uber.github.io/react-map-gl/#/Documentation/getting-started/about-mapbox-tokens
-const MAPBOX_TOKEN =
-  "pk.eyJ1Ijoic21peWFrYXdhIiwiYSI6ImNqcGM0d3U4bTB6dWwzcW04ZHRsbHl0ZWoifQ.X9cvdajtPbs9JDMG-CMDsA";
+const MAPBOX_TOKEN ="pk.eyJ1Ijoicm9sbGFuZGphc21pZSIsImEiOiJja2drZjM1dGowNnR0MnFwY2V2dHB4cGltIn0.KGbcbcVaTYQhASyG17Q5rQ";
 
 
 const Map = (props) => {
@@ -37,11 +36,7 @@ const Map = (props) => {
     [handleViewportChange]
   );
 
-  const deleteMap = () => {
-    console.log(mapRef.current);
-    //mapRef.current.remove();
-  }
-
+ 
   const [position, setPosition] = useState({
     longitude: 55.53817922704148,
     latitude: -21.121661209928707
@@ -91,7 +86,6 @@ const Map = (props) => {
           <Pin size={20} />
         </Marker>
       </MapGL>
-      <button onClick={deleteMap}>Delete</button>
     </div>
   );
 };

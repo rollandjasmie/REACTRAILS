@@ -22,7 +22,10 @@ import IncrementeComponent from './IncrementeComponent';
     const next =()=>{
       props.nextStep();
     }
-  
+    const io = () =>{
+    setSmShow(false)
+
+    }
     return (
       <>
 
@@ -55,7 +58,6 @@ import IncrementeComponent from './IncrementeComponent';
               formValue = {...formValue, lits: values};
               setFormValue(formValue);
               console.log(formValue);
-              setSmShow(false)
 
             }}
             >
@@ -72,7 +74,9 @@ import IncrementeComponent from './IncrementeComponent';
                 Lits double 
                 </div>
                 <span className="">
-                <IncrementeComponent />
+                  <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 mx-4 rounded-full rounded  shadow" onClick = {this.DecreaseItem}>-</button>
+                  <input className="w-10" value={this.state.quantity} onChange={this.handleChange}/>
+                  <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 rounded-full rounded shadow" onClick={this.IncrementItem}>+</button>
 
                 </span>
             
@@ -149,7 +153,7 @@ import IncrementeComponent from './IncrementeComponent';
                 </span>
               </label>
               </div> 
-                <Button type="submit">Enregistré</Button>
+                <Button type="submit" onClick={io} >Enregistré</Button>
               </Form>
               </div>
             </Modal.Body>

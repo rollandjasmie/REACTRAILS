@@ -41,7 +41,7 @@ return (
               <div className="  w-2/6 py-10 ">
               <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <form className="onSubmit={this.handleSubmit}  px-10  ">
+                    <form onSubmit={this.handleSubmit} className=" px-10">
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Créer un profil partenaire</h1>
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-2" for="grid-city" >
                          Nom
@@ -85,10 +85,16 @@ return (
                         </label>
                         <input  type="password" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onChange={this.handleChange}  placeholder=" Mot de passe  " name="password" value={password}/>
-                                                                                        
+
+                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
+                        password_confirmation
+                        </label>
+                        <input  type="password_confirmation" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onChange={this.handleChange}  placeholder=" Mot de passe  " name="password_confirmation" value={password_confirmation}/>
+                                                                                  
 
                         <button className="w-full appearance-none block  bg-orange-500 text-white rounded py-3
-                         px-4 my-10 leading-tight focus:outline-none hover:font-bold" type="submit">Commencer</button> 
+                         px-4 my-10 leading-tight focus:outline-none hover:font-bold" >Commencer</button> 
 
                          <p className="text-xs flex text-center">Vous  avez déja un compte ? Cliquez ici pour poursuivre l’inscription</p> 
                     </form>
