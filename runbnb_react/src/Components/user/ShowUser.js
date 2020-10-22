@@ -47,14 +47,15 @@ class Dashboard extends Component {
        
 
             <div class="ml-3 relative">
-              <div>
-              <button onClick={() => this.setState(!this.state)}>
-              <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
-  
-              </button>
-              <div className="   rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Mon compte</div>
-                
-              </div>
+              <div className="flex  items-center w-auto ">
+                <button onClick={() => this.setState(!this.state)}>
+                  <img className=" m-1 h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
+
+                </button>
+                <span className=" rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Mon compte</span>
+
+               </div>
+
         
                   <Transition
             show={this.state.show}
