@@ -22,6 +22,9 @@ import '../../App.css';
     const next =()=>{
       props.nextStep();
     }
+    const io =() => {
+      setSmShow(false)
+    }
   
     return (
       <>
@@ -152,7 +155,7 @@ import '../../App.css';
                 </span>
               </label>
               </div> 
-                <Button type="submit">Enregistré</Button>
+                <Button onClick={io} type="submit">Enregistré</Button>
               </Form>
               </div>
             </Modal.Body>
@@ -201,7 +204,7 @@ import '../../App.css';
                 </span>
                 </label>
                 </div>
-               <Button type="submit">Enregistré</Button>
+               <Button onClick={io} type="submit">Enregistré</Button>
 
               </Form>
             </Modal.Body>
@@ -311,7 +314,7 @@ import '../../App.css';
                     </label>
                   
                     </div> 
-                    <Button type="submit">Enregistré</Button>
+                    <Button onClick={io} type="submit">Enregistré</Button>
                   </Form>
               </Modal.Body>
                )}
