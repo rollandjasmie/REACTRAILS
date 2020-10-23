@@ -4,7 +4,7 @@ class CreateLogements < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :categorie
       t.string :types
-
+      
       t.timestamps
     end
   end

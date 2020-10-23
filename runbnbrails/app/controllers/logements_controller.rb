@@ -1,16 +1,15 @@
-class LogementsController < ApplicationController
-    before_action :set_logement, only: [:show, :update, :destroy]
 
+class LogementsController < ApplicationController
+ before_action :set_logement, only: [:show, :update, :destroy]
     def create
-        @logement = Logements.create(logement_params)
+        @logement = Logement.create(logement_params)
+        @logement.save
         json_response(@logement, :created)
     end
+     private 
     def logement_params
-        params.permit(:name, :categorie, :types)
+        params.require(:hebergement).permit(:name, :types, :categorie)
     end
-    def set_logement
-        @logement = Logements.find(params[:todo_id])
-      end
 end
 
 
