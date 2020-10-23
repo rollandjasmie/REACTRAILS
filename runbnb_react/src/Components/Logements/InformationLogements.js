@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 const InformationSchema = Yup.object().shape({
     name: Yup.string()
       .required('Champs obligatoire'),
-    type: Yup.string()
+    types: Yup.string()
       .required('Champs obligatoire'),
     categorie: Yup.string().required('Champs obligatoire'),
 });
@@ -48,7 +48,7 @@ class InformationLogements extends React.Component {
                   Choisissez le type d’hébergement que vous souhaitez inscrire sur RunBnB
                 </label>
                 <div className="relative">
-                  <select onChange={(event) => setFieldValue('type', event.target.value)} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                  <select onChange={(event) => setFieldValue('types', event.target.value)} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                     <option>----Choisir le type----</option>
                     <option value="Appartement">Appartement</option>
                     <option value="Maison / Villa">Maison / Villa</option>

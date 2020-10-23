@@ -3,15 +3,13 @@ import {DropzoneArea} from 'material-ui-dropzone'
 
 export default class Uploadphoto extends Component {
         state = {
-
+            
         }
-        
         handleChange(files){
             this.setState({
             files: files
         })
         console.log(files)
-            
             let { formValue, setFormValue } = this.props;
             formValue = {...formValue, photo: files};
             setFormValue(formValue);
@@ -30,6 +28,7 @@ export default class Uploadphoto extends Component {
                         showPreviews={true}
                         filesLimit={50}
                         maxFileSize={5000000}
+
                     />                
                     
                 <div className="flex items-end justify-end pt-10 my-5 mx-5">

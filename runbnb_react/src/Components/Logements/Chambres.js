@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-
-
+import * as Yup from "yup";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,17 +11,26 @@ import '../../App.css';
 
   function Chambres(props) {
 
+    const [LgShow, setLgShow] = useState(false);
     const [smShow, setSmShow] = useState(false);
-    const [lgShow, setLgShow] = useState(false);
     const  [ lgshowautre, setlgshowautre] = useState(false);
     let [Che, setCH] = useState(
     );
+
+    const ChambreSchema = Yup.object().shape({
+      lits: Yup.string().required("Required")
+    });
+    
+      const handleChange = (row, index, setFieldValue, event) => {
+        const isChecked = event.target.checked;
+        setFieldValue(`${row}[${index}].checked`, isChecked);
+      }
     
     
     const next =()=>{
       props.nextStep();
     }
-  
+
     return (
       <>
 
@@ -44,7 +52,7 @@ import '../../App.css';
 
   
 
-  
+      {/*modal chambre */}
         <Modal
             size=".w auto"
             show={smShow}
@@ -52,277 +60,228 @@ import '../../App.css';
             aria-labelledby="example-modal-sizes-title-lg"
           >           
             <Formik
-            initialValues={props.formValue.lits}
-            onSubmit={values => {
-               let { formValue, setFormValue } = props;
-              formValue = {...formValue, lits: values};
-              setFormValue(formValue);
-              console.log(formValue);
-              setSmShow(false)
+        initialValues={{
+          lits: [
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Simple"
+            },
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Double"
+            },
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Famille"
+            }
+          ]
+        }}
+        
+        validationSchema={ChambreSchema}
+        onSubmit={values => {
+          // same shape as initial values
+          console.log(values);
+        }}
+      >
+        {({ values, errors, touched, setFieldValue }) => (
+          <Form>
+            {Object.keys(values) &&
+              Object.keys(values).map(value => {
+                return (
+                  <>
+                    {/* Titre selon la key(s) */}
+                    {String(value).toLocaleUpperCase()}
+                    {values[value].map((item, index) => {
+                      return (
+                        <>
+                          <div>
+                            {/* Titre de l'option .name */}
+                            {item.name} 
+                            <input
+                              type="checkbox"
+                              onClick={event =>
+                                handleChange(value, index, setFieldValue, event)
+                              }
+                            />
+                          </div>
+                          <div style={{ display: "inline-block" }}>
+                            <IncrementeComponent
+                              onChange={quantity =>
+                                setFieldValue(
+                                  `${value}[${index}].quantite`,
+                                  quantity
+                                )
+                              }
+                            />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}
+            <button type="submit">Sauvegarder</button>
+          </Form>
+        )}
 
-            }}
-            >
-              {({ values,checked, handleSubmit, touched, setFieldValue }) => (
-            <Modal.Body>
-              <div>
-              
-              <Form onSubmit={handleSubmit}>
-               <div className="w-full ">
-              <label className="flex">
-                <div className="w-1/2">
-
-              <Field type="checkbox" className="mr-2"name="lits" value="Lits double"/>
-                Lits double 
-                </div>
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-            
-              </label>
-
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox"className="mr-2" name="lits" value="Lits Simples"/>
-                Lits simples
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox"className="mr-2" name="lits" value="Lits King size" />
-                Lits King size
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox" className="mr-2"name="lits" value="Grand lits King size" />
-                Grand lits King size
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox" className="mr-2"name="lits"  value="Lits Lits superposé"/>
-                Lits superposé
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox"className="mr-2" name="lits"  value="Canapé lits"/>
-                Canapé lits
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox" className="mr-2"name="lits"  value="Canpé lits double"/>
-                Canapé lits double
-                </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              <label className="flex">
-              <div className="w-1/2">
-                <Field type="checkbox" className="mr-2"name="lits" value="Futon" />
-                Futon
-              </div>  
-                <span className="">
-                <IncrementeComponent />
-
-                </span>
-              </label>
-              </div> 
-                <Button type="submit">Enregistré</Button>
-              </Form>
-              </div>
-            </Modal.Body>
-            ) }
-            </Formik>
+        </Formik>
           </Modal>
-          
-        <Modal
+
+          <Modal
             size=".w auto"
-            show={lgShow}
+            show={LgShow}
             onHide={() => setLgShow(false)}
             aria-labelledby="example-modal-sizes-title-lg"
-          >
-          <Formik
-            initialValues={props.formValue.canapes}
-            onSubmit={values => {
-               let { formValue, setFormValue } = props;
-              formValue = {...formValue, canapes: values};
-              setFormValue(formValue);
-              console.log(formValue);
-              setLgShow(false)
-            }}
-            >
-               {({ values,checked, handleSubmit, touched, setFieldValue }) => (
-            <Modal.Body>.
-              <Form  onSubmit={handleSubmit}>
-                <div className="w-full">
-                <label className="flex">
-                <div className="w-1/2">
-                  <Field type="checkbox" className="mr-2" name="canape" value="Canapé"/>
-                  Canapé
-                  </div>
-                  <span className="">
-                <IncrementeComponent />
+          >           
+            <Formik
+        initialValues={{
+          canapes: [
+            {
+              checked: false,
+              quantite: 0,
+              name: "canapés"
+            },
+            {
+              checked: false,
+              quantite: 0,
+              name: "Canapés lits"
+            },
+          ]
+        }}
+        
+        validationSchema={ChambreSchema}
+        onSubmit={values => {
+          // same shape as initial values
+          
+          console.log(values);
+        }}
+      >
+        {({ values, errors, touched, setFieldValue }) => (
+          <Form>
+            {Object.keys(values) &&
+              Object.keys(values).map(value => {
+                return (
+                  <>
+                    {/* Titre selon la key(s) */}
+                    {String(value).toLocaleUpperCase()}
+                    {values[value].map((item, index) => {
+                      return (
+                        <>
+                          <div>
+                            {/* Titre de l'option .name */}
+                            {item.name} 
+                            <input
+                              type="checkbox"
+                              onClick={event =>
+                                handleChange(value, index, setFieldValue, event)
+                              }
+                            />
+                          </div>
+                          <div style={{ display: "flex" }}>
+                            <IncrementeComponent
+                              onChange={quantity =>
+                                setFieldValue(
+                                  `${value}[${index}].quantite`,
+                                  quantity
+                                )
+                              }
+                            />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}
+            <button type="submit">Sauvegarder</button>
+          </Form>
+        )}
+        </Formik>
+          </Modal>
+          
 
-                </span>
-                </label>
-                <label className="flex">
-                <div className="w-1/2">
-                  <Field type="checkbox" className="mr-2" name="canape" value="Canapé lits"/>
-                  Canapé lits
-                  </div>
-                  <span className="">
-                <IncrementeComponent />
-
-                </span>
-                </label>
-                </div>
-               <Button type="submit">Enregistré</Button>
-
-              </Form>
-            </Modal.Body>
-               )}
-          </Formik>
-        </Modal>
-
-        <Modal
-          size=".w auto"
+          <Modal
+            size=".w auto"
             show={lgshowautre}
             onHide={() => setlgshowautre(false)}
             aria-labelledby="example-modal-sizes-title-lg"
-          >
-          <Formik
-            initialValues={props.formValue.autres}
-            onSubmit={values => {
-               let { formValue, setFormValue } = props;
-              formValue = {...formValue, autres: values};
-              setFormValue(formValue);
-              console.log(formValue);
-              setlgshowautre(false)
-            }}
-            >
-               {({ values,checked, handleSubmit, touched, setFieldValue }) => (
-              <Modal.Body>.
-                <Form onSubmit={handleSubmit} >
-                    <div className="w-full">
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits double"/>
-                      lits double
-                      </div>
-                      <span className="">
-                       <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits Simples"/>
-                      lits simples
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits King size" />
-                      lits King size
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits" value="Grand lits King size" />
-                      Grand lits King size
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label >
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits"  value="lits superposé"/>
-                      autrelits superposé
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits"  value="Canapé lits"/>
-                      Canapé lits
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits"  value="Canpé lits double"/>
-                      Canapé lits double
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                    <label className="flex">
-                    <div className="w-1/2">
-                      <Field type="checkbox" className="mr-2" name="autrelits" value="Futon" />
-                      Futon
-                      </div>
-                      <span className="">
-                      <IncrementeComponent />
-
-                      </span>
-                    </label>
-                  
-                    </div> 
-                    <Button type="submit">Enregistré</Button>
-                  </Form>
-              </Modal.Body>
-               )}
-          </Formik>
-        </Modal>
+          >           
+            <Formik
+        initialValues={{
+          lits: [
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Simple"
+            },
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Double"
+            },
+            {
+              checked: false,
+              quantite: 0,
+              name: "Lit Famille"
+            }
+          ]
+        }}
+        
+        validationSchema={ChambreSchema}
+        onSubmit={values => {
+          // same shape as initial values
+          console.log(values);
+        }}
+      >
+        {({ values, errors, touched, setFieldValue }) => (
+          <Form>
+            {Object.keys(values) &&
+              Object.keys(values).map(value => {
+                return (
+                  <>
+                    {/* Titre selon la key(s) */}
+                    {String(value).toLocaleUpperCase()}
+                    {values[value].map((item, index) => {
+                      return (
+                        <>
+                          <div>
+                            {/* Titre de l'option .name */}
+                            {item.name} 
+                            <input
+                              type="checkbox"
+                              onClick={event =>
+                                handleChange(value, index, setFieldValue, event)
+                              }
+                            />
+                          </div>
+                          <div style={{ display: "flex" }}>
+                            <IncrementeComponent
+                              onChange={quantity =>
+                                setFieldValue(
+                                  `${value}[${index}].quantite`,
+                                  quantity
+                                )
+                              }
+                            />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}
+            <button type="submit">Sauvegarder</button>
+          </Form>
+        )}
+        </Formik>
+      </Modal>
       </>
     ); 
-  }
+}
 
 export default Chambres;
-
-
 
 

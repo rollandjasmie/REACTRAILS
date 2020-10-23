@@ -28,17 +28,18 @@ import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+import axios from '../../axios'
 
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(3);
 
 
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
-      type: '',
+      tipes: '',
       categorie: '',
     },localisation:{
       pays: '',
@@ -65,7 +66,20 @@ export default function CustomizedSteppers() {
     date:{
     },
     conditions:{},
-  
+    lits: {
+      name:'',
+      quantite:'',
+    },
+    salon: {
+      name:'',
+      quantite:'',
+    },
+
+    autrelits: {
+      name:'',
+      quantite:'',
+    }
+    
   });
 
   const nextStep = () => {
@@ -77,9 +91,9 @@ export default function CustomizedSteppers() {
   };
 
   const saveHebergement = () => {
-    /*axios.post('/logement', formValue).then(response => {
+    axios.post('/logements', formValue).then(response => {
       
-    })*/
+    }) 
   }
 
   const getStepContent = () => {
@@ -149,13 +163,22 @@ export default function CustomizedSteppers() {
             formValue={formValue}
             setFormValue={setFormValue}/>    
         case 9:
-              return <InformationHeb/>
+              return <InformationHeb
+              previousStep={previousStep}
+              nextStep={nextStep}
+              formValue={formValue}
+              setFormValue={setFormValue}/>
         
         case 10:
-             return <InfoRunbnb/>
+             return <InfoRunbnb
+             previousStep={previousStep}
+             nextStep={nextStep}
+             formValue={formValue}
+             setFormValue={setFormValue}/>
         
        case 11:
-              return <PageCharte/>            
+              return <PageCharte
+              saveHebergement={saveHebergement}/>            
     }
   }
 
