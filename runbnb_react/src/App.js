@@ -1,7 +1,7 @@
 import React from 'react';
 import AjoutHebergements from "./Components/pages/AjoutHebergements";
 import Dashboard from "./Components/user/ShowUser"
-import User from "./Components/user/EditProfil"
+import EditProfil from "./Components/user/EditProfil"
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -28,7 +28,7 @@ class App extends React.Component {
                 </Route>
                 
                 <Route exact path="/Dashboard" component={Dashboard} />
-                <Route exact path="/User" component={User} />
+                <Route exact path="/EditProfil" component={EditProfil} />
 
                 <Route exact path='/'>
                     <HomePage/>
