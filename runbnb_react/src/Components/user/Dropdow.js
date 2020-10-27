@@ -2,8 +2,11 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { userLogoutAttempt } from '../../redux/Auth/auth.action';
+import { connect } from 'react-redux';
 
-export default function SimpleMenu() {
+
+ function SimpleMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -13,6 +16,11 @@ export default function SimpleMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const logout = () => {
+    console.log(props);
+    props.userLogoutAttempt()
+  }
 
   return (
     <div>
@@ -28,8 +36,16 @@ export default function SimpleMenu() {
       >
         
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={() => logout()}>Logout</MenuItem>
       </Menu>
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        userLogoutAttempt: () => dispatch(userLogoutAttempt())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SimpleMenu);

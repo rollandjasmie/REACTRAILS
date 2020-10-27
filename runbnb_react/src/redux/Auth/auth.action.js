@@ -34,14 +34,13 @@ export const userLoginAttempt = ({ email, password }) => {
             email: email,
             password: password
         }).then(response => {
-            if (response) {
+            if (response.status === 200) {
                 const token = response.data.token;
                 const user = response.data.user ? response.data.user : null;
 
                 dispatch((authLoginSuccess(token, user)))
-                console.log(history.location.pathname);
 
-                    history.push('/');
+                history.push('/');
                 
             } else {
                 const message = 'Utilisateur ou mot de passe incorrect';
@@ -77,8 +76,10 @@ export const userLogoutAttempt = () => {
     return (dispatch) => {
         window.localStorage.removeItem('jwtToken');
         window.localStorage.removeItem('user');
+        history.push('/');
         return dispatch(authLogoutSuccess());
     }
+    
 }
 
 export const AUTH_REFRESH_USER = 'AUTH_REFRESH_USER';

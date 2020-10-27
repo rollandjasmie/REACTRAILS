@@ -3331,6 +3331,7 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2020-10-27 10:49:11 +0300
 Started GET "/" for ::1 at 2020-10-27 10:49:13 +0300
 Started GET "/" for ::1 at 2020-10-27 10:49:13 +0300
@@ -3354,6 +3355,62 @@ actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+=======
+Started POST "/login" for ::1 at 2020-10-27 10:44:57 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 315ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 7740)
+
+
+Started POST "/login" for ::1 at 2020-10-27 10:45:47 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 333ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 962)
+
+
+Started POST "/login" for ::1 at 2020-10-27 10:47:13 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 339ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 723)
+
+
+Started POST "/login" for ::1 at 2020-10-27 10:48:46 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 342ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 962)
+
+
+Started POST "/login" for ::1 at 2020-10-27 10:50:43 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 347ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 963)
+
+
+Started POST "/login" for ::1 at 2020-10-27 10:51:15 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 339ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 947)
+
+
+Started POST "/logn" for ::1 at 2020-10-27 10:52:40 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/logn"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+>>>>>>> 9f02ba3a4441ee8c8f4a89777635aee0db2d97a4
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
 railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
@@ -3376,6 +3433,7 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActiveRecord::PendingMigrationError (
 
@@ -3393,6 +3451,13 @@ actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+=======
+Started POST "/logn" for ::1 at 2020-10-27 10:52:56 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/logn"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+>>>>>>> 9f02ba3a4441ee8c8f4a89777635aee0db2d97a4
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
 railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
@@ -3415,6 +3480,7 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActiveRecord::PendingMigrationError (
 
@@ -3604,6 +3670,316 @@ actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+=======
+Started POST "/login" for ::1 at 2020-10-27 10:54:01 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 384ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 983)
+
+
+Started POST "/users" for ::1 at 2020-10-27 10:56:00 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"", "first_name"=>"", "email"=>"", "mobile"=>"", "date_of_birth"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "first_name"=>"", "mobile"=>"", "date_of_birth"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 192ms (ActiveRecord: 1.8ms | Allocations: 5707)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/login" for ::1 at 2020-10-27 10:58:49 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 361ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 946)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:12:16 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 362ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 1046)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:13:26 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 351ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 947)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:14:53 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 346ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 707)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:16:10 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 357ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 706)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:18:24 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 346ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 945)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:32:28 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 359ms (Views: 0.8ms | ActiveRecord: 5.2ms | Allocations: 7740)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:32:39 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 340ms (Views: 0.7ms | ActiveRecord: 1.9ms | Allocations: 966)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:32:54 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raaaaaaaa@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raaaaaaaa@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raaaaaaaa@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 678)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-10-27 11:34:04 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"rz@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rz@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 305ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 922)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-10-27 11:34:06 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"rz@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rz@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 309ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 937)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-10-27 11:34:10 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"rz@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"rz@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 308ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 702)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:36:45 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 396ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 706)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:37:16 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 389ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 709)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:39:16 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 387ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 722)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:42:09 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 393ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 706)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:42:39 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azeza", "password"=>"[FILTERED]", "user"=>{"email"=>"azeza"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azeza"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:42:39 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 295)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 1531)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:42:55 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azeaze", "password"=>"[FILTERED]", "user"=>{"email"=>"azeaze"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azeaze"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:42:55 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.5ms | Allocations: 179)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 712)
+
+
+Started POST "/users" for ::1 at 2020-10-27 11:44:26 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"aza", "first_name"=>"aza", "email"=>"", "mobile"=>"", "date_of_birth"=>"", "password"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"aza", "first_name"=>"aza", "mobile"=>"", "date_of_birth"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 1.1ms | Allocations: 5673)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Email can't be blank):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/login" for ::1 at 2020-10-27 11:44:37 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 689)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:37 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:44:38 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:38 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:44:39 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:39 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:44:39 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:39 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 238)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:44:40 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:40 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:44:45 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"azaz", "password"=>"[FILTERED]", "user"=>{"email"=>"azaz"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "azaz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 661)
+
+
+Started GET "/" for ::1 at 2020-10-27 11:44:45 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vahid/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started POST "/login" for ::1 at 2020-10-27 11:45:04 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 305ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 950)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY" for ::1 at 2020-10-27 11:45:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+>>>>>>> 9f02ba3a4441ee8c8f4a89777635aee0db2d97a4
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
 railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
@@ -3626,9 +4002,23 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/logement" for ::1 at 2020-10-27 11:24:31 +0300
   
 ActionController::RoutingError (No route matches [POST] "/logement"):
+=======
+Started POST "/login" for ::1 at 2020-10-27 11:45:36 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 314ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY" for ::1 at 2020-10-27 11:45:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY"):
+>>>>>>> 9f02ba3a4441ee8c8f4a89777635aee0db2d97a4
   
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -3653,9 +4043,23 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/logement" for ::1 at 2020-10-27 11:29:14 +0300
   
 ActionController::RoutingError (No route matches [POST] "/logement"):
+=======
+Started POST "/login" for ::1 at 2020-10-27 11:54:02 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `login'
+Completed 200 OK in 315ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 1043)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY" for ::1 at 2020-10-27 11:54:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.vNA0UCjgKoeOWyOJLa2nT1RQrKEfFWG0VJtp5qWKNUY"):
+>>>>>>> 9f02ba3a4441ee8c8f4a89777635aee0db2d97a4
   
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
