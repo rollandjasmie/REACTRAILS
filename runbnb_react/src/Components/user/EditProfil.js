@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Dropdow from './Dropdow';
 import Navboard from '../forms/Navbar/Navboard';
+
+import UserForm from './UserForm';
+
 class EditProfile extends Component {
     render() {
         return (
@@ -95,7 +98,17 @@ class EditProfile extends Component {
     </div>
   </nav>
 
+     <div className="p-20 flex">
 
+       <span className="">
+
+       </span>
+       <span className="w-1/3  ">
+
+          <UserForm/>
+      </span>
+
+     </div>
    
 
 

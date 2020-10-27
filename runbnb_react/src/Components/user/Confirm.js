@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 
@@ -19,29 +17,25 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { PrenometNom, Sexe, DateDeNaissance, Email, NumeroDeTel, Piece,Adresse,NumeroDurgence, }
     } = this.props;
     return (
-      <MuiThemeProvider>
+     
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
-            <AppBar title="Confirm User Data" />
+       
+            
             <List>
               <ListItem>
                 <ListItemText primary="PrenometNom" secondary={PrenometNom} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="sexe" secondary={sexe} />
+                <ListItemText primary="Sexe" secondary={Sexe} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="DateDeNaissance" secondary={DateDeNaissance} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="email" secondary={email} />
+                <ListItemText primary="Email" secondary={Email} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="NumeroDeTel" secondary={NumeroDeTel} />
@@ -62,16 +56,12 @@ export class Confirm extends Component {
               color="secondary"
               variant="contained"
               onClick={this.back}
-            >Back</Button>
+            >Edit</Button>
 
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Confirm & Continue</Button>
-          </Dialog>
+          
+       
         </>
-      </MuiThemeProvider>
+ 
     );
   }
 }

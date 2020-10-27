@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+
 import Confirm from './Confirm';
-import Success from './Success';
+
 
 export class UserForm extends Component {
   state = {
     step: 1,
-    PrenometNom: '',
-    sexe: '',
+    PrenomEtNom: '',
+    Sexe: '',
     DateDeNaissance: '',
-    email: '',
+    Email: '',
     NumeroDeTel: '',
     Piece: '',
     Adresse:'',
@@ -40,8 +40,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { PrenometNom ,  sexe,   DateDeNaissance, email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence } = this.state;
-    const values = { PrenometNom ,  sexe,   DateDeNaissance, email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence }; 
+    const { PrenomEtNom ,  Sexe,   DateDeNaissance, Email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence } = this.state;
+    const values = { PrenomEtNom ,  Sexe,   DateDeNaissance, Email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence }; 
 
     switch (step) {
       case 1:
@@ -54,7 +54,7 @@ export class UserForm extends Component {
         );
       case 2:
         return (
-          <FormPersonalDetails
+          <Confirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -62,10 +62,9 @@ export class UserForm extends Component {
           />
         );
 
-      case 4:
-        return <Success />;
+    
       default:
-        (console.log('This is a multi-step form built with React.'))
+        (console.log('votre profil'))
     }
   }
 }
