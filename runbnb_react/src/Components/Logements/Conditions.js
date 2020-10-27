@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
 import '../../App.css';
 
-class Conditions extends React.Component {
+
+
+
+
+export default class Conditions extends React.Component {
+ 
+
   render() {
     return (
       <>
        <p className="text-2ml font-bold  px-5 py-5 ">Quels équipements proposez-vous ?</p>
-     < div className="w-2/4 on inline-block element h-200 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-20 ">
+     < div className=" w-2/4 on inline-block element h-200 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-20 ">
      <p className="text-2ml  px-2  "><span className="uppercase">à</span> quelle dates les clients peuvent-ils annuler leur réservations ?</p>
         <Formik
         initialValues={{
@@ -27,26 +33,26 @@ class Conditions extends React.Component {
        }}
         >
           <Form>
-            <div className="w-full flex py-5" >
-              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
-               hover:text-white hover:font-bold" >
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+            <div className="w-full flex py-5"    >
+              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold">
                 1 jours
+                <Field className="hidden"  type="radio" name="conditions" value="1 jours" />
               </label>
-              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
               hover:text-white hover:font-bold">
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
                 7 jours
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
               </label>
-              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
               hover:text-white hover:font-bold">
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
                 14 jours
-              </label>
-              <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
-               hover:text-white hover:font-bold">
                 <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+              </label>
+              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
+               hover:text-white hover:font-bold">
                 30 jours
+                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
               </label>
             </div>
             <div className="flex items-end justify-end my-5">
@@ -58,7 +64,8 @@ class Conditions extends React.Component {
         </div>
        </> 
     )
+  
+      
+      }
   }
-}
 
-export default Conditions;

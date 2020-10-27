@@ -14,15 +14,18 @@ export default class Navbar extends Component {
                     <NavLink to="/AjoutHebergements"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                       <a className=" hover:text-gray-900">Ajouter un hébergement</a>
                     </NavLink>
+                    <NavLink to="/Dashboard"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                      <a className=" hover:text-gray-900">Dashboard</a>
+                    </NavLink>
                     <form>
                     <div className="flex">
                       <DropDown title="Espace propriétaire" className="nav-action mx-5">
-                        <NavLink to="/gestion/annonces"><div className="item">Gérer mes annonces</div></NavLink>
+                        <NavLink to="/signin"><div className="item">Gérer mes annonces</div></NavLink>
                         <NavLink to="/"><div className="item">Service à la carte</div></NavLink>
                       </DropDown>
 
                       <DropDown title="Espace voyageur" className="nav-action">
-                        <NavLink to="/signin"><div className="item">S'inscrire</div></NavLink>
+                        <NavLink to="/"><div className="item">S'inscrire</div></NavLink>
                         <NavLink to=""><div className="item">Se connecter</div></NavLink>
                       </DropDown>
                       

@@ -77,6 +77,11 @@
   outline: none;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
 .plus{position: relative;
 top: 0.1rem;}
 .materialui-daterange-picker-MuiList-root-257{
@@ -85,3 +90,4 @@ top: 0.1rem;}
 
 .sp{top: 1rem;
 left:60vh;}
+

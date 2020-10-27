@@ -32,7 +32,7 @@ render() {
 return (
   <>
            <Navbarin/>
-            <div className="flex ">
+            <div className="flex bg-white">
               <div className=" flex w-4/6 py-40 px-10">
                 <h1 className="text-5xl w-4/6  font-bold ">Inscrivez votre <span className="text-orange-500">hébergement</span> sur Runbnb.com</h1>
               </div>
@@ -87,7 +87,7 @@ return (
                         <button className="w-full appearance-none block  bg-orange-500 text-white rounded py-3
                          px-4 my-10 leading-tight focus:outline-none hover:font-bold" > </button> 
 
-                         <p className="text-xs flex text-center">Vous  avez déja un compte ? Cliquez ici pour poursuivre l’inscription</p> 
+                         <p className="text-xs flex text-center my-5">Vous  avez déja un compte ? Cliquez ici pour poursuivre l’inscription</p> 
                     </form>
               </div>
               </div>

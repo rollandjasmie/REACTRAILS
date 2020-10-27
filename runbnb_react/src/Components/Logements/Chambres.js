@@ -42,7 +42,6 @@ import '../../App.css';
               <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={props.previousStep}>Précedent</button>
               <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={next}>Suivant</button>
             </div>
-      
           </div>
 
   
@@ -203,7 +202,7 @@ import '../../App.css';
                 </span>
                 </label>
                 </div>
-               <Button type="submit">Enregistré</Button>
+               <Button onClick={io} type="submit">Enregistré</Button>
 
               </Form>
             </Modal.Body>
@@ -313,7 +312,7 @@ import '../../App.css';
                     </label>
                   
                     </div> 
-                    <Button type="submit">Enregistré</Button>
+                    <Button onClick={io} type="submit">Enregistré</Button>
                   </Form>
               </Modal.Body>
                )}

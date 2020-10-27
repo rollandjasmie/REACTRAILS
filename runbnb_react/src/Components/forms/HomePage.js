@@ -48,6 +48,7 @@ class HomePage extends React.Component{
                    <div className="flex justify-center "> 
                      <div className="w-5/12 my-5 mx-10">
                        <a className="block mr-5 hover:text-gray-500  text-xl">Ajouter un hébergement</a>
+                       
                        <a className="block mr-5 hover:text-gray-500  text-xl my-2">Gérer ses hébergements (extranet)</a>
                        <div className="py-5">
                          <img src="./images/fond.jpg"></img>
