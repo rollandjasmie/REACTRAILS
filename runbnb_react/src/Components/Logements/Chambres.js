@@ -22,10 +22,10 @@ import '../../App.css';
     const next =()=>{
       props.nextStep();
     }
-    const io =() => {
-      setSmShow(false)
+    const io = () =>{
+    setSmShow(false)
+
     }
-  
     return (
       <>
 
@@ -42,7 +42,6 @@ import '../../App.css';
               <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={props.previousStep}>Précedent</button>
               <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" onClick={next}>Suivant</button>
             </div>
-      
           </div>
 
   
@@ -61,7 +60,6 @@ import '../../App.css';
               formValue = {...formValue, lits: values};
               setFormValue(formValue);
               console.log(formValue);
-              setSmShow(false)
 
             }}
             >
@@ -78,7 +76,7 @@ import '../../App.css';
                 Lits double 
                 </div>
                 <span className="">
-                <IncrementeComponent />
+                      <IncrementeComponent />
 
                 </span>
             
@@ -155,7 +153,7 @@ import '../../App.css';
                 </span>
               </label>
               </div> 
-                <Button onClick={io} type="submit">Enregistré</Button>
+                <Button type="submit" onClick={io} >Enregistré</Button>
               </Form>
               </div>
             </Modal.Body>
@@ -238,7 +236,7 @@ import '../../App.css';
                       lits double
                       </div>
                       <span className="">
-                       <IncrementeComponent />
+                       <IncrementeComponent/>
 
                       </span>
                     </label>

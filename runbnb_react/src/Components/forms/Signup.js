@@ -1,13 +1,32 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import NavbarUp from './Navbar/NavbarUp';
+import * as Yup from 'yup';
+import { connect } from 'react-redux';
+import { userLoginAttempt } from '../../redux/Auth/auth.action';
 
+const LoginSchema = Yup.object().shape({
+    email: Yup.string()
+        .required('Le marque ne doit pas être vide'),
+    password: Yup.string()
+        .required('Le model ne doit pas être vide')
+});
 
 class Signup extends React.Component{
     render(){
       return(
      
-        <Formik>
+        <Formik
+           initialValues={{
+                email: '',
+                password: ''
+            }}
+            validationSchema={LoginSchema}
+             onSubmit={(values) => {
+                this.props.userLoginAttempt(values);
+            }}
+        >
+          {({ errors, touched }) => (
            <>
            <NavbarUp/>
             <div className="flex bg-white">
@@ -20,35 +39,49 @@ class Signup extends React.Component{
               <div className="  w-2/6 py-10 ">
               <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <form className="  px-10">
+                    <Form className="  px-10">
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Se connecter</h1>
                        
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
                          Adresse e-mail
                         </label>
-                        <Field className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
-                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse e-mail "/>
-                       
+                        <Field name="email" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Adresse e-mail "
+                         />
+                        { errors.email && touched.email ? ( <div className="text-red-600 text-sm font-bold">{errors.email}</div>) : null }                       
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
                         Mot de passe 
                         </label>
-                        <input type="password" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
+                        <Field name="password" type="password" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder=" Mot de passe  " />
-
+                        { errors.password && touched.password ? (<div className="text-red-600 text-sm font-bold">{errors.password}</div>) : null }
                         <button className="w-full appearance-none block  bg-orange-500 text-white rounded py-3
-                         px-4 my-10 leading-tight focus:outline-none hover:font-bold">Se connecter</button> 
+                         px-4 my-10 leading-tight focus:outline-none hover:font-bold"  type="submit">Se connecter</button> 
 
                          
-                    </form>
+                    </Form>
               </div>
               </div>
               
             </div>        
-      </>
+           </>
+                    )}
         </Formik>
      
       )
     }
   }
-  export default Signup;
+
+  const mapStateToProps = (state) => {
+    return {
+        ...state.AuthReducer
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        userLoginAttempt: (email, password) => {dispatch(userLoginAttempt(email, password))}
+    }
+}
+  export default connect(mapStateToProps, mapDispatchToProps)(Signup);
   

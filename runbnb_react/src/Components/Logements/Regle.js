@@ -3,6 +3,16 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import TimeField from 'react-simple-timefield';
+import * as Yup from 'yup';
+
+const InformationSchema = Yup.object().shape({
+    arrive1: Yup.string()
+      .required('Champs obligatoire'),
+    arrive2: Yup.string()
+      .required('Champs obligatoire'),
+    depart1: Yup.string().required('Champs obligatoire'),
+    depart2: Yup.string().required('Champs obligatoire'),
+});
 
 
 
@@ -12,6 +22,7 @@ class Regle extends React.Component {
     return (
    <Formik
               initialValues={this.props.formValue.regles}
+              validationSchema={InformationSchema}
               onSubmit={values => {
                  let { formValue, setFormValue } = this.props;
                  formValue = {...formValue, regles: values};
@@ -50,7 +61,9 @@ class Regle extends React.Component {
                     <h2 className="my-2 text-sm font-medium">De</h2>
                     <label>
                     <Field  className="mt-3 "type="time" name="arrive1"  min="01:00" max="23:00"/>   
-                  
+                      {/* { errors.arrive1 && touched.arrive1 ? (
+                        <div className="text-red-600 text-sm font-bold">{errors.arrive1}</div>
+                      ) : null } */}
 
                     <span className="ml-20 mr-20 text-sm font-medium">à</span>
                  

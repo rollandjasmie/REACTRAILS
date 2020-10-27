@@ -6,14 +6,12 @@ class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      names:'',
+      name:'',
       first_name: '',
       email: '',
+      mobile:'',
+      date_of_birth:'',
       password: '',
-      password_confirmation: '',
-      errors: '',
-      numero:'',
-      date:'',
      };
   }
 handleChange = (event) => {
@@ -24,12 +22,13 @@ handleChange = (event) => {
   };
 handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('http://localhost:4000/registrations',this.state).then()
-            console.log(this.state)
+    axios.post('http://localhost:4000/users',this.state)
+      .then(response => console.log(response.data.email))
+      
 
   };
 render() {
-    const {first_name,names,date, email, password, password_confirmation,numero} = this.state
+    const {first_name,name,date_of_birth, email, password,mobile} = this.state
 return (
   <>
            <Navbarin/>
@@ -41,13 +40,13 @@ return (
               <div className="  w-2/6 py-10 ">
               <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <form className="onSubmit={this.handleSubmit}  px-10  ">
+                    <form onSubmit={this.handleSubmit} className=" px-10">
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Créer un profil partenaire</h1>
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-2" for="grid-city" >
                          Nom
                         </label>
                         <input className=" w-full  appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
-                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Nom"onChange={this.handleChange}   name="names" value={names}/>
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Nom"onChange={this.handleChange}   name="name" value={name}/>
 
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city" >
                        Prénom
@@ -64,12 +63,11 @@ return (
                          <label className="block tracking-wide text-gray-500 text-xs my-3 " for="grid-city">
                          Entrez une adresse e-mail valide
                         </label>
-
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city" >
                         Numéro de téléphone
                         </label>
                         <input  className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
-                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Téléphone "onChange={this.handleChange}   name="numero" value={numero} />
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Téléphone "onChange={this.handleChange}   name="mobile" value={mobile} />
                            <label className="block tracking-wide text-gray-500 text-xs my-3 " for="grid-city">
                            Entrez une numéro de téléphone valide
                         </label>
@@ -78,17 +76,16 @@ return (
                         Date de naissance 
                         </label>
                         <input  className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
-                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Date de naissance "onChange={this.handleChange}    name="date" value={date} />
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Date de naissance "onChange={this.handleChange}    name="date_of_birth" value={date_of_birth} />
 
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
                         Mot de passe 
                         </label>
                         <input  type="password" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
-                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onChange={this.handleChange}  placeholder=" Mot de passe  " name="password" value={password}/>
-                                                                                        
+                         px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onChange={this.handleChange}  placeholder=" Mot de passe  " name="password" value={password}/>                                                                                  
 
                         <button className="w-full appearance-none block  bg-orange-500 text-white rounded py-3
-                         px-4 my-10 leading-tight focus:outline-none hover:font-bold" type="submit">Commencer</button> 
+                         px-4 my-10 leading-tight focus:outline-none hover:font-bold" > </button> 
 
                          <p className="text-xs flex text-center my-5">Vous  avez déja un compte ? Cliquez ici pour poursuivre l’inscription</p> 
                     </form>

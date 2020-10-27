@@ -32,7 +32,7 @@ import PageCharte from '../Logements/PageCharte';
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(10);
+  const [activeStep, setActiveStep] = React.useState(0);
 
 
   const [formValue, setFormValue] = React.useState({
@@ -40,15 +40,16 @@ export default function CustomizedSteppers() {
       name: '',
       type: '',
       categorie: '',
-    },localisation:{
+    },
+    localisation:{
       pays: '',
       ville: '',
       adresse:'',
       code: '',
     },
     map:{
-      longitude:"",
-      latitude:""
+      longitude:55.53817922704148,
+      latitude:-21.121661209928707
     },
     lits:{},  
     canapes:{},
@@ -71,11 +72,21 @@ export default function CustomizedSteppers() {
   const nextStep = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
+  
 
   const previousStep = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  let adresse1 = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 8);
+  };
+  let nom1 = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 9);
+  };
+  let map1 = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 7);
+  };
   const saveHebergement = () => {
     /*axios.post('/logement', formValue).then(response => {
       
@@ -149,10 +160,19 @@ export default function CustomizedSteppers() {
             formValue={formValue}
             setFormValue={setFormValue}/>    
         case 9:
-              return <InformationHeb/>
+              return <InformationHeb
+            previousStep={previousStep}
+            nextStep={nextStep}
+            formValue={formValue}
+            adresse1={adresse1}
+            nom1={nom1}
+            map1={map1}
+                />
         
         case 10:
-             return <InfoRunbnb/>
+             return <InfoRunbnb
+             previousStep={previousStep}
+            nextStep={nextStep}/>
         
        case 11:
               return <PageCharte/>            

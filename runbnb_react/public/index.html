@@ -12,6 +12,7 @@
     
     
   
+    <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -40,7 +41,7 @@
     <div id="root">
     <BoxLoading />
 
-  
+      
     </div>
 
  
@@ -49,8 +50,21 @@
     
   </body>
   <script>
-    var o= getElementsByClassName("MuiDropzoneArea-root"[0])
-    console.log(o)
-  </script>
+    function conditon() {
+      
+    
+    var d= document.getElementById('daika')
+    var i = document.getElementById('izy')
+    var t = document.getElementById('tsy')
+
+if (d.checked) {
+  i.style.display="block"
+  t.style.display="none"  
+} else {
+  t.style.display="block"  
+  i.style.display="none"  
+
+}}
+ </script>
 </html>
 

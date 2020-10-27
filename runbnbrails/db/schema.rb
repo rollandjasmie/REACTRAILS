@@ -10,30 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_065503) do
+ActiveRecord::Schema.define(version: 2020_10_23_073504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chambres", force: :cascade do |t|
-    t.string "title"
-    t.bigint "logement_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["logement_id"], name: "index_chambres_on_logement_id"
-  end
-
-  create_table "logements", force: :cascade do |t|
-    t.string "name"
-    t.string "categorie"
-    t.string "types"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "name"
+    t.string "first_name"
+    t.string "adresse"
+    t.string "mobile"
+    t.string "date_of_birth"
+    t.string "sexe"
+    t.string "urgence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

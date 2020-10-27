@@ -20,12 +20,12 @@ export default class Navbar extends Component {
                     <form>
                     <div className="flex">
                       <DropDown title="Espace propriétaire" className="nav-action mx-5">
-                        <NavLink to="/gestion/annonces"><div className="item">Gérer mes annonces</div></NavLink>
+                        <NavLink to="/signin"><div className="item">Gérer mes annonces</div></NavLink>
                         <NavLink to="/"><div className="item">Service à la carte</div></NavLink>
                       </DropDown>
 
                       <DropDown title="Espace voyageur" className="nav-action">
-                        <NavLink to="/signin"><div className="item">S'inscrire</div></NavLink>
+                        <NavLink to="/"><div className="item">S'inscrire</div></NavLink>
                         <NavLink to=""><div className="item">Se connecter</div></NavLink>
                       </DropDown>
                       
