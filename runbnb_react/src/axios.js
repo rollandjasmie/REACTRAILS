@@ -13,14 +13,16 @@ axios.defaults.baseURL = 'http://localhost:4000/';
 axios.interceptors.request.use(config => {
     let token = null;
 
-    const jwtToken = window.localStorage.getItem('jwtToken')
+    const jwtToken = window.localStorage.getItem('jwtToken');
+
+    console.log(jwtToken);
 
     if (jwtToken) {
         token = jwtToken;
         config.headers.Authorization = `Bearer ${token}`;
     } else {
         config.headers.Authorization = null;
-        history.push("/login");
+        //history.push("/signup");
     }
 
     return config;

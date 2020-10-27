@@ -64,11 +64,10 @@ var userLoginAttempt = function userLoginAttempt(_ref) {
       email: email,
       password: password
     }).then(function (response) {
-      if (response) {
+      if (response.status === 200) {
         var token = response.data.token;
         var user = response.data.user ? response.data.user : null;
         dispatch(authLoginSuccess(token, user));
-        console.log(_history["default"].location.pathname);
 
         _history["default"].push('/');
       } else {
@@ -104,6 +103,9 @@ var userLogoutAttempt = function userLogoutAttempt() {
   return function (dispatch) {
     window.localStorage.removeItem('jwtToken');
     window.localStorage.removeItem('user');
+
+    _history["default"].push('/');
+
     return dispatch(authLogoutSuccess());
   };
 };
