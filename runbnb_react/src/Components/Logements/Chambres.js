@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Formik, Field, Form } from 'formik';
 import IncrementeComponent from './IncrementeComponent';
-
+import '../../App.css';
 
 
 
@@ -29,11 +29,14 @@ import IncrementeComponent from './IncrementeComponent';
     return (
       <>
 
-
-          <div className="container col-4 flow-root on inline-block element mt-5 pl-10 ml-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10   ">
-              <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setSmShow(true)} >Chambre 1</Button>
-              <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setLgShow(true)} > Salon</Button>
-              <Button className="my-4 block text-gray-700 text-center bg-gray-500 " onClick={() => setlgshowautre(true)} > Autres espaces</Button>
+        <h1 className="text-2ml font-bold  mx-5 my-5 ">Informations sur l’hébergement :</h1>
+          <div className="w-1/3 mx-5 flow-root on inline-block element mt-5 pl-10 ml-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10   ">
+              <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none " onClick={() => setSmShow(true)} >
+                 <span className="plus font-bold text-2xl">+</span><span className="mx-3">Chambre 1</span></Button>
+              <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none" onClick={() => setLgShow(true)} >
+              <span className="plus font-bold text-2xl">+</span><span className="mx-3">Salon</span> </Button>
+              <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none" onClick={() => setlgshowautre(true)} >
+              <span className="plus font-bold text-2xl">+</span><span className="mx-3">Autres espaces</span> </Button>
                <div className="flex items-end justify-end">
 
               <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={props.previousStep}>Précedent</button>
@@ -74,9 +77,7 @@ import IncrementeComponent from './IncrementeComponent';
                 Lits double 
                 </div>
                 <span className="">
-                  <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 mx-4 rounded-full rounded  shadow" onClick = {this.DecreaseItem}>-</button>
-                  <input className="w-10" value={this.state.quantity} onChange={this.handleChange}/>
-                  <button className=" .rounded-3xl bg-primary hover:bg-grey-dark font-bold py-0 px-2 rounded-full rounded shadow" onClick={this.IncrementItem}>+</button>
+                      <IncrementeComponent />
 
                 </span>
             
@@ -180,14 +181,26 @@ import IncrementeComponent from './IncrementeComponent';
                {({ values,checked, handleSubmit, touched, setFieldValue }) => (
             <Modal.Body>.
               <Form  onSubmit={handleSubmit}>
-                <div className="col-4">
-                <label>
-                  <Field type="checkbox" name="canape" value="Canapé"/>
+                <div className="w-full">
+                <label className="flex">
+                <div className="w-1/2">
+                  <Field type="checkbox" className="mr-2" name="canape" value="Canapé"/>
                   Canapé
+                  </div>
+                  <span className="">
+                <IncrementeComponent />
+
+                </span>
                 </label>
-                <label>
-                  <Field type="checkbox" name="canape" value="Canapé lits"/>
+                <label className="flex">
+                <div className="w-1/2">
+                  <Field type="checkbox" className="mr-2" name="canape" value="Canapé lits"/>
                   Canapé lits
+                  </div>
+                  <span className="">
+                <IncrementeComponent />
+
+                </span>
                 </label>
                 </div>
                <Button type="submit">Enregistré</Button>
@@ -217,38 +230,86 @@ import IncrementeComponent from './IncrementeComponent';
                {({ values,checked, handleSubmit, touched, setFieldValue }) => (
               <Modal.Body>.
                 <Form onSubmit={handleSubmit} >
-                    <div className="col-5">
-                    <label>
-                      <Field type="checkbox" name="autrelits" value="lits double"/>
+                    <div className="w-full">
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits double"/>
                       lits double
+                      </div>
+                      <span className="">
+                       <IncrementeComponent/>
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits" value="lits Simples"/>
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits Simples"/>
                       lits simples
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits" value="lits King size" />
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits" value="lits King size" />
                       lits King size
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits" value="Grand lits King size" />
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits" value="Grand lits King size" />
                       Grand lits King size
-                    </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits"  value="lits superposé"/>
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
+                    </label >
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits"  value="lits superposé"/>
                       autrelits superposé
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits"  value="Canapé lits"/>
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits"  value="Canapé lits"/>
                       Canapé lits
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits"  value="Canpé lits double"/>
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits"  value="Canpé lits double"/>
                       Canapé lits double
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
-                    <label>
-                      <Field type="checkbox" name="autrelits" value="Futon" />
+                    <label className="flex">
+                    <div className="w-1/2">
+                      <Field type="checkbox" className="mr-2" name="autrelits" value="Futon" />
                       Futon
+                      </div>
+                      <span className="">
+                      <IncrementeComponent />
+
+                      </span>
                     </label>
                   
                     </div> 

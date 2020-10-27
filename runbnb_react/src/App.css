@@ -76,3 +76,12 @@
   text-transform: uppercase;
   outline: none;
 }
+
+.plus{position: relative;
+top: 0.1rem;}
+.materialui-daterange-picker-MuiList-root-257{
+  display: none;
+}
+
+.sp{top: 1rem;
+left:60vh;}

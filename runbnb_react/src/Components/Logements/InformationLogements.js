@@ -86,7 +86,7 @@ class InformationLogements extends React.Component {
               <hr className="my-4"/> 
               <div className="flex items-end justify-end">
 
-                <button  class="bg-blue-500 hover:bg-blue-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
+                <button  class="bg-orange-500 hover:bg-orange-700 text-white pl-6 pr-6 font-bold py-2 px-4 rounded" type="submit">Suivant</button>
               </div>
             </div>
           </Form>
