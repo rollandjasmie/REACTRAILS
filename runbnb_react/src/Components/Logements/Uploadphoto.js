@@ -34,7 +34,7 @@ export default class Uploadphoto extends Component {
                         maxFileSize={5000000}
                         dropzoneText='Importez au moins une photo'
                         previewText="Photo(s) sélectionnée(s)"
-
+                        
                     />                
                     
                 <div className="flex items-end justify-end pt-10 my-5 mx-5">

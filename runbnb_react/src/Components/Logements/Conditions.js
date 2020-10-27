@@ -2,26 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
 import '../../App.css';
-import classnames from 'classnames';
+
 
 
 
 
 export default class Conditions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {active: false};
-  }
-  
-  click() {
-    this.setState({active: true});
-  }
+ 
 
-  render() {let classes = classnames('specialbutton', {active: this.state.active});
+  render() {
     return (
       <>
        <p className="text-2ml font-bold  px-5 py-5 ">Quels équipements proposez-vous ?</p>
-     < div className="w-2/4 on inline-block element h-200 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-20 ">
+     < div className=" w-2/4 on inline-block element h-200 pl-10 ml-10   bg-white shadow-md rounded px-8 pt-20 ">
      <p className="text-2ml  px-2  "><span className="uppercase">à</span> quelle dates les clients peuvent-ils annuler leur réservations ?</p>
         <Formik
         initialValues={{
@@ -41,8 +34,8 @@ export default class Conditions extends React.Component {
         >
           <Form>
             <div className="w-full flex py-5"    >
-              <label className="{classes}  w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold" onClick={this.click.bind(this)}>
+              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold">
                 1 jours
                 <Field className="hidden"  type="radio" name="conditions" value="1 jours" />
               </label>
