@@ -84,8 +84,12 @@ import '../../App.css';
         validationSchema={ChambreSchema}
         onSubmit={values => {
           // same shape as initial values
-          setLits(values)
-          console.log(lits);
+          let { formValue, setFormValue } =props;
+
+          formValue = {...formValue, canapes: values};
+
+          setFormValue(formValue);
+          console.log(formValue);
         }}
       >
         {({ values, errors, touched, setFieldValue }) => (
