@@ -21,7 +21,7 @@ import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 
-import ShowUser from '../Logements/ShowUser'
+// import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
