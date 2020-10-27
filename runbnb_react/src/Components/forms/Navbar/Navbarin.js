@@ -6,7 +6,7 @@ export default class Navbarin extends Component {
     render() {
         return (
             <>
-                <header className="text-gray-700 body-font">
+                <header className="text-gray-700 bg-white">
                   <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
                     <NavLink to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                       <img className="w-40" src="./images/logo.jpg"></img>

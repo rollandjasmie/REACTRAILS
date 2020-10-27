@@ -10,7 +10,7 @@ class Signup extends React.Component{
         <Formik>
            <>
            <NavbarUp/>
-            <div className="flex">
+            <div className="flex bg-white">
               <div className=" flex w-4/6 py-40 px-10">
                 <h1 className="text-5xl w-4/6  font-bold ">Inscrivez votre <span className="text-orange-500">hébergement</span> sur Runbnb.com</h1>
               </div>

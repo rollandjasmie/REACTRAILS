@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Dropdow from './Dropdow';
 
+import Navboard from '../forms/Navbar/Navboard';
+
 
 
 
@@ -33,7 +35,7 @@ class Dashboard extends Component {
   render(){
     return (
       <> 
- 
+ <Navboard/>
 
 <div>
   <nav className="bg-blue-500">
