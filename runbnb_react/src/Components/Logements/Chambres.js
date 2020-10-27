@@ -11,6 +11,7 @@ import '../../App.css';
 
   function Chambres(props) {
 
+    const [lits,setLits]=useState();
     const [LgShow, setLgShow] = useState(false);
     const [smShow, setSmShow] = useState(false);
     const  [ lgshowautre, setlgshowautre] = useState(false);
@@ -60,30 +61,31 @@ import '../../App.css';
             aria-labelledby="example-modal-sizes-title-lg"
           >           
             <Formik
-        initialValues={{
-          lits: [
-            {
-              checked: false,
-              quantite: 0,
-              name: "Lit Simple"
-            },
-            {
-              checked: false,
-              quantite: 0,
-              name: "Lit Double"
-            },
-            {
-              checked: false,
-              quantite: 0,
-              name: "Lit Famille"
-            }
-          ]
-        }}
-        
+          
+         initialValues={{
+              lits: [
+                {
+                  checked: false,
+                  quantite: 0,
+                  name: "Lit Simple"
+                },
+                {
+                  checked: false,
+                  quantite: 0,
+                  name: "Lit Double"
+                },
+                {
+                  checked: false,
+                  quantite: 0,
+                  name: "Lit Famille"
+                }
+              ]
+            }}    
         validationSchema={ChambreSchema}
         onSubmit={values => {
           // same shape as initial values
-          console.log(values);
+          setLits(values)
+          console.log(lits);
         }}
       >
         {({ values, errors, touched, setFieldValue }) => (
@@ -94,12 +96,12 @@ import '../../App.css';
                   <>
                     {/* Titre selon la key(s) */}
                     {String(value).toLocaleUpperCase()}
-                    {values[value].map((item, index) => {
+                     {values[value].map((item, index) => {
                       return (
                         <>
                           <div>
                             {/* Titre de l'option .name */}
-                            {item.name} 
+                            {item.name} {index}
                             <input
                               type="checkbox"
                               onClick={event =>
@@ -155,8 +157,12 @@ import '../../App.css';
         validationSchema={ChambreSchema}
         onSubmit={values => {
           // same shape as initial values
-          
-          console.log(values);
+          let { formValue, setFormValue } =props;
+
+          formValue = {...formValue, canapes: values};
+
+          setFormValue(formValue);
+          console.log(formValue);
         }}
       >
         {({ values, errors, touched, setFieldValue }) => (
@@ -196,7 +202,7 @@ import '../../App.css';
                   </>
                 );
               })}
-            <button type="submit">Sauvegarder</button>
+            <button >Sauvegarder</button>
           </Form>
         )}
         </Formik>
@@ -211,7 +217,7 @@ import '../../App.css';
           >           
             <Formik
         initialValues={{
-          lits: [
+          autrelits: [
             {
               checked: false,
               quantite: 0,
@@ -233,7 +239,12 @@ import '../../App.css';
         validationSchema={ChambreSchema}
         onSubmit={values => {
           // same shape as initial values
-          console.log(values);
+          let { formValue, setFormValue } =props;
+
+          formValue = {...formValue, autrelits: values};
+
+          setFormValue(formValue);
+          console.log(formValue);
         }}
       >
         {({ values, errors, touched, setFieldValue }) => (
@@ -273,7 +284,7 @@ import '../../App.css';
                   </>
                 );
               })}
-            <button type="submit">Sauvegarder</button>
+            <button >Sauvegarder</button>
           </Form>
         )}
         </Formik>

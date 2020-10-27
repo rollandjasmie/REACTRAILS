@@ -33,7 +33,7 @@ import axios from '../../axios'
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(3);
+  const [activeStep, setActiveStep] = React.useState(7);
 
 
   const [formValue, setFormValue] = React.useState({
@@ -51,9 +51,6 @@ export default function CustomizedSteppers() {
       longitude:"",
       latitude:""
     },
-    lits:{},  
-    canapes:{},
-    autres:{},
     title: {},
     photo:[],
     regles: {
@@ -67,18 +64,20 @@ export default function CustomizedSteppers() {
     },
     conditions:{},
     lits: {
+      checked:'',
       name:'',
       quantite:'',
     },
-    salon: {
+    canapes: {
+      checked:'',
       name:'',
       quantite:'',
     },
-
     autrelits: {
+      checked:'',
       name:'',
       quantite:'',
-    }
+    },
     
   });
 

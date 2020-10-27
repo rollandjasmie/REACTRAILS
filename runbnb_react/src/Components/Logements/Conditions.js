@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Formik, Field, Form } from 'formik';
 import '../../App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 class Conditions extends React.Component {
+ 
+ 
   render() {
     return (
       <>
@@ -29,23 +33,23 @@ class Conditions extends React.Component {
           <Form>
             <div className="w-full flex py-5" >
               <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
-               hover:text-white hover:font-bold" >
+               hover:text-white hover:font-bold button1">
                 <Field className="hidden" type="radio" name="conditions" value="1 jours" />
-                1 jours
+                1 jours 
               </label>
               <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold">
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+              hover:text-white hover:font-bold active">
+                <Field className="hidden" type="radio" name="conditions" value="7 jours" />
                 7 jours
               </label>
               <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold">
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+              hover:text-white hover:font-bold active">
+                <Field className="hidden" type="radio" name="conditions" value="14 jours" />
                 14 jours
               </label>
               <label className="² w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
-               hover:text-white hover:font-bold">
-                <Field className="hidden" type="radio" name="conditions" value="1 jours" />
+               hover:text-white hover:font-bold active">
+                <Field className="hidden" type="radio" name="conditions" value="30 jours" />
                 30 jours
               </label>
             </div>
