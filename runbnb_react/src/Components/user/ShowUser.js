@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Dropdow from './Dropdow';
+import Dropdow1 from './Dropdow1';
 
 import Navboard from '../forms/Navbar/Navboard';
 
@@ -48,7 +48,7 @@ class Dashboard extends Component {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
 
-              <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
+              <a href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
 
               <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
 
@@ -66,7 +66,7 @@ class Dashboard extends Component {
           
                   <img className=" m-h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
   
-                  <Dropdow/>
+                  <Dropdow1 />
               </div>
 
         

@@ -12,7 +12,7 @@ export class Confirm extends Component {
 
   back = e => {
     e.preventDefault();
-    this.props.prevStep();
+    this.props.nextStep();
   };
 
   render() {

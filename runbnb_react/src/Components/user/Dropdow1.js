@@ -34,7 +34,8 @@ import { connect } from 'react-redux';
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        
+
+        <MenuItem > <a href='/EditProfil'>My account</a></MenuItem>
         <MenuItem onClick={() => logout()}>Déconnecter</MenuItem>
       </Menu>
     </div>
