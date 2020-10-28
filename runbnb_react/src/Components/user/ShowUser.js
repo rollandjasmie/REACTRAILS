@@ -47,12 +47,13 @@ class Dashboard extends Component {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-            
-              <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700
-               focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
+
+              <a href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+                Tous les hébergements</a>
 
               <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700
                focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
+
 
               <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700
                focus:outline-none focus:text-white focus:bg-gray-700">Toutes les réservations</a>

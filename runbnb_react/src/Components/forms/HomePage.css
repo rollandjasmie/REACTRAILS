@@ -2,5 +2,7 @@
 @import '~tailwindcss/dist/components.css';
 @import '~tailwindcss/dist/utilities.css';
 
-.with-bg{background-image: url('/images/fond.jpg');
-    background-size: cover;}
+.with-bg{background-image: url('/images/illu.jpg');
+    background-size: cover;
+    background-position: 50% 48%;
+height: 50vh;}

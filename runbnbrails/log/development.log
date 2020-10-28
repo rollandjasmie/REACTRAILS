@@ -8323,3 +8323,88 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 844)
 
 
+Started POST "/login" for ::1 at 2020-10-28 16:38:22 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"raharimalalarolland@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"raharimalalarolland@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raharimalalarolland@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 325ms (Views: 0.4ms | ActiveRecord: 6.3ms | Allocations: 7751)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.hIRgBq5Kmv-3b4mUx8cZu-GPhXsIOsHvnMB6EevLtkc" for ::1 at 2020-10-28 16:38:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.hIRgBq5Kmv-3b4mUx8cZu-GPhXsIOsHvnMB6EevLtkc"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2020-10-28 16:38:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1035)
+
+
+Started GET "/users/2" for ::1 at 2020-10-28 16:38:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 861)
+
+
+Started PUT "/users/2" for ::1 at 2020-10-28 16:38:42 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>2, "email"=>"raharimalalarolland@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"rolland", "first_name"=>"rolland", "adresse"=>nil, "mobile"=>"03345678771", "date_of_birth"=>"12/09/122", "sexe"=>"homme", "urgence"=>"09319809381", "created_at"=>"2020-10-27T17:08:09.886Z", "updated_at"=>"2020-10-28T13:29:41.028Z"}, "name"=>"rollandazeaza", "sexe"=>"femme", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "raharimalalarolland@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "sexe" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "rollandazeaza"], ["sexe", "femme"], ["updated_at", "2020-10-28 13:38:42.871431"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (225.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 244ms (Views: 1.6ms | ActiveRecord: 229.3ms | Allocations: 4906)
+
+
+Started GET "/users/2" for ::1 at 2020-10-28 16:38:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 844)
+
+
+Started GET "/users/2" for ::1 at 2020-10-28 16:38:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 861)
+
+
