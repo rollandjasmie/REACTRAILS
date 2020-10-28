@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
       before_action :authorized, only: [:auto_login]
+    def show
+        show= User.find_by(id:params[:id])
+        render json:{
+            user:show
+        }
+    end
+      
 
     def create
         @user = User.find_by(email: params[:email])
@@ -30,6 +37,13 @@ class UsersController < ApplicationController
             render json: {error: "Mot de passe ou email incorrect"}
         end
     end
+    def update
+        @users =User.find_by(id:params[:id])
+       @users.update(user_params)
+        render json:{
+            user: @users
+        }
+    end
     
     
     def auto_login
@@ -39,7 +53,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password)
+        params.permit(:id,:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password)
     end
 
 
