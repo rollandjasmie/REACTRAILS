@@ -60,6 +60,7 @@ export class UserForm extends Component {
       default:
         (console.log('votre profil'))
     }
+    
   }
 }
 
