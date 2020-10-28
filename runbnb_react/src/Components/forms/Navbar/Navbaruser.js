@@ -11,7 +11,7 @@ export default class Navbaruser extends Component {
                   <NavLink to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                       <img className="w-40 pt-2" src="./images/logo.jpg"></img>
                     </NavLink>
-                    <NavLink to="/AjoutHebergements"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <NavLink to="/"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                       <a className=" hover:text-gray-900"></a>
                     </NavLink>
                    
