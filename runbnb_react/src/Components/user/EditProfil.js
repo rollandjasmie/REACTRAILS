@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import Dropdow from './Dropdow';
 import Navboard from '../forms/Navbar/Navboard';
 
+
+
 import UserForm from './UserForm';
-var AvatarCropper = require("react-avatar-cropper");
+import Upload from './Upload';
+
 
 class EditProfile extends Component {
 
@@ -103,13 +106,7 @@ class EditProfile extends Component {
      <div className="p-20 flex">
 
        <span className="">
-       <AvatarCropper
-      onRequestHide={this.handleRequestHide}
-      onCrop={this.handleCrop}
-      image={this.state.img}
-      width={400}
-      height={400}
-    />
+        <Upload/>
 
        </span>
        <span className="w-1/3  ">
