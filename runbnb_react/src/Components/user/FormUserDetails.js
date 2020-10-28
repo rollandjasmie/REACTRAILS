@@ -16,9 +16,9 @@ export class FormUserDetails extends Component {
     return (
  
         <>
-       
+            <div>
         
-            <TextField
+            <TextField 
               placeholder="Prenon et Nom"
               label="Prenom et Nom"
               onChange={handleChange('PrenomEtNom')}
@@ -87,7 +87,7 @@ export class FormUserDetails extends Component {
               variant="contained"
               onClick={this.continue}
             >Enregistré</Button>
-       
+       </div>
         </>
     
     );

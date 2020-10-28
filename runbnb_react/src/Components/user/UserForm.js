@@ -39,6 +39,7 @@ export class UserForm extends Component {
   };
 
   render() {
+
     const { step } = this.state;
     const { PrenomEtNom ,  Sexe,   DateDeNaissance, Email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence } = this.state;
     const values = { PrenomEtNom ,  Sexe,   DateDeNaissance, Email, NumeroDeTel ,  Piece, Adresse,  NumeroDurgence }; 
@@ -66,6 +67,7 @@ export class UserForm extends Component {
       default:
         (console.log('votre profil'))
     }
+    
   }
 }
 
