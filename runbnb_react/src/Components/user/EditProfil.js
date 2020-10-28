@@ -101,11 +101,11 @@ class EditProfile extends Component {
 
      <div className="p-20 flex">
 
-       <span className="">
+       <span className="flex">
      
-
+          
        </span>
-       <span className="w-1/3  ">
+       <span className="w-1/3 float-right">
 
           <UserForm/>
       </span>
