@@ -12,6 +12,7 @@ import {
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
 import Signup from "./Components/forms/Signup";
+import Details from "./Components/forms/Details";
 
 class App extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class App extends React.Component {
                 </Route>
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signup" component={Signup} />
+                <Route exact path="/details" component={Details} />
               </Switch>
           </div>
 

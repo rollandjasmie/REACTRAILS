@@ -11,7 +11,7 @@ class HomePage extends React.Component{
     render(){
       return(
         <Formik>
-            <div className="w-full">
+            <div className="w-full bg-white">
                 <Navbar/>
                 <div className="">
                   <div className="with-bg container mx-auto flex flex-wrap flex-col md:flex-row mx-12 my-5 py-6 
@@ -34,7 +34,7 @@ class HomePage extends React.Component{
                 <div className=" pl-12 py-5">
                   <h1 className="text-xl ">Les offres du moment :<span className="text-xs"> &nbsp; (voir toutes les offres)</span></h1>
                 </div>
-                 <div className="py-5 px-5">
+                 <div className="py-5 px-5" >
                   <CarouselItems/>
                  </div>
                  <div className=" pl-12 py-5">
