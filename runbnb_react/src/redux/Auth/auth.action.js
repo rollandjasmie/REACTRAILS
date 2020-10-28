@@ -34,18 +34,19 @@ export const userLoginAttempt = ({ email, password }) => {
             email: email,
             password: password
         }).then(response => {
-            if (response.status === 200) {
+            console.log(response.data)
+            if (response.data.error === "Mot de passe ou email incorrect") {
+                
+                
+                const message = 'email ou mot de passe incorrect';
+
+                dispatch((authLoginError(message)))
+            } else {
                 const token = response.data.token;
                 const user = response.data.user ? response.data.user : null;
 
                 dispatch((authLoginSuccess(token, user)))
-
                 history.push('/');
-                
-            } else {
-                const message = 'Utilisateur ou mot de passe incorrect';
-
-                dispatch((authLoginError(message)))
             }
         }).catch(error => {
             let status = null;

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux'
 
 export class Confirm extends Component {
+
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
@@ -14,11 +16,10 @@ export class Confirm extends Component {
     e.preventDefault();
     this.props.nextStep();
   };
-
+  
   render() {
-    const {
-      values: { PrenometNom, Sexe, DateDeNaissance, Email, NumeroDeTel, Piece,Adresse,NumeroDurgence, }
-    } = this.props;
+    const { user } = this.props;
+ 
     return (
      
         <>
@@ -26,28 +27,28 @@ export class Confirm extends Component {
             
             <List>
               <ListItem>
-                <ListItemText primary="PrenometNom" secondary={PrenometNom} />
+                <ListItemText primary="Prenom et Nom" secondary={user.name}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary="Sexe" secondary={Sexe} />
+                <ListItemText primary="Sexe" secondary={user.sexe} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="DateDeNaissance" secondary={DateDeNaissance} />
+                <ListItemText primary="Date De Naissance" secondary={user.date_of_birth} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Email" secondary={Email} />
+                <ListItemText primary="Email" secondary={user.email} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="NumeroDeTel" secondary={NumeroDeTel} />
+                <ListItemText primary="Numero De Tel" secondary={user.mobile} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Piece" secondary={Piece} />
+                <ListItemText primary="Piece"  />
               </ListItem>
                 <ListItem>
-                <ListItemText primary="Adresse" secondary={Adresse} />
+                <ListItemText primary="Adresse" secondary={user.adresse} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="NumeroDurgence" secondary={NumeroDurgence} />
+                <ListItemText primary="Numero D'urgence" secondary={user.urgence} />
               </ListItem>
             </List>
             <br />
@@ -66,4 +67,9 @@ export class Confirm extends Component {
   }
 }
 
-export default Confirm;
+const mapStateToPropos=(state) =>{
+  return{
+    ...state.auth
+  }
+}
+export default connect(mapStateToPropos) (Confirm);

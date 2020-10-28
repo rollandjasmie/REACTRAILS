@@ -64,15 +64,17 @@ var userLoginAttempt = function userLoginAttempt(_ref) {
       email: email,
       password: password
     }).then(function (response) {
-      if (response.status === 200) {
+      console.log(response.data);
+
+      if (response.data.error === "Mot de passe ou email incorrect") {
+        var message = 'email ou mot de passe incorrect';
+        dispatch(authLoginError(message));
+      } else {
         var token = response.data.token;
         var user = response.data.user ? response.data.user : null;
         dispatch(authLoginSuccess(token, user));
 
         _history["default"].push('/');
-      } else {
-        var message = 'Utilisateur ou mot de passe incorrect';
-        dispatch(authLoginError(message));
       }
     })["catch"](function (error) {
       var status = null;

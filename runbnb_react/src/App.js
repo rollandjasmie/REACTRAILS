@@ -12,36 +12,47 @@ import {
 import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
 import Signup from "./Components/forms/Signup";
+import { connect } from 'react-redux';
+
 
 class App extends React.Component {
   render() {
+    const { isAuthenticated} = this.props;
     return (
       <>
         <Router>
-         
-          <div className="bg-gray-100 h-screen">
-            
-            
-              <Switch>
-                <Route path='/AjoutHebergements'>
-                    <AjoutHebergements/>
-                </Route>
-                
-                <Route exact path="/Dashboard" component={Dashboard} />
-                <Route exact path="/EditProfil" component={EditProfil} />
+          <Switch>
+            {isAuthenticated?(         
+                <div className="bg-gray-100 h-screen">
+                      <Route path='/AjoutHebergements'>
+                          <AjoutHebergements/>
+                      </Route>
+                      
+                      <Route exact path="/Dashboard" component={Dashboard} />
+                      <Route exact path="/EditProfil" component={EditProfil} />
 
-                <Route exact path='/'>
-                    <HomePage/>
-                </Route>
-                <Route exact path="/signin" component={SignIn} />
-                <Route exact path="/signup" component={Signup} />
-              </Switch>
-          </div>
-
+                      <Route exact path='/'>
+                          <HomePage/>
+                      </Route>
+                </div>
+              ) : 
+                <>
+                  <Route exact path='/' component={HomePage} />
+                  <Route exact path="/signin" component={SignIn} />
+                  <Route exact path="/signup" component={Signup} />
+                </>
+            }
+          </Switch>
         </Router>
-      </>);
+      </>
+    );
   }
-
-  
 }
-export default App;
+
+const mapStateToprops =(state) => {
+  return {
+    ...state.auth
+  }
+}
+
+export default connect(mapStateToprops)(App);

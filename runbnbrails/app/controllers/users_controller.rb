@@ -30,6 +30,13 @@ class UsersController < ApplicationController
             render json: {error: "Mot de passe ou email incorrect"}
         end
     end
+    def update
+        @users =User.find_by(id:params[:id])
+       @users.update(user_params)
+        render json:{
+            user: @users
+        }
+    end
     
     
     def auto_login
@@ -39,7 +46,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password)
+        params.require(:user).permit(:id,:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password)
     end
 
 
