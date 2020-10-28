@@ -23,14 +23,13 @@ _axios["default"].defaults.baseURL = 'http://localhost:4000/';
 _axios["default"].interceptors.request.use(function (config) {
   var token = null;
   var jwtToken = window.localStorage.getItem('jwtToken');
+  console.log(jwtToken);
 
   if (jwtToken) {
     token = jwtToken;
     config.headers.Authorization = "Bearer ".concat(token);
   } else {
-    config.headers.Authorization = null;
-
-    _history["default"].push("/login");
+    config.headers.Authorization = null; //history.push("/signup");
   }
 
   return config;

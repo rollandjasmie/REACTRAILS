@@ -22,8 +22,8 @@ class Signup extends React.Component{
                 password: ''
             }}
             validationSchema={LoginSchema}
-             onSubmit={(values) => {
-                this.props.userLoginAttempt(values);
+            onSubmit={(values) => {
+              this.props.userLoginAttempt(values);
             }}
         >
           {({ errors, touched }) => (
@@ -39,7 +39,7 @@ class Signup extends React.Component{
               <div className="  w-2/6 py-10 ">
               <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <Form className="  px-10">
+                    <Form className="  px-10" >
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Se connecter</h1>
                        
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
@@ -80,7 +80,7 @@ class Signup extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userLoginAttempt: (email, password) => {dispatch(userLoginAttempt(email, password))}
+        userLoginAttempt: (values) => {dispatch(userLoginAttempt(values))}
     }
 }
   export default connect(mapStateToProps, mapDispatchToProps)(Signup);

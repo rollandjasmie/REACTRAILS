@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 export class FormUserDetails extends Component {
   continue = e => {
     e.preventDefault();
-    this.props.nextStep();
+    this.props.prevStep();
   };
 
   render() {
