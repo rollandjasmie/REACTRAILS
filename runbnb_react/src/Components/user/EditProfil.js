@@ -3,6 +3,8 @@ import Dropdow from './Dropdow';
 import Navboard from '../forms/Navbar/Navboard';
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
+import {render} from 'react-dom';
+import AvatarUploader from './EditProfil';
 
 
 
@@ -108,20 +110,9 @@ class EditProfile extends Component {
      <div className="p-20 ">
 
        <span className="">
-       <IconButton>
- <Avatar 
-  src="/images/example.jpg" 
-  style={{
-    margin: "10px",
-    width: "100px",
-    height: "100px",
-  }} 
- />
-</IconButton>
-
 
        </span>
-       <span className="w-1/3 float-right">
+       <span className="w-1/3 float-right ">
 
           <UserForm/>
       </span>
