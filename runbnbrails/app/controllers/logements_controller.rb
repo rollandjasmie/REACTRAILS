@@ -71,13 +71,9 @@ class LogementsController < ApplicationController
         params.require(:conditions).permit(:conditions)
     end
     def regle_params
-<<<<<<< HEAD
         params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2, regle: [])
     end
     def cal_params
         params.require(:date).permit( :startDate , :endDate)
-=======
-        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2,regle: [])
->>>>>>> d8c8e10cf3372c2144a560e92a220a084b7a8f6e
     end
 end
