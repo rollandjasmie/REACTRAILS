@@ -24,13 +24,29 @@ class LogementsController < ApplicationController
         @equipement = Equipement.create(title: params[:title],logement_id:@logement.id)
 
          #regle controller new
-         @regle = regle.new(regle_params)
+         @regle = Regle.new(regle_params)
          @regle.logement_id = @logement.id
          @regle.save
          json_response(@regle, :created)
         
 
     end
+    
+    def update
+        log = Logement.find_by(id:params[:id])
+        
+        if log=log.update(name:params[:name],types:params[:types],categorie:params[:categorie])
+            render json: {
+                status:log
+            }
+        else
+           render json:{ 
+               erreur: :error 
+            } 
+        end
+        
+    end
+    
 
      private 
 
@@ -47,6 +63,6 @@ class LogementsController < ApplicationController
         params.require(:conditions).permit(:conditions)
     end
     def regle_params
-        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2)
+        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2,regle: [])
     end
 end

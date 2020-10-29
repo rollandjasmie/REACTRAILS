@@ -32,13 +32,17 @@ componentDidMount(){
   
   render() {
     if (this.state.user) {
+      const values = {
+        name:this.state.user.name,
+        first_name:this.state.user.first_name
+      }
 
     return (
         <>
         
            <List>
               <ListItem>
-                <ListItemText primary="Prenom et Nom" secondary={this.state.user.name}/>
+                <ListItemText primary="Prenom et Nom" secondary={`${values.name}  ${values.first_name}`}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary="Sexe" secondary={this.state.user.sexe} />

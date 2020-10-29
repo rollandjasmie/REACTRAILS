@@ -55,6 +55,13 @@ continue = e => {
                 margin="normal"
                 fullWidth
               />
+               <TextField
+                label={'Prénom'}
+                onChange={(e) => {this.setState({first_name: e.target.value})}}
+                defaultValue={this.state.user.first_name}
+                margin="normal"
+                fullWidth
+              />
               <br />
 
               <TextField
