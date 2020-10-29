@@ -20,6 +20,7 @@ import StepProgress from './components/StepProgress';
 import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
+import axios from '../../axios'
 
 // import ShowUser from '../Logements/ShowUser'
 
@@ -38,7 +39,7 @@ export default function CustomizedSteppers() {
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
-      type: '',
+      types: '',
       categorie: '',
     },
     localisation:{
@@ -54,7 +55,9 @@ export default function CustomizedSteppers() {
     lits:{},  
     canapes:{},
     autres:{},
+
     title: {},
+
     photo:[],
     regles: {
         regle: '',
@@ -65,7 +68,11 @@ export default function CustomizedSteppers() {
       },
     date:{
     },
-    conditions:{},
+    conditions: {},
+    chambreT: {},
+    salonT: {},
+    autreT: {},
+
   
   });
 
@@ -88,9 +95,9 @@ export default function CustomizedSteppers() {
     setActiveStep((prevActiveStep) => prevActiveStep - 7);
   };
   const saveHebergement = () => {
-    /*axios.post('/logement', formValue).then(response => {
+    axios.post('/logements', formValue).then(response => {
       
-    })*/
+    })
   }
 
   const getStepContent = () => {
@@ -175,7 +182,10 @@ export default function CustomizedSteppers() {
             nextStep={nextStep}/>
         
        case 11:
-              return <PageCharte/>            
+              return <PageCharte
+              saveHebergement = {saveHebergement}
+              />     
+
     }
   }
 

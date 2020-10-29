@@ -121,7 +121,7 @@ class EditProfile extends Component {
 
 
        </span>
-       <span className="w-1/3  ">
+       <span className="w-1/3 float-right">
 
           <UserForm/>
       </span>

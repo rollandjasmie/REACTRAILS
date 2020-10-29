@@ -61,11 +61,11 @@ export default class Conditions extends React.Component {
             </div>
           </Form>
         </Formik>
+
         </div>
        </> 
     )
-  
-      
+ 
       }
   }
 

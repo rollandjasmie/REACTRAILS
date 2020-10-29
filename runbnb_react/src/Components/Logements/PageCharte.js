@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field,ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import '../../Charte.css';
 
@@ -8,26 +8,18 @@ class PageCharte extends React.Component {
   render() {
     return (
       <Formik
-       initialValues={{
-       
-         pays: '',
-         ville: '',
-         adresse:'',
-         code: '',
-         adresse2: ''
-       }}
-     
-       onSubmit={values => {
-          let { formValue, setFormValue } = this.props;
-
-          formValue = {...formValue, localisation: values};
-
-          setFormValue(formValue);
-
+      initialValues={{
+        acceptTerms: false
+    }}
+    validationSchema={Yup.object().shape({
+      acceptTerms: Yup.bool().oneOf([true], 'les termes de conditions son requise')
+  })}
+  onSubmit={fields => {
+      let { formValue, setFormValue } = this.props;
+          this.props.saveHebergement();
           console.log(formValue);
-
-          this.props.nextStep();
-       }}
+          setFormValue(formValue);
+  }}
      >
        {({ values, errors, touched, setFieldValue }) => (
          <Form className="flex justify-center">
@@ -61,14 +53,15 @@ class PageCharte extends React.Component {
             <hr className="w-full my-5"></hr>
 
             <div className="flex ">
-              <input type="checkbox" className=""></input>
+              <Field type="checkbox" name="acceptTerms" className={ (errors.acceptTerms && touched.acceptTerms  ? ' is-invalid' : '' )}></Field>
               <p className=" atteste text-sm ">J’atteste qu’il s’agit d’une activité d’hébergement légale disposant de
                toutes les autorisations nécessaires pouvant être présentées sur demande Runbnb.com </p>
             </div>
    
             <div className="flex py-4">
-              <input type="checkbox" className=""></input>
+              <Field type="checkbox" name="acceptTerms" className={(errors.acceptTerms && touched.acceptTerms  ? ' is-invalid' : '')}></Field>
               <p className=" atteste2 text-sm ">J’ai lu et j’accepte les Conditions Générales de Runbnb.com</p>
+              <ErrorMessage name="acceptTerms" component="div" className="invalid-feedback flex-4" />
             </div>
            
            
