@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import DropDown from '../DropDown/DropDown';
 import { connect } from 'react-redux';
 
-class Navbar extends Component {
+class Navbarextra extends Component {
     render() {
       const { isAuthenticated, user } = this.props;
       return (
@@ -49,11 +49,9 @@ class Navbar extends Component {
                   <form>
                     <>
                       <div className="flex">
-                        <DropDown title="Espace propriétaire" className="nav-action mx-5">
-                          <NavLink to="/Dashboard"><div className="item">Gérer mes annonces</div></NavLink>
-                          <NavLink to=""><div className="item">Service à la carte</div></NavLink>
-                        </DropDown>
-
+                      <NavLink to="/signup"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                        <a className=" hover:text-gray-900">Changer d'hébergement</a>
+                      </NavLink>
                         {/* <DropDown title="Espace voyageur" className="nav-action">
                           <NavLink to=""><div className="item">S'inscrire</div></NavLink>
                           <NavLink to=""><div className="item">Se connecter</div></NavLink>
@@ -77,4 +75,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbarextra);
