@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.authRefreshUser = exports.AUTH_REFRESH_USER = exports.userLogoutAttempt = exports.userLoginAttempt = exports.authLogoutSuccess = exports.authLoginSuccess = exports.authLoginError = exports.authLoginRequest = exports.AUTH_LOGOUT_SUCCESS = exports.AUTH_LOGIN_SUCCESS = exports.AUTH_LOGIN_ERROR = exports.AUTH_LOGIN_REQUEST = void 0;
+exports.authRefreshUser = exports.AUTH_REFRESH_USER = exports.userLogoutAttempt = exports.userUpdateAttempt = exports.userLoginAttempt = exports.authUpdateSuccess = exports.authLogoutSuccess = exports.authLoginSuccess = exports.authLoginError = exports.authLoginRequest = exports.AUTH_UPDATE_SUCCESS = exports.AUTH_LOGOUT_SUCCESS = exports.AUTH_LOGIN_SUCCESS = exports.AUTH_LOGIN_ERROR = exports.AUTH_LOGIN_REQUEST = void 0;
 
 var _axios = _interopRequireDefault(require("../../axios"));
 
@@ -19,6 +19,8 @@ var AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS';
 exports.AUTH_LOGIN_SUCCESS = AUTH_LOGIN_SUCCESS;
 var AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
 exports.AUTH_LOGOUT_SUCCESS = AUTH_LOGOUT_SUCCESS;
+var AUTH_UPDATE_SUCCESS = 'AUTH_UPDATE_SUCCESS';
+exports.AUTH_UPDATE_SUCCESS = AUTH_UPDATE_SUCCESS;
 
 var authLoginRequest = function authLoginRequest() {
   return {
@@ -55,6 +57,15 @@ var authLogoutSuccess = function authLogoutSuccess() {
 
 exports.authLogoutSuccess = authLogoutSuccess;
 
+var authUpdateSuccess = function authUpdateSuccess(user) {
+  return {
+    type: AUTH_UPDATE_SUCCESS,
+    user: user
+  };
+};
+
+exports.authUpdateSuccess = authUpdateSuccess;
+
 var userLoginAttempt = function userLoginAttempt(_ref) {
   var email = _ref.email,
       password = _ref.password;
@@ -64,15 +75,17 @@ var userLoginAttempt = function userLoginAttempt(_ref) {
       email: email,
       password: password
     }).then(function (response) {
-      if (response.status === 200) {
+      console.log(response.data);
+
+      if (response.data.error === "Mot de passe ou email incorrect") {
+        var message = 'email ou mot de passe incorrect';
+        dispatch(authLoginError(message));
+      } else {
         var token = response.data.token;
         var user = response.data.user ? response.data.user : null;
         dispatch(authLoginSuccess(token, user));
 
         _history["default"].push('/');
-      } else {
-        var message = 'Utilisateur ou mot de passe incorrect';
-        dispatch(authLoginError(message));
       }
     })["catch"](function (error) {
       var status = null;
@@ -98,6 +111,21 @@ var userLoginAttempt = function userLoginAttempt(_ref) {
 };
 
 exports.userLoginAttempt = userLoginAttempt;
+
+var userUpdateAttempt = function userUpdateAttempt(user, values) {
+  return function (dispatch) {
+    _axios["default"].put("/users/".concat(user.id), values).then(function (response) {
+      if (response.status === 200) {
+        console.log(response.data);
+        var _user = response.data.user;
+        console.log(_user);
+        dispatch(authUpdateSuccess(_user));
+      }
+    });
+  };
+};
+
+exports.userUpdateAttempt = userUpdateAttempt;
 
 var userLogoutAttempt = function userLogoutAttempt() {
   return function (dispatch) {

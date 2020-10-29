@@ -22,7 +22,7 @@ import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 import axios from '../../axios'
 
-import ShowUser from '../Logements/ShowUser'
+// import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";

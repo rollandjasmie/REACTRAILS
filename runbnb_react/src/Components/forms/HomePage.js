@@ -11,21 +11,21 @@ class HomePage extends React.Component{
     render(){
       return(
         <Formik>
-            <div className="w-full">
+            <div className="w-full bg-white">
                 <Navbar/>
                 <div className="">
-                  <div className="with-bg container mx-auto flex flex-wrap flex-col md:flex-row mx-12 my-5 py-6 
-                  w-11/12 h-64 flex justify-center container">
-                  <input  className="appearance-none block w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2" placeholder="Nom" />
+                  <div className="with-bg container mx-auto flex flex-wrap flex-col md:flex-row mx-12 my-5 py-5 
+                  w-11/12  flex justify-center container">
+                  <input  className="appearance-none block w-42 h-10 bg-gray-100 text-gray-700 border-2 border-gray-200
+                  rounded my-5 px-4 leading-tight focus:outline-none focus:bg-white focus:border-orange-500 mx-2 " placeholder="Nom" />
 
-                  <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2 "></input>
-                    <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2 "></input>   
+                  <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-100 text-gray-700 border-2 border-gray-200
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500 mx-2 my-5 "></input>
+                    <input type="date" className="appearance-none text-center px-5 w-42 h-10 bg-gray-100 text-gray-700 border-2 border-gray-200
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500 mx-2 my-5 "></input>   
 
-                      <select className="appearance-none text-center px-5 w-42 h-10 bg-gray-200 text-gray-700 border border-gray-200
-                      rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-2  ">
+                      <select className="appearance-none text-center px-5 w-42 h-10 bg-gray-100 text-gray-700 border-2 border-gray-200
+                      rounded leading-tight focus:outline-none focus:bg-white focus:border-orange-500 mx-2 my-5  ">
                         <option value="green">1 voyageur</option>
                         <option value="blue">Plusieurs voyageurs</option>
                       </select>
@@ -34,7 +34,7 @@ class HomePage extends React.Component{
                 <div className=" pl-12 py-5">
                   <h1 className="text-xl ">Les offres du moment :<span className="text-xs"> &nbsp; (voir toutes les offres)</span></h1>
                 </div>
-                 <div className="py-5 px-5">
+                 <div className="py-5 px-5" >
                   <CarouselItems/>
                  </div>
                  <div className=" pl-12 py-5">
