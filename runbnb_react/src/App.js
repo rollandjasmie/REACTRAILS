@@ -13,6 +13,8 @@ import HomePage from "./Components/forms/HomePage";
 import SignIn from "./Components/forms/SignIn";
 import Signup from "./Components/forms/Signup";
 import { connect } from 'react-redux';
+import Details from './Components/forms/Details'
+import NotFoundPage from './NotFoundPage/NotFoundPage';
 
 
 class App extends React.Component {
@@ -30,6 +32,9 @@ class App extends React.Component {
                       
                       <Route exact path="/Dashboard" component={Dashboard} />
                       <Route exact path="/EditProfil" component={EditProfil} />
+                      <Route exact path="/details" component={Details} />
+                      <Route component={NotFoundPage} />
+
 
                       <Route exact path='/'>
                           <HomePage/>
@@ -37,9 +42,11 @@ class App extends React.Component {
                 </div>
               ) : 
                 <>
+                  <Route exact path="/details" component={Details}/>
                   <Route exact path='/' component={HomePage} />
                   <Route exact path="/signin" component={SignIn} />
                   <Route exact path="/signup" component={Signup} />
+                  <Route component={NotFoundPage} />
                 </>
             }
           </Switch>
