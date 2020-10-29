@@ -132,20 +132,17 @@ class EditProfile extends Component {
 
    </div>
     
+  </div>
 
-     </div>
+  <div>
 
+      <div class="w-1/3 ml-1 h-34 bg-white  juser">
 
-     <div>
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-800 f">Lesquelles de mes informations sont communiquées à des tiers ?</p>
 
-
-       <div class="w-1/3 ml-1 h-34 bg-white  juser">
-
-<p class="w-full h-22 text-lg font-medium text-center text-gray-800 f">Lesquelles de mes informations sont communiquées à des tiers ?</p>
-
-<p class="w-full h-22 text-lg font-medium text-center text-gray-500 f">Runbnb ne communique les coordonnées de l’hôte aux voyageurs qu’après la confirmation de la réservation.</p>
-       </div>
-     </div>
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-500 f">Runbnb ne communique les coordonnées de l’hôte aux voyageurs qu’après la confirmation de la réservation.</p>
+    </div>
+  </div>
    
 
 
