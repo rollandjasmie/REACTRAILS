@@ -24,10 +24,15 @@ class LogementsController < ApplicationController
         @equipement = Equipement.create(title: params[:title],logement_id:@logement.id)
 
          #regle controller new
-         @regle = regle.new(regle_params)
+         @regle = Regle.new(regle_params)
          @regle.logement_id = @logement.id
          @regle.save
-         json_response(@regle, :created)
+
+         #calendrier controller new
+         @cal = Calendrier.new(cal_params)
+         @cal.logement_id = @logement.id
+         @cal.save
+         json_response(@cal, :created)   
         
 
     end
@@ -47,6 +52,9 @@ class LogementsController < ApplicationController
         params.require(:conditions).permit(:conditions)
     end
     def regle_params
-        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2)
+        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2, regle: [])
+    end
+    def cal_params
+        params.require(:date).permit( :startDate , :endDate)
     end
 end
