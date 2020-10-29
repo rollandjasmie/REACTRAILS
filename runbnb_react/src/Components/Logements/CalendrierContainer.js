@@ -4,11 +4,7 @@ import '../../App.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { frFR } from '@material-ui/core/locale';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: '#1976d2' },
-  },
-}, frFR);
+
 export default class CalendrierContainer extends Component {
   state={
 
@@ -31,7 +27,7 @@ export default class CalendrierContainer extends Component {
                <h2 className="text-sm mb-10">Cliquez sur chaque date individuellement. Toutes les dates colorés sont disponibles à la réservation. Ne vous inquitez pas, vous pourrez toujours ajouter ou supprimer des dates plus tard.</h2>
             
                  <div className="">
-               <ThemeProvider theme={theme}>
+               <ThemeProvider >
                   <CalendrierComponent dateRange={this.dateRange}/>  
                </ThemeProvider>
                   </div>
