@@ -97,7 +97,11 @@ export default function CustomizedSteppers() {
     setActiveStep((prevActiveStep) => prevActiveStep - 7);
   };
   const saveHebergement = () => {
+<<<<<<< HEAD
     console.log(formValue.date)
+=======
+    console.log(formValue.regles.regle)
+>>>>>>> d8c8e10cf3372c2144a560e92a220a084b7a8f6e
     axios.post('/logements', formValue).then(response => {
       
     })

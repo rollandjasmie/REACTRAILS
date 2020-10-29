@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   resources :logements do
-    resources :adresses
   end
+  put "/logements/:longement_id/adresse",to:"adresses#update"
 end
