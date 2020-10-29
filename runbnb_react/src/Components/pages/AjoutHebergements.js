@@ -29,6 +29,7 @@ import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+import history from '../../history';
 
 
 export default function CustomizedSteppers() {
@@ -99,7 +100,7 @@ export default function CustomizedSteppers() {
   const saveHebergement = () => {
     console.log(formValue.regles.regle)
     axios.post('/logements', formValue).then(response => {
-      
+      history.push('/')
     })
   }
 

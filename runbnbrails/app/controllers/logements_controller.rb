@@ -3,8 +3,8 @@ class LogementsController < ApplicationController
 
     def create
         @logement = Logement.new(logement_params)
+        @logement.user_id=current_user.id
         @logement.save
-
         #adresse controller new
         @adresse = Adresse.new(adresse_params)
         @adresse.logement_id = @logement.id
