@@ -6,7 +6,7 @@ export const AUTH_LOGIN_REQUEST = 'AUTH_LOGIN_REQUEST';
 export const AUTH_LOGIN_ERROR = 'AUTH_LOGIN_ERROR';
 export const AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS';
 export const AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
-
+export const AUTH_UPDATE_SUCCESS = 'AUTH_UPDATE_SUCCESS';
 
 export const authLoginRequest = () => ({
     type: AUTH_LOGIN_REQUEST
@@ -27,6 +27,11 @@ export const authLogoutSuccess = () => ({
     type: AUTH_LOGOUT_SUCCESS
 });
 
+export const authUpdateSuccess = (user) => ({
+    type: AUTH_UPDATE_SUCCESS,
+    user: user
+});
+
 export const userLoginAttempt = ({ email, password }) => {
     return (dispatch) => {
         dispatch(authLoginRequest());
@@ -34,18 +39,19 @@ export const userLoginAttempt = ({ email, password }) => {
             email: email,
             password: password
         }).then(response => {
-            if (response.status === 200) {
+            console.log(response.data)
+            if (response.data.error === "Mot de passe ou email incorrect") {
+                
+                
+                const message = 'email ou mot de passe incorrect';
+
+                dispatch((authLoginError(message)))
+            } else {
                 const token = response.data.token;
                 const user = response.data.user ? response.data.user : null;
 
                 dispatch((authLoginSuccess(token, user)))
-
                 history.push('/');
-                
-            } else {
-                const message = 'Utilisateur ou mot de passe incorrect';
-
-                dispatch((authLoginError(message)))
             }
         }).catch(error => {
             let status = null;
@@ -67,6 +73,21 @@ export const userLoginAttempt = ({ email, password }) => {
             }
             
             dispatch((authLoginError(message)))
+        })
+    }
+}
+
+
+export const userUpdateAttempt = (user, values) => {
+    return (dispatch) => {
+        axios.put(`/users/${user.id}`, values)
+        .then(response => {
+            if (response.status === 200) {
+                console.log(response.data)
+                const { user } = response.data;
+                console.log(user);
+                dispatch(authUpdateSuccess(user));
+            }
         })
     }
 }

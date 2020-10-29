@@ -14,6 +14,7 @@ const LoginSchema = Yup.object().shape({
 
 class Signup extends React.Component{
     render(){
+      const { error } = this.props
       return(
      
         <Formik
@@ -55,6 +56,9 @@ class Signup extends React.Component{
                         <Field name="password" type="password" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder=" Mot de passe  " />
                         { errors.password && touched.password ? (<div className="text-red-600 text-sm font-bold">{errors.password}</div>) : null }
+                        <label className="text-red-600 text-sm ">
+                        { error}
+                        </label>
                         <button className="w-full appearance-none block  bg-orange-500 text-white rounded py-3
                          px-4 my-10 leading-tight focus:outline-none hover:font-bold"  type="submit">Se connecter</button> 
 
@@ -74,7 +78,7 @@ class Signup extends React.Component{
 
   const mapStateToProps = (state) => {
     return {
-        ...state.AuthReducer
+        ...state.auth
     }
 }
 

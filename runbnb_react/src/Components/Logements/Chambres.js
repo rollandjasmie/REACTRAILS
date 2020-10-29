@@ -61,12 +61,7 @@ import '../../App.css';
               <Formik
             
                   initialValues={{
-                    lits: [
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Simple"
-                      },
+                    Lits : [
                       {
                         checked: false,
                         quantite: 0,
@@ -75,8 +70,34 @@ import '../../App.css';
                       {
                         checked: false,
                         quantite: 0,
-                        name: "Lit Famille"
+                        name: "Lit Simple"
+                      },
+                      {
+                        checked: false,
+                        quantite: 0,
+                        name: "Lit King-size"
+                      },
+                      {
+                        checked: false,
+                        quantite: 0,
+                        name: "Lit Superposé"
+                      },
+                      {
+                        checked: false,
+                        quantite: 0,
+                        name: "Canapé lit"
+                      },
+                      {
+                        checked: false,
+                        quantite: 0,
+                        name:"Canapé lit double"
+                      },
+                      {
+                        checked: false,
+                        quantite: 0,
+                        name: "Futon"
                       }
+
                     ]
                   }}    
                     onSubmit={values => {
@@ -87,6 +108,7 @@ import '../../App.css';
 
                       setFormValue(formValue);
                       console.log(formValue);
+                      setSmShow(false)
               }}
               >
                 {({ values,checked, handleSubmit, touched, setFieldValue }) => (
@@ -102,35 +124,52 @@ import '../../App.css';
                       {values[value].map((item, index) => {
                         return (
                           <>
-                            <div>
-                              {/* Titre de l'option .name */}
-                              {item.name} 
-                              <input
-                                type="checkbox"
-                                onClick={event =>
-                                  handleChange(value, index, setFieldValue, event)
-                                }
+                      <div className="w-full ">
+
+                     
+                          <label className="flex">
+
+                              <div className="w-1/2">
+                                {/* Titre de l'option .name */}
+                             
+                                <input className="mr-2"
+                                   
+                                  type="checkbox"
+                                  onClick={event =>
+                                    handleChange(value, index, setFieldValue, event)
+                                  }
+                               
+                          
+                               />
+                                  {item.name} 
+                              </div>
+
+                              <span className="">
+                                <IncrementeComponent
+                                  onChange={quantity =>
+                                    setFieldValue(
+                                      `${value}[${index}].quantite`,
+                                      quantity
+                                    )
+                                  }
                               />
+                            </span>
+
+                            </label>
+
                             </div>
-                            <div style={{ display: "inline-block" }}>
-                              <IncrementeComponent
-                                onChange={quantity =>
-                                  setFieldValue(
-                                    `${value}[${index}].quantite`,
-                                    quantity
-                                  )
-                                }
-                              />
-                            </div>
+           
+
                           </>
                         );
                       })}
                     </>
                   );
                 })}
-              <button type="submit">Sauvegarder</button>
+              <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5">
+              Sauvegarder</button>
             </Form>
-          )}
+       
                 </div>
               </Modal.Body>
               ) }
@@ -170,6 +209,7 @@ import '../../App.css';
 
                       setFormValue(formValue);
                       console.log(formValue);
+                      setLgShow(false)
               }}
               >
                 {({ values,checked, handleSubmit, touched, setFieldValue }) => (
@@ -185,35 +225,44 @@ import '../../App.css';
                       {values[value].map((item, index) => {
                         return (
                           <>
-                            <div>
-                              {/* Titre de l'option .name */}
-                              {item.name} 
-                              <input
-                                type="checkbox"
-                                onClick={event =>
-                                  handleChange(value, index, setFieldValue, event)
-                                }
-                              />
-                            </div>
-                            <div style={{ display: "inline-block" }}>
-                              <IncrementeComponent
-                                onChange={quantity =>
-                                  setFieldValue(
-                                    `${value}[${index}].quantite`,
-                                    quantity
-                                  )
-                                }
-                              />
-                            </div>
+
+                          <div className="w-full">                       
+
+                                <label className="flex" >
+                                      <div className="w-1/2">
+                                        {/* Titre de l'option .name */}
+                                   
+                                        <input className="mr-2"
+                                          type="checkbox"
+                                          onClick={event =>
+                                            handleChange(value, index, setFieldValue, event)
+                                          }
+                                        />
+                                             {item.name} 
+                                      </div>
+                                      <span>
+                                        <IncrementeComponent
+                                          onChange={quantity =>
+                                            setFieldValue(
+                                              `${value}[${index}].quantite`,
+                                              quantity
+                                            )
+                                          }
+                                        />
+                                      </span>
+                                  </label>     
+
+                          </div>
                           </>
                         );
                       })}
                     </>
                   );
                 })}
-              <button type="submit">Sauvegarder</button>
+              <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5">
+              Sauvegarder</button>
             </Form>
-          )}
+
                 </div>
               </Modal.Body>
               ) }
@@ -261,6 +310,7 @@ import '../../App.css';
 
                       setFormValue(formValue);
                       console.log(formValue);
+                      setlgshowautre(false)
               }}
               >
                 {({ values,checked, handleSubmit, touched, setFieldValue }) => (
@@ -276,35 +326,43 @@ import '../../App.css';
                       {values[value].map((item, index) => {
                         return (
                           <>
-                            <div>
-                              {/* Titre de l'option .name */}
-                              {item.name} 
-                              <input
-                                type="checkbox"
-                                onClick={event =>
-                                  handleChange(value, index, setFieldValue, event)
-                                }
-                              />
-                            </div>
-                            <div style={{ display: "inline-block" }}>
-                              <IncrementeComponent
-                                onChange={quantity =>
-                                  setFieldValue(
-                                    `${value}[${index}].quantite`,
-                                    quantity
-                                  )
-                                }
-                              />
-                            </div>
+
+                           <div className="w-full">
+
+                             <label className="flex">
+                                  <div className="w-1/2">
+                                    {/* Titre de l'option .name */}
+                              
+                                    <input className="mr-2"
+                                      type="checkbox"
+                                      onClick={event =>
+                                        handleChange(value, index, setFieldValue, event)
+                                      }
+                                    />
+                                          {item.name} 
+                                  </div>
+                                  <span>
+                                    <IncrementeComponent
+                                      onChange={quantity =>
+                                        setFieldValue(
+                                          `${value}[${index}].quantite`,
+                                          quantity
+                                        )
+                                      }
+                                    />
+                                  </span>
+                            </label>  
+                          </div>   
                           </>
                         );
                       })}
                     </>
                   );
                 })}
-              <button type="submit">Sauvegarder</button>
+               <button  type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5">
+              Sauvegarder</button>
             </Form>
-          )}
+    
                 </div>
               </Modal.Body>
               ) }

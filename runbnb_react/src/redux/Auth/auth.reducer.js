@@ -46,6 +46,12 @@ export default(state = initialState, action) => {
                 isAuthenticating: false
             }
 
+        case 'AUTH_UPDATE_SUCCESS':
+            return {
+                ...state,
+                user: action.user
+            }
+
         case 'AUTH_REFRESH_USER':
                 return {
                     ...state,

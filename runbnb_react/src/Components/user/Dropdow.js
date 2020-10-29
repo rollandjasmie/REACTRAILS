@@ -35,8 +35,7 @@ import { connect } from 'react-redux';
         onClose={handleClose}
       >
         
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={() => logout()}>Logout</MenuItem>
+        <MenuItem onClick={() => logout()}>Déconnecter</MenuItem>
       </Menu>
     </div>
   );
