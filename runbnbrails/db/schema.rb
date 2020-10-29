@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_071654) do
+ActiveRecord::Schema.define(version: 2020_10_28_133809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adresses", force: :cascade do |t|
+    t.string "pays"
+    t.string "ville"
+    t.string "adresse"
+    t.string "code"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_adresses_on_logement_id"
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "conditions"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_conditions_on_logement_id"
+  end
+
+  create_table "equipements", force: :cascade do |t|
+    t.string "title"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_equipements_on_logement_id"
+  end
 
   create_table "logements", force: :cascade do |t|
     t.string "name"
@@ -21,6 +48,27 @@ ActiveRecord::Schema.define(version: 2020_10_27_071654) do
     t.string "types"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_maps_on_logement_id"
+  end
+
+  create_table "regles", force: :cascade do |t|
+    t.string "regle"
+    t.string "arrive1"
+    t.string "arrive2"
+    t.string "depart1"
+    t.string "depart2"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_regles_on_logement_id"
   end
 
   create_table "users", force: :cascade do |t|
