@@ -105,7 +105,7 @@ class EditProfile extends Component {
     </div>
   </nav>
 
-     <div className="p-20 flex">
+     <div className="p-20 ">
 
        <span className="">
        <IconButton>
@@ -118,11 +118,6 @@ class EditProfile extends Component {
   }} 
  />
 </IconButton>
-
-
-
-
-
 
 
        </span>
