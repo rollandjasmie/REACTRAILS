@@ -31179,3 +31179,65 @@ Completed 200 OK in 57ms (Views: 1.0ms | ActiveRecord: 8.3ms | Allocations: 9591
 
 
 >>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
+Started POST "/logements" for ::1 at 2020-10-30 08:32:20 +0300
+  [1m[35m (26.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"", "types"=>"", "categorie"=>""}, "localisation"=>{"pays"=>"", "ville"=>"", "adresse"=>"", "code"=>""}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "canapes"=>{"canapes"=>[{"checked"=>true, "quantite"=>2, "name"=>" Canapés"}, {"checked"=>true, "quantite"=>4, "name"=>"Canapés lits"}]}, "autres"=>{"autres"=>[{"checked"=>true, "quantite"=>4, "name"=>"Lit Simple"}, {"checked"=>true, "quantite"=>3, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Famille"}]}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>["Animaux  admisdomestique", "Enfant bienvenus"], "arrive1"=>"14:00", "arrive2"=>"12:00", "depart1"=>"15:00", "depart2"=>"13:00"}, "date"=>{"startDate"=>"2020-10-29T21:00:00.000Z", "endDate"=>"2020-11-22T21:00:00.000Z"}, "conditions"=>{"conditions"=>""}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "Lits"=>{"Lits"=>[{"checked"=>true, "quantite"=>3, "name"=>"Lit Double"}, {"checked"=>true, "quantite"=>3, "name"=>"Lit Simple"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit King-size"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Superposé"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit double"}, {"checked"=>false, "quantite"=>0, "name"=>"Futon"}]}, "logement"=>{}}
+  [1m[36mUser Load (124.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+Completed 500 Internal Server Error in 434ms (ActiveRecord: 266.6ms | Allocations: 14723)
+
+
+  
+NoMethodError (undefined method `user_id=' for #<Logement:0x00000000049e8e38>
+Did you mean?  user=):
+  
+app/controllers/logements_controller.rb:6:in `create'
+Started POST "/login" for ::1 at 2020-10-30 08:33:51 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 499ms (Views: 1.6ms | ActiveRecord: 11.5ms | Allocations: 6980)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-30 08:33:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/logements" for ::1 at 2020-10-30 08:35:08 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"", "types"=>"", "categorie"=>""}, "localisation"=>{"pays"=>"", "ville"=>"", "adresse"=>"", "code"=>""}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "canapes"=>{"canapes"=>[{"checked"=>true, "quantite"=>2, "name"=>" Canapés"}, {"checked"=>true, "quantite"=>2, "name"=>"Canapés lits"}]}, "autres"=>{"autres"=>[{"checked"=>true, "quantite"=>3, "name"=>"Lit Simple"}, {"checked"=>true, "quantite"=>2, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Famille"}]}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>["Animaux  admisdomestique", "Hébergement fumeurBar"], "arrive1"=>"12:00", "arrive2"=>"14:00", "depart1"=>"15:00", "depart2"=>"16:00"}, "date"=>{"startDate"=>"", "endDate"=>""}, "conditions"=>{"conditions"=>""}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "Lits"=>{"Lits"=>[{"checked"=>false, "quantite"=>0, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Simple"}, {"checked"=>true, "quantite"=>4, "name"=>"Lit King-size"}, {"checked"=>true, "quantite"=>3, "name"=>"Lit Superposé"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit double"}, {"checked"=>false, "quantite"=>0, "name"=>"Futon"}]}, "logement"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 11.9ms | Allocations: 6597)
+
+
+  
+NoMethodError (undefined method `user_id=' for #<Logement:0x00007f0b84c3fc30>
+Did you mean?  user=):
+  
+app/controllers/logements_controller.rb:6:in `create'
