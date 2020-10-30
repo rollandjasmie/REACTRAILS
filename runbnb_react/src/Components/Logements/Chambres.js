@@ -103,7 +103,7 @@ import '../../App.css';
                     onSubmit={values => {
                       // same shape as initial values
                       let { formValue, setFormValue } =props;
-
+                      console.log()
                       formValue = {...formValue, lits: values};
 
                       setFormValue(formValue);

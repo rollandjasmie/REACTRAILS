@@ -5,6 +5,11 @@ class LogementsController < ApplicationController
         @logement = Logement.new(logement_params)
         @logement.save
 
+        @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)
+        @salon = Salon.create(title: "Salon",logement_id: @logement.id)
+        @autre = Autre.create(title: "Autre espace",logement_id: @logement.id)
+
+
         #adresse controller new
         @adresse = Adresse.new(adresse_params)
         @adresse.logement_id = @logement.id
@@ -32,13 +37,26 @@ class LogementsController < ApplicationController
          @cal = Calendrier.new(cal_params)
          @cal.logement_id = @logement.id
          @cal.save
-         json_response(@cal, :created)   
-        
+         json_response(@cal, :created)
 
+         #lits controller new
+         @lits = Lit.new(lits_params)
+         @lits.chambre_id = @chambre.id
+         @lits.save
+          
+
+         #canapes controller new
+         @canape = Canape.new(canapes_params)
+         @canape.salon_id = @salon.id
+         @canape.save
+
+         #autre controller new
+         @autre = Autre.new(autre_params)
+         @autre.autre_id = @autre.id
+         @autre.save
+         json_response(@autre, :created)   
+          
     end
-
-
-
 
     def update
         log = Logement.find_by(id:params[:id])
@@ -76,4 +94,14 @@ class LogementsController < ApplicationController
     def cal_params
         params.require(:date).permit( :startDate , :endDate)
     end
+    def lits_params
+        params.require(:lits).permit( :name , :quantite, :checked)
+    end
+    def canapes_params
+        params.require(:canapes).permit( :name , :quantite, :checked)
+    end
+    def autre_params
+        params.require(:autres).permit( :name , :quantite, :checked)
+    end
 end
+

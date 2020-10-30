@@ -52,9 +52,21 @@ export default function CustomizedSteppers() {
       longitude:55.53817922704148,
       latitude:-21.121661209928707
     },
-    lits:{},  
-    canapes:{},
-    autres:{},
+    lits:{
+      name:"",
+      quantite: "",
+      checked:"",
+    },  
+    canapes:{
+      name:"",
+      quantite: "",
+      checked:"",
+    },
+    autres:{
+      name:"",
+      quantite: "",
+      checked:"",
+    },
 
     title: [],
     

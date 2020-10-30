@@ -5,4 +5,7 @@ class Logement < ApplicationRecord
     has_many :calendriers
     has_many :equipements
     has_many :regles
+    has_many :chambres
+    has_many :salons
+    has_many :autres
 end
