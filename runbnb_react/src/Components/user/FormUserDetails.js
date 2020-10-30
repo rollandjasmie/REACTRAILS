@@ -46,7 +46,7 @@ continue = e => {
 
       return (
 <>
-           <div className=''>       
+           <div className='foutu-overflow'>       
               <TextField 
             
                 label={' Nom'}

@@ -25,7 +25,7 @@ class App extends React.Component {
         <BrowserRouter>
 
           <Switch>
-          <div className="bg-gray-100 h-screen ">
+          <div className="bg-gray-100 h-screen overflow-x-hidden">
 
             {isAuthenticated?(  
               <>       
