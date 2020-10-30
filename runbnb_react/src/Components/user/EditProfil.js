@@ -114,8 +114,8 @@ class EditProfile extends Component {
             <hr></hr>
             <br></br>
       <p class="w-full h-12 text-lg text-center font-medium text-gray-500 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
-
-
+      <br></br>
+      <hr></hr>
    </span>  
 
 
