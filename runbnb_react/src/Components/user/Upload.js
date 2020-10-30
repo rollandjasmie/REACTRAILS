@@ -36,7 +36,7 @@ import React, { Component } from 'react';
           />
           <div className="label">
             <label className="image-upload" htmlFor="input">
-              <i className="material-icons">Mettre à jour </i>
+              <i className="material-icons font-medium roboto">Mettre à jour </i>
             
             </label>
           </div>

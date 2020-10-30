@@ -104,7 +104,6 @@ class EditProfile extends Component {
     </div>
   </nav>
   <div className="p-20 mt-15 flex ">
-   
         <span className="sary ">
         
 
@@ -114,17 +113,16 @@ class EditProfile extends Component {
             <br></br>
             <hr></hr>
             <br></br>
-      <p class="w-full h-12 text-lg text-center text-gray-600 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
+      <p class="w-full h-12 text-lg text-center font-medium text-gray-500 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
 
 
    </span>  
 
- 
 
 
 <p class="w-full h-12 text-lg text-center ml-24   text-gray-600">Membre depuis 2020</p>
    <div className="mt-10  ">
-        <span className="field bg-white shadow-md rounded px-8 pt-6 pb-8 mb-1 rounded-2xl ">
+        <span className="field bg-white shadow-md rounded px-8 pt-6 pb-8 mb-1 rounded-2xl">
 
           <UserForm/>
       </span>
@@ -135,7 +133,7 @@ class EditProfile extends Component {
 
   <div>
 
-      <div class="w-1/3 ml-1 h-34 bg-white  juser">
+      <div class=" ml-1 h-34 bg-white  juser">
 
           <p class="w-full h-22 text-lg font-medium text-center text-gray-800 f">Lesquelles de mes informations sont communiquées à des tiers ?</p>
 
