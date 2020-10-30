@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 
 import './HomePage.css';
-import Navbarextra from './Navbar/Navbaruser';
+import Navbarextra from './Navbar/Navbarextra';
 import { NavLink } from 'react-router-dom';
 
 
@@ -12,8 +12,36 @@ class Details extends React.Component{
       return(
         <Formik>
             <div className="w-full bg-white">
+              <div className="h-24">
                 <Navbarextra/>
-                        <h1 className="tracking-wide text-gray-700 mx-3 text-lg font-bold my-3"> > Détails de l'hébergement</h1>
+                </div> 
+                 <div className="flex w-full h-16 bg-blue-500">
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Accueil</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Tarif et calendrier</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Promotions</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Réservation</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Hébergement</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Boite de réception</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white pt-4 ">Comptabilité</h1>
+                    </div>
+                    <div className="navex h-full w-1/2 flex justify-center">
+                        <h1 className="text-md text-white text-center pt-4 ">Commentaire  clients</h1>
+                    </div>
+                   
+                 </div>       
                   
                 
           </div>  

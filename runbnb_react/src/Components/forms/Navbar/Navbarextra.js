@@ -5,74 +5,33 @@ import { connect } from 'react-redux';
 
 class Navbarextra extends Component {
     render() {
-      const { isAuthenticated, user } = this.props;
+  
       return (
-          <>
-              <header className="text-gray-700 body-font">
-                  { !isAuthenticated ? (
-                <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
-                <NavLink to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <img className="w-40 pt-2" src="./images/logo.jpg"></img>
-                  </NavLink>
-                  <NavLink to="/signup"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a className=" hover:text-gray-900">extra</a>
-                  </NavLink>
-                  <NavLink to="/signup"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a className=" hover:text-gray-900">Ajouter un hébergement</a>
-                  </NavLink>
-                 
-                  <form>
-                    <>
-                      <div className="flex">
-                        <DropDown title="Espace propriétaire" className="nav-action mx-5">
-                          <NavLink to="/signup"><div className="item">Gérer mes annonces</div></NavLink>
-                          <NavLink to="/signup"><div className="item">Service à la carte</div></NavLink>
-                        </DropDown>
-
-                        <DropDown title="Espace voyageur" className="nav-action">
-                          <NavLink to=""><div className="item">S'inscrire</div></NavLink>
-                          <NavLink to=""><div className="item">Se connecter</div></NavLink>
-                        </DropDown>
-                      </div>
-                    </>
-                  </form>
-                </div>) : null},
-                 { isAuthenticated ? (
-                    <>
-                    <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
-                <NavLink to="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <img className="w-40 pt-2" src="./images/logo.jpg"></img>
-                  </NavLink>
-                  <NavLink to="/AjoutHebergements"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a className=" hover:text-gray-900">Ajouter un hébergement</a>
-                  </NavLink>
-                  <form>
-                    <>
-                      <div className="flex">
-                      <NavLink to="/signup"  className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                        <a className=" hover:text-gray-900">Changer d'hébergement</a>
-                      </NavLink>
-                        {/* <DropDown title="Espace voyageur" className="nav-action">
-                          <NavLink to=""><div className="item">S'inscrire</div></NavLink>
-                          <NavLink to=""><div className="item">Se connecter</div></NavLink>
-                        </DropDown> */}
-                      </div>
-                    </>
-                  </form>
-                </div>
-                    
-                    </>
-                  ) : null }
-              </header>
+          <><header className="text-gray-700 bg-white">
+          <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
+            <NavLink to="/" className="flex title-font font-medium items-center text-gray-900 mb-3 md:mb-0">
+              <img className="w-40" src="./images/logo.jpg"></img>
+         
+            </NavLink>
+              <button className="  bg-orange-500 rounded-lg hover:bg-orange-700 hover:text-white
+               text-white px-3 py-1  mx-5">Accueil du groupe</button>
+            <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+              <div className="flex">
+              <a href='' className="no-underline border-2 border-blue-500  rounded-xl hover:bg-blue-500 hover:text-white
+               text-blue-500  px-4 mx-3">La Villa Nath - Saint Gilles Les Bains 6388771</a>
+         
+           <button className=" border-2 border-orange-500 rounded-xl hover:bg-orange-500 hover:text-white
+            text-orange-500  px-4 mx-3">Changer d'hébergement</button>
+             
+            </div>
+              </nav>
+      
+          </div>
+        </header>
           </>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    ...state.auth
-  }
-}
 
-export default connect(mapStateToProps)(Navbarextra);
+export default Navbarextra;

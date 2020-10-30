@@ -25,19 +25,23 @@ class SignIn extends Component {
         [name]: value
       })
     };
-
+    
     handleSubmit = (event) => {
         event.preventDefault()
-      axios.post('http://localhost:4000/users',this.state)
+      axios.post('/users',this.state)
       .then(response => {
         if (response.data.email === "Email déjà existé") {
             this.setState({
               erros:response.data.email
             })
         }else{
-            this.props.userLoginAttempt(this.state.email,this.state.password);
-
-        }
+          const values = {
+            email: this.state.email,
+            password:this.state.password 
+          }
+           this.props.userLoginAttempt(values)
+           
+          }
       })
     };
 
@@ -115,13 +119,13 @@ class SignIn extends Component {
 }
  const mapStateToProps = (state) => {
     return {
-        ...state.AuthReducer
+        ...state.auth
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userLoginAttempt: (values) => {dispatch(userLoginAttempt(values))}
+        userLoginAttempt: (email,password) => {dispatch(userLoginAttempt(email,password))}
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

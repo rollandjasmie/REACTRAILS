@@ -121,7 +121,6 @@ import '../../App.css';
                   return (
                     <>
                       {/* Titre selon la key(s) */}
-                      {String(value).toLocaleUpperCase()}
                       {values[value].map((item, index) => {
                         return (
                           <>
@@ -223,7 +222,6 @@ import '../../App.css';
                   return (
                     <>
                       {/* Titre selon la key(s) */}
-                      {String(value).toLocaleUpperCase()}
                       {values[value].map((item, index) => {
                         return (
                           <>
@@ -325,7 +323,6 @@ import '../../App.css';
                   return (
                     <>
                       {/* Titre selon la key(s) */}
-                      {String(value).toLocaleUpperCase()}
                       {values[value].map((item, index) => {
                         return (
                           <>

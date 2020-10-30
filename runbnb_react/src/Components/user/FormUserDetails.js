@@ -48,10 +48,18 @@ continue = e => {
 <>
            <div className='float:rigth'>       
               <TextField
-                placeholder="Prenon et Nom"
-                label={'Prénom et Nom'}
+                placeholder="Nom"
+                label={'Nom'}
                 onChange={(e) => {this.setState({name: e.target.value})}}
                 defaultValue={this.state.user.name}
+                margin="normal"
+                fullWidth
+              />
+               <TextField
+                placeholder="Prénom"
+                label={'Prénom'}
+                onChange={(e) => {this.setState({first_name: e.target.value})}}
+                defaultValue={this.state.user.first_name}
                 margin="normal"
                 fullWidth
               />
