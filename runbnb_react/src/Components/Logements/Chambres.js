@@ -37,7 +37,10 @@ import '../../App.css';
           <h1 className="text-2ml font-bold  mx-5 my-5 ">Informations sur l’hébergement :</h1>
             <div className="w-1/3 mx-5 flow-root on inline-block element mt-5 pl-10 ml-9 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10   ">
                 <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none " onClick={() => setSmShow(true)} >
-                  <span className="plus font-bold text-2xl">+</span><span className="mx-3">Chambre 1</span></Button>
+                  <span className="plus font-bold text-2xl">+</span><span className="mx-3">Chambre 1
+                  
+                  </span>
+                </Button>
                 <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none" onClick={() => setLgShow(true)} >
                 <span className="plus font-bold text-2xl">+</span><span className="mx-3">Salon</span> </Button>
                 <Button className="my-4 block text-gray-700 text-center bg-white hover:text-blue-500 border-none focus:text-blue-500 border-none" onClick={() => setlgshowautre(true)} >
@@ -60,55 +63,19 @@ import '../../App.css';
             >           
               <Formik
             
-                  initialValues={{
-                    Lits : [
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Double"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Simple"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit King-size"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Superposé"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Canapé lit"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name:"Canapé lit double"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Futon"
-                      }
-
-                    ]
-                  }}    
+                  initialValues={props.formValue.Lits}    
                     onSubmit={values => {
                       // same shape as initial values
                       let { formValue, setFormValue } =props;
-
-                      formValue = {...formValue, lits: values};
+                      console.log(props.formValue.Lits)
+                      formValue = {...formValue, Lits: values};
 
                       setFormValue(formValue);
+                      console.log(values);
+                      console.log("formValue");
                       console.log(formValue);
                       setSmShow(false)
+                      console.log(props)
               }}
               >
                 {({ values,checked, handleSubmit, touched, setFieldValue }) => (
@@ -135,6 +102,7 @@ import '../../App.css';
                                 <input className="mr-2"
                                    
                                   type="checkbox"
+                                  checked={item.checked}
                                   onClick={event =>
                                     handleChange(value, index, setFieldValue, event)
                                   }
@@ -152,6 +120,8 @@ import '../../App.css';
                                       quantity
                                     )
                                   }
+                                  
+
                               />
                             </span>
 
@@ -186,21 +156,7 @@ import '../../App.css';
             >           
               <Formik
             
-                  initialValues={{
-                    canapes: [
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: " Canapés"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Cnapés lits"
-                      }
-                     
-                    ]
-                  }}    
+                  initialValues={props.formValue.canapes}    
                     onSubmit={values => {
                       // same shape as initial values
                       let { formValue, setFormValue } =props;
@@ -234,6 +190,7 @@ import '../../App.css';
                                    
                                         <input className="mr-2"
                                           type="checkbox"
+                                          checked={item.checked}
                                           onClick={event =>
                                             handleChange(value, index, setFieldValue, event)
                                           }
@@ -283,25 +240,7 @@ import '../../App.css';
             >           
               <Formik
             
-                  initialValues={{
-                    autres: [
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Simple"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Double"
-                      },
-                      {
-                        checked: false,
-                        quantite: 0,
-                        name: "Lit Famille"
-                      }
-                    ]
-                  }}    
+                  initialValues={props.formValue.autres}    
                     onSubmit={values => {
                       // same shape as initial values
                       let { formValue, setFormValue } =props;
@@ -335,6 +274,7 @@ import '../../App.css';
                               
                                     <input className="mr-2"
                                       type="checkbox"
+                                      checked={item.checked}
                                       onClick={event =>
                                         handleChange(value, index, setFieldValue, event)
                                       }

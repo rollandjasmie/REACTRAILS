@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 2020_10_29_133711) do
     t.string "name"
     t.string "categorie"
     t.string "types"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_logements_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|

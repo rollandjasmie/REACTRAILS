@@ -2,21 +2,18 @@ import React, { Component } from 'react'
 import Dropdow from './Dropdow';
 import Navboard from '../forms/Navbar/Navboard';
 import IconButton from '@material-ui/core/IconButton';
-import Avatar from '@material-ui/core/Avatar';
+
 import {render} from 'react-dom';
-import AvatarUploader from './EditProfil';
-
-
-
-
+import Upload from './Upload';
 
 import UserForm from './UserForm';
+
 
 class EditProfile extends Component {
 
     render() {
         return (
-            <>
+            < div className="h">
                   <Navboard/>
                  <nav className="bg-blue-500">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,22 +103,49 @@ class EditProfile extends Component {
       </div>
     </div>
   </nav>
+  <div className="p-20 mt-15 flex ">
+   
+        <span className="sary ">
+        
 
-     <div className="p-20 ">
+            <Upload/>
+  
+            <br></br>
+            <br></br>
+            <hr></hr>
+            <br></br>
+      <p class="w-full h-12 text-lg text-center text-gray-600 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
 
-       <span className="">
 
-       </span>
-       <span className="w-1/3 float-right ">
+   </span>  
+
+ 
+
+
+<p class="w-full h-12 text-lg text-center ml-24   text-gray-600">Membre depuis 2020</p>
+   <div className="mt-10  ">
+        <span className="field bg-white shadow-md rounded px-8 pt-6 pb-8 mb-1 rounded-2xl ">
 
           <UserForm/>
       </span>
 
-     </div>
+   </div>
+    
+  </div>
+
+  <div>
+
+      <div class="w-1/3 ml-1 h-34 bg-white  juser">
+
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-800 f">Lesquelles de mes informations sont communiquées à des tiers ?</p>
+
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-500 f">Runbnb ne communique les coordonnées de l’hôte aux voyageurs qu’après la confirmation de la réservation.</p>
+    </div>
+  </div>
    
 
 
-            </>
+   </div>
         )
     }
 }

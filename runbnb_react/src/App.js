@@ -23,18 +23,23 @@ class App extends React.Component {
     return (
       <>
         <BrowserRouter>
+
           <Switch>
-            {isAuthenticated?(         
-                <div className="bg-gray-100 h-screen">
+          <div className="bg-gray-100 h-screen ">
+
+            {isAuthenticated?(  
+              <>       
                       <Route exact path='/'  component={HomePage} />  
-                      <Route path='/AjoutHebergements' component={AjoutHebergements} />                      
+                      <Route path='/AjoutHebergements' component={AjoutHebergements} />  
+                 
                       <Route exact path="/Dashboard" component={Dashboard} />
+                  
                       <Route exact path="/EditProfil" component={EditProfil} />
                       <Route exact path="/details" component={Details} />
-                      <Route exact path="/l" component={NotFoundPage} />
+                      <Route exact path="/lnpm" component={NotFoundPage} />
 
-
-                </div>
+                </>
+                
               ) : 
                 <>
                   <Route exact path='/' component={HomePage} />
@@ -43,8 +48,11 @@ class App extends React.Component {
                   <Route exact path="/signup" component={Signup} />
                   <Route exact path="/l" component={NotFoundPage} />
                 </>
+                 
             }
+             </div>
           </Switch>
+          
         </BrowserRouter>
       </>
     );
