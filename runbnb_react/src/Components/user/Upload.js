@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
 
-
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 
  class Upload extends Component {
@@ -36,8 +38,10 @@ import React, { Component } from 'react';
           />
           <div className="label">
             <label className="image-upload" htmlFor="input">
-              <i className="material-icons font-medium roboto">Mettre à jour </i>
-            
+              
+            <IconButton color="primary" aria-label="upload picture" component="span">
+          <PhotoCamera />
+        </IconButton>
             </label>
           </div>
         </div>
