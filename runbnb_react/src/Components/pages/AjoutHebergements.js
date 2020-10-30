@@ -22,7 +22,7 @@ import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
 import axios from '../../axios'
 
-// import ShowUser from '../Logements/ShowUser'
+import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
@@ -56,17 +56,19 @@ export default function CustomizedSteppers() {
     canapes:{},
     autres:{},
 
-    title: {},
-
+    title: [],
+    
     photo:[],
     regles: {
-        regle: '',
+        regle: [],
         arrive1:'',
         arrive2:'',
         depart1:'',
         depart2:'',
       },
     date:{
+       startDate:"",
+       endDate:"",
     },
     conditions: {},
     chambreT: {},
