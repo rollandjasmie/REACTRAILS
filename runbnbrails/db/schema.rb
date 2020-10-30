@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_29_181802) do
+=======
+ActiveRecord::Schema.define(version: 2020_10_29_133711) do
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
     t.index ["logement_id"], name: "index_adresses_on_logement_id"
   end
 
+<<<<<<< HEAD
   create_table "autrelits", force: :cascade do |t|
     t.string "name"
     t.integer "quantite"
@@ -42,6 +47,11 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_autres_on_logement_id"
+=======
+  create_table "autres", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
   end
 
   create_table "calendriers", force: :cascade do |t|
@@ -53,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
     t.index ["logement_id"], name: "index_calendriers_on_logement_id"
   end
 
+<<<<<<< HEAD
   create_table "canapes", force: :cascade do |t|
     t.string "name"
     t.integer "quantite"
@@ -69,6 +80,11 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_chambres_on_logement_id"
+=======
+  create_table "chambres", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
   end
 
   create_table "conditions", force: :cascade do |t|
@@ -101,8 +117,10 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
     t.string "name"
     t.string "categorie"
     t.string "types"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_logements_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -127,11 +145,16 @@ ActiveRecord::Schema.define(version: 2020_10_29_181802) do
   end
 
   create_table "salons", force: :cascade do |t|
+<<<<<<< HEAD
     t.string "title"
     t.bigint "logement_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_salons_on_logement_id"
+=======
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
   end
 
   create_table "users", force: :cascade do |t|

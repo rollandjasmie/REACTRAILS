@@ -3,6 +3,7 @@ class LogementsController < ApplicationController
 
     def create
         @logement = Logement.new(logement_params)
+        @logement.user_id=current_user.id
         @logement.save
 
         @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)

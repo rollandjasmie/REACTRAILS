@@ -24896,6 +24896,7 @@ Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 9.5ms | Allocations: 1361
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 71d6355a74786e6a3d2dcc5c11ee883bd8b1ed24
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1318294706029596750)[0m
   [1m[35m (71.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -24917,6 +24918,18 @@ Completed 200 OK in 558ms (Views: 2.2ms | ActiveRecord: 140.9ms | Allocations: 7
 
 
 Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-29 10:33:28 +0300
+=======
+Started POST "/login" for ::1 at 2020-10-29 15:02:13 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 306ms (Views: 0.5ms | ActiveRecord: 5.3ms | Allocations: 7756)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-29 15:02:13 +0300
+>>>>>>> connexion1
   
 ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
   
@@ -24943,6 +24956,7 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/logements" for ::1 at 2020-10-29 10:43:12 +0300
 Processing by LogementsController#create as HTML
   Parameters: {"hebergement"=>{"name"=>"ffg", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"azer", "ville"=>"tana", "adresse"=>"rth", "code"=>"285"}, "map"=>{"longitude"=>55.61456274095787, "latitude"=>-21.18073634681396}, "lits"=>{}, "canapes"=>{}, "autres"=>{"autres"=>[{"checked"=>false, "quantite"=>0, "name"=>"Lit Simple"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Famille"}]}, "title"=>{"title"=>["Bar", "Sauna", "jardin"]}, "photo"=>[], "regles"=>{"regle"=>["Hébergement fumeurBar", "Animaux  admisdomestique", "Enfant bienvenus"], "arrive1"=>"12:00", "arrive2"=>"12:01", "depart1"=>"23:00", "depart2"=>"01:04"}, "date"=>{"range"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-21T21:00:00.000Z"}}, "conditions"=>{"conditions"=>""}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
@@ -28043,6 +28057,7 @@ Completed 201 Created in 588ms (Views: 0.8ms | ActiveRecord: 314.4ms | Allocatio
 
 =======
 >>>>>>> d8c8e10cf3372c2144a560e92a220a084b7a8f6e
+<<<<<<< HEAD
 Started GET "/users/1" for ::1 at 2020-10-29 16:55:18 +0300
   [1m[35m (160.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   
@@ -28252,6 +28267,1563 @@ Completed 200 OK in 407ms (Views: 0.6ms | ActiveRecord: 6.4ms | Allocations: 777
 Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-29 16:57:33 +0300
   
 ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+=======
+=======
+Started GET "/users/1" for ::1 at 2020-10-29 15:02:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1040)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:03:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 866)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:04:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:04:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 866)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:06:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 866)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:06:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:08:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:10:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:11:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:11:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:11:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:13:38 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:14:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:15:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:15:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:15:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:15:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:16:12 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:16:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:16:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:17:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:17:49 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:19:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:19:19 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:19:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:19:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:20:17 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:20:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:20:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:21:10 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"+261390987634", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T07:13:16.778Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 3968)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:21:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:21:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:21:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 850)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:22:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:22:29 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 850)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:25:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:25:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:25:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:25:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:26:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:26:31 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:27:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:27:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:27:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:27:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:28:10 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"+261390987634", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T07:13:16.778Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3667)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:28:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:28:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:30:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:31:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:31:23 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"+261390987634", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T07:13:16.778Z"}, "mobile"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "mobile" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["mobile", ""], ["updated_at", "2020-10-29 12:31:23.430105"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 15.2ms | Allocations: 4564)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:31:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:31:31 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:31:47 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:31:23.430Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3665)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:31:47 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:31:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:32:02 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:31:23.430Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 3669)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:32:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:32:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:32:28 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:31:23.430Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 3665)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:32:28 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:32:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:32:51 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:31:23.430Z"}, "id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 2.8ms | Allocations: 3665)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:32:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:00 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:33:09 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:31:23.430Z"}, "mobile"=>"034 788", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "mobile" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["mobile", "034 788"], ["updated_at", "2020-10-29 12:33:09.959730"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 14.4ms | Allocations: 4516)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:33:29 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"034 788", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:33:09.959Z"}, "mobile"=>"034 56868 667", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "mobile" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["mobile", "034 56868 667"], ["updated_at", "2020-10-29 12:33:29.663462"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 27ms (Views: 0.7ms | ActiveRecord: 17.0ms | Allocations: 4521)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:29 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:33:47 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"034 56868 667", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:33:29.663Z"}, "piece"=>"46677", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameters: :user, :piece[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.4ms | Allocations: 3672)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:33:47 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:34:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:34:13 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"034 56868 667", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:33:29.663Z"}, "piece"=>"la hjdhdijld", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameters: :user, :piece[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 3669)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:34:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 851)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:34:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:34:59 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started PUT "/users/1" for ::1 at 2020-10-29 15:35:01 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>1, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"034 56868 667", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T07:13:16.778Z", "updated_at"=>"2020-10-29T12:33:29.663Z"}, "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 3666)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:35:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:35:40 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:35:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:35:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 2.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:38:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:38:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:41:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:42:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:44:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:44:39 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:46:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:51:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:59:14 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 948)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:59:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 15:59:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:01:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:01:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:02:33 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:03:21 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:03:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:05:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:07:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:09:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:10:11 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:10:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:11:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 2.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:12:49 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:13:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:13:21 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:13:37 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:13:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:15:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:15:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:16:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:16:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:17:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 850)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:18:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:18:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:18:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:18:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:19:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:20:37 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:21:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:21:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:24:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:24:28 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:25:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:25:37 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 850)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:26:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 851)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:26:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:26:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:27:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:28:02 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:31:14 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:31:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:32:21 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:32:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:33:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:33:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:34:12 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:35:54 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:36:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:36:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:37:24 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:38:15 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:38:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:40:11 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:40:40 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:41:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:41:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:43:33 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:44:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:45:03 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:45:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:46:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:49:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:50:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:51:47 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:53:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:54:29 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:54:53 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:55:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:55:29 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:55:47 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:56:25 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:56:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:56:59 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:57:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:58:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:58:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:59:19 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 16:59:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 850)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:00:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:00:35 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:01:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:02:28 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:02:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 849)
+
+
+Started GET "/users/1" for ::1 at 2020-10-29 17:03:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 849)
+
+
+>>>>>>> connexion1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1318294706029596750)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCalendriers (20201029104736)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCREATE TABLE "calendriers" ("id" bigserial primary key, "startDate" timestamp, "endDate" timestamp, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCREATE  INDEX  "index_calendriers_on_logement_id" ON "calendriers"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029104736"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChambres (20201029132526)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "chambres" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132526"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSalons (20201029132534)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE TABLE "salons" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132534"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAutres (20201029133711)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE "autres" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029133711"]]
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1318294706029596750)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "first_name", "adresse", "mobile", "date_of_birth", "sexe", "urgence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "r@gmail.com"], ["password_digest", "$2a$12$iKEcL6orraqDx.2YmvNjheB2zRULiaTsxotfj1.4t/DLtFdtyLHxu"], ["name", "Run"], ["first_name", "bnb"], ["adresse", "Tana"], ["mobile", "+261390987634"], ["date_of_birth", "12/09/92"], ["sexe", "homme"], ["urgence", "119"], ["created_at", "2020-10-29 14:13:04.363232"], ["updated_at", "2020-10-29 14:13:04.363232"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2020-10-29 17:13:16 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 350ms (Views: 0.5ms | ActiveRecord: 5.0ms | Allocations: 7756)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.hIRgBq5Kmv-3b4mUx8cZu-GPhXsIOsHvnMB6EevLtkc" for ::1 at 2020-10-29 17:13:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.hIRgBq5Kmv-3b4mUx8cZu-GPhXsIOsHvnMB6EevLtkc"):
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9
   
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -28276,6 +29848,7 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/1" for ::1 at 2020-10-29 16:57:40 +0300
 Processing by UsersController#show as HTML
   Parameters: {"id"=>"1"}
@@ -28801,3 +30374,808 @@ ActionController::ParameterMissing (param is missing or the value is empty: Lits
   
 app/controllers/logements_controller.rb:103:in `lits_params'
 app/controllers/logements_controller.rb:43:in `create'
+=======
+Started GET "/users/2" for ::1 at 2020-10-29 17:13:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1039)
+
+
+Started GET "/users/2" for ::1 at 2020-10-29 17:13:58 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 866)
+
+
+Started PUT "/users/2" for ::1 at 2020-10-29 17:14:10 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>2, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb", "adresse"=>"Tana", "mobile"=>"+261390987634", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T14:13:04.363Z", "updated_at"=>"2020-10-29T14:13:04.363Z"}, "first_name"=>"bnb aer", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "first_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["first_name", "bnb aer"], ["updated_at", "2020-10-29 14:14:10.233086"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 14.3ms | Allocations: 4863)
+
+
+Started GET "/users/2" for ::1 at 2020-10-29 17:14:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 849)
+
+
+Started GET "/users/2" for ::1 at 2020-10-29 17:18:25 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 56ms (Views: 0.6ms | ActiveRecord: 7.5ms | Allocations: 8875)
+
+
+Started GET "/users/2" for ::1 at 2020-10-29 17:18:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 867)
+
+
+Started PUT "/users/2" for ::1 at 2020-10-29 17:19:07 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"id"=>2, "email"=>"r@gmail.com", "password_digest"=>"[FILTERED]", "name"=>"Run", "first_name"=>"bnb aer", "adresse"=>"Tana", "mobile"=>"+261390987634", "date_of_birth"=>"12/09/92", "sexe"=>"homme", "urgence"=>"119", "created_at"=>"2020-10-29T14:13:04.363Z", "updated_at"=>"2020-10-29T14:14:10.233Z"}, "first_name"=>"azazz", "id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `update'
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "r@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "first_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["first_name", "azazz"], ["updated_at", "2020-10-29 14:19:07.557557"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:42:in `update'
+  [1m[35m (225.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:42:in `update'
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 228.1ms | Allocations: 4885)
+
+
+Started GET "/users/2" for ::1 at 2020-10-29 17:19:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 849)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:24:29 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (3.5ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:24:29.966849"], ["updated_at", "2020-10-29 14:24:29.966849"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `logged_in_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[36mAdresse Create (2.9ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.027128"], ["updated_at", "2020-10-29 14:24:30.027128"]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[36mMap Create (3.5ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.059652"], ["updated_at", "2020-10-29 14:24:30.059652"]]
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mCondition Create (6.2ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.093520"], ["updated_at", "2020-10-29 14:24:30.093520"]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[36mEquipement Create (3.4ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.136250"], ["updated_at", "2020-10-29 14:24:30.136250"]]
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[36mRegle Create (3.4ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.181304"], ["updated_at", "2020-10-29 14:24:30.181304"]]
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[36mCalendrier Create (0.9ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 8], ["created_at", "2020-10-29 14:24:30.223789"], ["updated_at", "2020-10-29 14:24:30.223789"]]
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+Completed 201 Created in 286ms (Views: 0.7ms | ActiveRecord: 135.9ms | Allocations: 60978)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:25:54 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.3ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:25:54.813519"], ["updated_at", "2020-10-29 14:25:54.813519"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `logged_in_user'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[36mAdresse Create (0.4ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 9], ["created_at", "2020-10-29 14:25:54.877482"], ["updated_at", "2020-10-29 14:25:54.877482"]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[36mMap Create (0.4ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 9], ["created_at", "2020-10-29 14:25:54.913658"], ["updated_at", "2020-10-29 14:25:54.913658"]]
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:25:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 9], ["created_at", "2020-10-29 14:25:54.945905"], ["updated_at", "2020-10-29 14:25:54.945905"]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[36mEquipement Create (0.4ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 9], ["created_at", "2020-10-29 14:25:54.980640"], ["updated_at", "2020-10-29 14:25:54.980640"]]
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:33:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[36mRegle Create (0.5ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 9], ["created_at", "2020-10-29 14:25:55.018322"], ["updated_at", "2020-10-29 14:25:55.018322"]]
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:38:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[36mCalendrier Create (0.3ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 9], ["created_at", "2020-10-29 14:25:55.054975"], ["updated_at", "2020-10-29 14:25:55.054975"]]
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:43:in `create'
+Completed 201 Created in 267ms (Views: 0.5ms | ActiveRecord: 127.5ms | Allocations: 58877)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:27:09 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.4ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:27:09.503880"], ["updated_at", "2020-10-29 14:27:09.503880"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `logged_in_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mAdresse Create (0.5ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.577303"], ["updated_at", "2020-10-29 14:27:09.577303"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mMap Create (0.5ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.617667"], ["updated_at", "2020-10-29 14:27:09.617667"]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.654182"], ["updated_at", "2020-10-29 14:27:09.654182"]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (1.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mEquipement Create (1.1ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.692537"], ["updated_at", "2020-10-29 14:27:09.692537"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mRegle Create (0.5ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.727984"], ["updated_at", "2020-10-29 14:27:09.727984"]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mCalendrier Create (0.4ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 10], ["created_at", "2020-10-29 14:27:09.765377"], ["updated_at", "2020-10-29 14:27:09.765377"]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+Completed 201 Created in 288ms (Views: 0.4ms | ActiveRecord: 131.2ms | Allocations: 58880)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:27:40 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.4ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:27:40.838553"], ["updated_at", "2020-10-29 14:27:40.838553"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (225.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `logged_in_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mAdresse Create (0.4ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.113832"], ["updated_at", "2020-10-29 14:27:41.113832"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mMap Create (0.4ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.154091"], ["updated_at", "2020-10-29 14:27:41.154091"]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.189198"], ["updated_at", "2020-10-29 14:27:41.189198"]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (1.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mEquipement Create (0.4ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.225765"], ["updated_at", "2020-10-29 14:27:41.225765"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mRegle Create (0.5ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.268909"], ["updated_at", "2020-10-29 14:27:41.268909"]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mCalendrier Create (0.4ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 11], ["created_at", "2020-10-29 14:27:41.321240"], ["updated_at", "2020-10-29 14:27:41.321240"]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+Completed 201 Created in 510ms (Views: 0.5ms | ActiveRecord: 357.8ms | Allocations: 58881)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:28:07 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.3ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:28:07.862127"], ["updated_at", "2020-10-29 14:28:07.862127"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `logged_in_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mAdresse Create (0.4ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 12], ["created_at", "2020-10-29 14:28:07.919753"], ["updated_at", "2020-10-29 14:28:07.919753"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mMap Create (0.5ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 12], ["created_at", "2020-10-29 14:28:07.966139"], ["updated_at", "2020-10-29 14:28:07.966139"]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 12], ["created_at", "2020-10-29 14:28:08.000949"], ["updated_at", "2020-10-29 14:28:08.000949"]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mEquipement Create (0.4ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 12], ["created_at", "2020-10-29 14:28:08.034267"], ["updated_at", "2020-10-29 14:28:08.034267"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mRegle Create (0.6ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 12], ["created_at", "2020-10-29 14:28:08.072858"], ["updated_at", "2020-10-29 14:28:08.072858"]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mCalendrier Create (0.4ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 12], ["created_at", "2020-10-29 14:28:08.111865"], ["updated_at", "2020-10-29 14:28:08.111865"]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+Completed 201 Created in 277ms (Views: 0.7ms | ActiveRecord: 125.2ms | Allocations: 58877)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:29:11 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.5ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:29:11.626170"], ["updated_at", "2020-10-29 14:29:11.626170"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (225.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 229.2ms | Allocations: 66313)
+
+
+  
+NameError (undefined local variable or method `logged_in_user' for #<LogementsController:0x00007fc5ec9297f8>
+Did you mean?  logged_in?):
+  
+app/controllers/logements_controller.rb:7:in `create'
+Started POST "/logements" for ::1 at 2020-10-29 17:29:48 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mLogement Create (0.4ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Appartement"], ["created_at", "2020-10-29 14:29:48.866384"], ["updated_at", "2020-10-29 14:29:48.866384"]]
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mAdresse Create (0.4ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "aa"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 14], ["created_at", "2020-10-29 14:29:48.922796"], ["updated_at", "2020-10-29 14:29:48.922796"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[36mMap Create (0.6ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.121661209928707], ["longitude", 55.53817922704148], ["logement_id", 14], ["created_at", "2020-10-29 14:29:48.954182"], ["updated_at", "2020-10-29 14:29:48.954182"]]
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 14], ["created_at", "2020-10-29 14:29:48.986116"], ["updated_at", "2020-10-29 14:29:48.986116"]]
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:31:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mEquipement Create (0.6ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "[]"], ["logement_id", 14], ["created_at", "2020-10-29 14:29:49.017373"], ["updated_at", "2020-10-29 14:29:49.017373"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[36mRegle Create (0.3ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "[]"], ["arrive1", "12:13"], ["arrive2", "13:01"], ["depart1", "03:02"], ["depart2", "12:02"], ["logement_id", 14], ["created_at", "2020-10-29 14:29:49.059423"], ["updated_at", "2020-10-29 14:29:49.059423"]]
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[36mCalendrier Create (0.4ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 14], ["created_at", "2020-10-29 14:29:49.091263"], ["updated_at", "2020-10-29 14:29:49.091263"]]
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:44:in `create'
+Completed 201 Created in 252ms (Views: 0.7ms | ActiveRecord: 125.0ms | Allocations: 59008)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (225.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "runbnbrails_development"[0m
+  [1m[35m (223.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "runbnbrails_test"[0m
+  [1m[35m (4062.9ms)[0m  [1m[35mCREATE DATABASE "runbnbrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (3701.8ms)[0m  [1m[35mCREATE DATABASE "runbnbrails_test" ENCODING = 'unicode'[0m
+  [1m[35m (263.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (67.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1318294706029596750)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201023073504)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "name" character varying, "first_name" character varying, "adresse" character varying, "mobile" character varying, "date_of_birth" character varying, "sexe" character varying, "urgence" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201023073504"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLogements (20201027071654)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (54.5ms)[0m  [1m[35mCREATE TABLE "logements" ("id" bigserial primary key, "name" character varying, "categorie" character varying, "types" character varying, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE  INDEX  "index_logements_on_user_id" ON "logements"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201027071654"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAdresses (20201027121852)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.5ms)[0m  [1m[35mCREATE TABLE "adresses" ("id" bigserial primary key, "pays" character varying, "ville" character varying, "adresse" character varying, "code" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE  INDEX  "index_adresses_on_logement_id" ON "adresses"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201027121852"]]
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMaps (20201028071048)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "maps" ("id" bigserial primary key, "latitude" float, "longitude" float, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE  INDEX  "index_maps_on_logement_id" ON "maps"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201028071048"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConditions (20201028092250)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE TABLE "conditions" ("id" bigserial primary key, "conditions" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE  INDEX  "index_conditions_on_logement_id" ON "conditions"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201028092250"]]
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEquipements (20201028111249)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE TABLE "equipements" ("id" bigserial primary key, "title" character varying[] DEFAULT '{}', "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE  INDEX  "index_equipements_on_logement_id" ON "equipements"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201028111249"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRegles (20201028133809)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE TABLE "regles" ("id" bigserial primary key, "regle" character varying[] DEFAULT '{}', "arrive1" character varying, "arrive2" character varying, "depart1" character varying, "depart2" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE  INDEX  "index_regles_on_logement_id" ON "regles"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201028133809"]]
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCalendriers (20201029104736)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "calendriers" ("id" bigserial primary key, "startDate" timestamp, "endDate" timestamp, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE  INDEX  "index_calendriers_on_logement_id" ON "calendriers"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029104736"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChambres (20201029132526)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE TABLE "chambres" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132526"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSalons (20201029132534)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "salons" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132534"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAutres (20201029133711)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE "autres" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029133711"]]
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-29 14:32:38.612435"], ["updated_at", "2020-10-29 14:32:38.612435"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1318294706029596750)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/logements" for ::1 at 2020-10-29 17:34:39 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+Completed 201 Created in 245ms (Views: 0.8ms | ActiveRecord: 18.0ms | Allocations: 34359)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:36:36 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Appartement", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"aa", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.53817922704148, "latitude"=>-21.121661209928707}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:13", "arrive2"=>"13:01", "depart1"=>"03:02", "depart2"=>"12:02"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.8ms | Allocations: 6765)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/logements_controller.rb:6:in `create'
+Started GET "/users/2" for ::1 at 2020-10-29 17:37:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 2460)
+
+
+Started POST "/login" for ::1 at 2020-10-29 17:38:05 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 780)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "first_name", "adresse", "mobile", "date_of_birth", "sexe", "urgence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "r@gmail.com"], ["password_digest", "$2a$12$08svYCfN0WbxINNgo4vkl.hXTVDxi4LxmF1kMN/vIKsQl9jiC/CKu"], ["name", "Run"], ["first_name", "bnb"], ["adresse", "Tana"], ["mobile", "+261390987634"], ["date_of_birth", "12/09/92"], ["sexe", "homme"], ["urgence", "119"], ["created_at", "2020-10-29 14:38:18.321707"], ["updated_at", "2020-10-29 14:38:18.321707"]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2020-10-29 17:38:22 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 300ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 6970)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-29 17:38:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/logements" for ::1 at 2020-10-29 17:39:15 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Hôtel", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"l", "ville"=>"sds", "adresse"=>"sds", "code"=>"12"}, "map"=>{"longitude"=>55.46365872565187, "latitude"=>-21.013875399598167}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[], "regles"=>{"regle"=>[], "arrive1"=>"12:12", "arrive2"=>"12:12", "depart1"=>"12:12", "depart2"=>"12:12"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-10T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[36mLogement Create (0.8ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Hôtel"], ["user_id", 1], ["created_at", "2020-10-29 14:39:15.698363"], ["updated_at", "2020-10-29 14:39:15.698363"]]
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (225.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[36mAdresse Create (0.9ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "l"], ["ville", "sds"], ["adresse", "sds"], ["code", "12"], ["logement_id", 1], ["created_at", "2020-10-29 14:39:15.960008"], ["updated_at", "2020-10-29 14:39:15.960008"]]
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[36mMap Create (1.0ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.013875399598167], ["longitude", 55.46365872565187], ["logement_id", 1], ["created_at", "2020-10-29 14:39:15.992334"], ["updated_at", "2020-10-29 14:39:15.992334"]]
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mCondition Create (0.9ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 1], ["created_at", "2020-10-29 14:39:16.027375"], ["updated_at", "2020-10-29 14:39:16.027375"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mLogement Load (5.7ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mEquipement Create (0.7ms)[0m  [1m[32mINSERT INTO "equipements" ("logement_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["logement_id", 1], ["created_at", "2020-10-29 14:39:16.071650"], ["updated_at", "2020-10-29 14:39:16.071650"]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[36mLogement Load (1.8ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[36mRegle Create (6.0ms)[0m  [1m[32mINSERT INTO "regles" ("arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["arrive1", "12:12"], ["arrive2", "12:12"], ["depart1", "12:12"], ["depart2", "12:12"], ["logement_id", 1], ["created_at", "2020-10-29 14:39:16.130231"], ["updated_at", "2020-10-29 14:39:16.130231"]]
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (4.6ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mCalendrier Create (0.9ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-10 21:00:00"], ["logement_id", 1], ["created_at", "2020-10-29 14:39:16.189580"], ["updated_at", "2020-10-29 14:39:16.189580"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+Completed 201 Created in 527ms (Views: 0.6ms | ActiveRecord: 366.1ms | Allocations: 54554)
+
+
+Started POST "/logements" for ::1 at 2020-10-29 17:47:51 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Maison / Villa", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"l", "ville"=>"a", "adresse"=>"12", "code"=>"12"}, "map"=>{"longitude"=>55.50278198887932, "latitude"=>-21.071254990042142}, "lits"=>{}, "canapes"=>{}, "autres"=>{}, "title"=>[], "photo"=>[{"path"=>"Capture du 2020-10-06 00-25-00.png"}], "regles"=>{"regle"=>["Hébergement fumeurBar", "Animaux  admisdomestique", "Enfant bienvenus", "Terrasse"], "arrive1"=>"12:01", "arrive2"=>"21:21", "depart1"=>"12:12", "depart2"=>"02:21"}, "date"=>{"startDate"=>"2020-10-28T21:00:00.000Z", "endDate"=>"2020-11-20T21:00:00.000Z"}, "conditions"=>{"conditions"=>"1 jours"}, "chambreT"=>{}, "salonT"=>{}, "autreT"=>{}, "logement"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[36mLogement Create (0.5ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Maison / Villa"], ["user_id", 1], ["created_at", "2020-10-29 14:47:51.633724"], ["updated_at", "2020-10-29 14:47:51.633724"]]
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (225.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[36mAdresse Create (0.5ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "l"], ["ville", "a"], ["adresse", "12"], ["code", "12"], ["logement_id", 2], ["created_at", "2020-10-29 14:47:51.868823"], ["updated_at", "2020-10-29 14:47:51.868823"]]
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[36mMap Create (0.5ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.071254990042142], ["longitude", 55.50278198887932], ["logement_id", 2], ["created_at", "2020-10-29 14:47:51.893866"], ["updated_at", "2020-10-29 14:47:51.893866"]]
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:16:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[36mCondition Create (0.4ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", "1 jours"], ["logement_id", 2], ["created_at", "2020-10-29 14:47:51.913406"], ["updated_at", "2020-10-29 14:47:51.913406"]]
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mEquipement Create (0.6ms)[0m  [1m[32mINSERT INTO "equipements" ("logement_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["logement_id", 2], ["created_at", "2020-10-29 14:47:51.935717"], ["updated_at", "2020-10-29 14:47:51.935717"]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[36mRegle Create (0.8ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "{\"Hébergement fumeurBar\",\"Animaux  admisdomestique\",\"Enfant bienvenus\",Terrasse}"], ["arrive1", "12:01"], ["arrive2", "21:21"], ["depart1", "12:12"], ["depart2", "02:21"], ["logement_id", 2], ["created_at", "2020-10-29 14:47:51.959670"], ["updated_at", "2020-10-29 14:47:51.959670"]]
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:29:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[36mCalendrier Create (0.6ms)[0m  [1m[32mINSERT INTO "calendriers" ("startDate", "endDate", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["startDate", "2020-10-28 21:00:00"], ["endDate", "2020-11-20 21:00:00"], ["logement_id", 2], ["created_at", "2020-10-29 14:47:51.984131"], ["updated_at", "2020-10-29 14:47:51.984131"]]
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:34:in `create'
+Completed 201 Created in 375ms (Views: 0.7ms | ActiveRecord: 313.0ms | Allocations: 26304)
+
+
+Started POST "/login" for ::1 at 2020-10-29 20:23:31 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `login'
+Completed 200 OK in 302ms (Views: 0.5ms | ActiveRecord: 5.9ms | Allocations: 7752)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-10-29 20:23:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2020-10-30 08:19:13 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 57ms (Views: 1.0ms | ActiveRecord: 8.3ms | Allocations: 9591)
+
+
+>>>>>>> f00375518a6f8e2317009935b6680a1a2185c5d9

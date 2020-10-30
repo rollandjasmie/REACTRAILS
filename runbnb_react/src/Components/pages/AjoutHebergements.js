@@ -29,11 +29,12 @@ import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+import history from '../../history';
 
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(3);
 
 
   const [formValue, setFormValue] = React.useState({
@@ -52,20 +53,40 @@ export default function CustomizedSteppers() {
       longitude:55.53817922704148,
       latitude:-21.121661209928707
     },
-    lits:{
-      name:"",
-      quantite: "",
-      checked:"",
-    },  
-    canapes:{
-      name:"",
-      quantite: "",
-      checked:"",
+  
+    canapes: {
+      canapes: [
+        {
+          checked: false,
+          quantite: 0,
+          name: " Canapés"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapés lits"
+        }
+
+      ]
     },
-    autres:{
-      name:"",
-      quantite: "",
-      checked:"",
+    autres: {
+      autres: [
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Simple"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Famille"
+        }
+      ]
     },
 
     title: [],
@@ -86,6 +107,47 @@ export default function CustomizedSteppers() {
     chambreT: {},
     salonT: {},
     autreT: {},
+    Lits:
+    {
+      Lits: [
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Simple"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit King-size"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Superposé"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapé lit"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapé lit double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Futon"
+        }
+
+      ]
+    }
 
   
   });
@@ -111,7 +173,7 @@ export default function CustomizedSteppers() {
   const saveHebergement = () => {
     console.log(formValue.regles.regle)
     axios.post('/logements', formValue).then(response => {
-      
+      history.push('/')
     })
   }
 

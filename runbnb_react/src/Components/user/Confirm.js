@@ -44,24 +44,31 @@ componentDidMount(){
               <ListItem>
                 <ListItemText primary="Prenom et Nom" secondary={`${values.name}  ${values.first_name}`}/>
               </ListItem>
+              <hr className="larg"></hr>
               <ListItem>
                 <ListItemText primary="Sexe" secondary={this.state.user.sexe} />
               </ListItem>
+               <hr></hr>
               <ListItem>
                 <ListItemText primary="Date De Naissance" secondary={this.state.user.date_of_birth} />
               </ListItem>
+                 <hr></hr>
               <ListItem>
                 <ListItemText primary="Email" secondary={this.state.user.email} />
               </ListItem>
+                 <hr></hr>
               <ListItem>
                 <ListItemText primary="Numero De Tel" secondary={this.state.user.mobile} />
               </ListItem>
+                 <hr></hr>
               <ListItem>
                 <ListItemText primary="Piece"  />
               </ListItem>
+                 <hr></hr>
                 <ListItem>
                 <ListItemText primary="Adresse" secondary={this.state.user.adresse} />
               </ListItem>
+                 <hr></hr>
               <ListItem>
                 <ListItemText primary="Numero D'urgence" secondary={this.state.user.urgence} />
               </ListItem>

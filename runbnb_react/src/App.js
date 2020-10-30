@@ -31,7 +31,7 @@ class App extends React.Component {
                       <Route exact path="/Dashboard" component={Dashboard} />
                       <Route exact path="/EditProfil" component={EditProfil} />
                       <Route exact path="/details" component={Details} />
-                      <Route exact path="/l" component={NotFoundPage} />
+                      <Route exact path="/lnpm" component={NotFoundPage} />
 
 
                 </div>
