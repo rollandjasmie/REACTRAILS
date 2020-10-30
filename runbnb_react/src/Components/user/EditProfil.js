@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import Dropdow from './Dropdow';
 import Navboard from '../forms/Navbar/Navboard';
 import IconButton from '@material-ui/core/IconButton';
-import Avatar from '@material-ui/core/Avatar';
 
-
-
-
+import {render} from 'react-dom';
+import Upload from './Upload';
 
 import UserForm from './UserForm';
+
 
 class EditProfile extends Component {
 
     render() {
         return (
-            <>
+            < div className="h">
                   <Navboard/>
                  <nav className="bg-blue-500">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,11 +25,11 @@ class EditProfile extends Component {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 no-underline">
 
-              <a className="no-underline" href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
+              <a  href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
 
-              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
+              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
 
-              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Toutes les réservations</a>
+              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Toutes les réservations</a>
 
             </div>
           </div>
@@ -104,38 +103,47 @@ class EditProfile extends Component {
       </div>
     </div>
   </nav>
+  <div className="p-20 mt-15 flex ">
+        <span className="sary ">
+        
 
-     <div className="p-20 flex">
-
-       <span className="">
-       <IconButton>
- <Avatar 
-  src="/images/example.jpg" 
-  style={{
-    margin: "10px",
-    width: "100px",
-    height: "100px",
-  }} 
- />
-</IconButton>
+            <Upload/>
+  
+            <br></br>
+            <br></br>
+            <hr></hr>
+            <br></br>
+      <p class="w-full h-12 text-lg text-center font-medium text-gray-500 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
 
 
+   </span>  
 
 
 
-
-
-       </span>
-       <span className="w-1/3 float-right">
+<p class="w-full h-12 text-lg text-center ml-24   text-gray-600">Membre depuis 2020</p>
+   <div className="mt-10  ">
+        <span className="field bg-white shadow-md rounded px-8 pt-6 pb-8 mb-1 rounded-2xl">
 
           <UserForm/>
       </span>
 
-     </div>
+   </div>
+    
+  </div>
+
+  <div>
+
+      <div class=" ml-1 h-34 bg-white  juser">
+
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-800 f">Lesquelles de mes informations sont communiquées à des tiers ?</p>
+
+          <p class="w-full h-22 text-lg font-medium text-center text-gray-500 f">Runbnb ne communique les coordonnées de l’hôte aux voyageurs qu’après la confirmation de la réservation.</p>
+    </div>
+  </div>
    
 
 
-            </>
+   </div>
         )
     }
 }

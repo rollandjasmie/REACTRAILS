@@ -20,25 +20,27 @@ import StepProgress from './components/StepProgress';
 import Equipement from '../Logements/Equipement';
 import CalendrierContainer from '../Logements/CalendrierContainer';
 import Conditions from '../Logements/Conditions'
+import axios from '../../axios'
 
-// import ShowUser from '../Logements/ShowUser'
+import ShowUser from '../Logements/ShowUser'
 
 
 import Uploadphoto from "../Logements/Uploadphoto";
 import InformationHeb from "../Logements/InformationHeb";
 import InfoRunbnb from '../Logements/InfoRunbnb';
 import PageCharte from '../Logements/PageCharte';
+import history from '../../history';
 
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(3);
 
 
   const [formValue, setFormValue] = React.useState({
     hebergement: {
       name: '',
-      type: '',
+      types: '',
       categorie: '',
     },
     localisation:{
@@ -51,21 +53,102 @@ export default function CustomizedSteppers() {
       longitude:55.53817922704148,
       latitude:-21.121661209928707
     },
-    lits:{},  
-    canapes:{},
-    autres:{},
-    title: {},
+  
+    canapes: {
+      canapes: [
+        {
+          checked: false,
+          quantite: 0,
+          name: " Canapés"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapés lits"
+        }
+
+      ]
+    },
+    autres: {
+      autres: [
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Simple"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Famille"
+        }
+      ]
+    },
+
+    title: [],
+    
     photo:[],
     regles: {
-        regle: '',
+        regle: [],
         arrive1:'',
         arrive2:'',
         depart1:'',
         depart2:'',
       },
     date:{
+       startDate:"",
+       endDate:"",
     },
-    conditions:{},
+    conditions: {},
+    chambreT: {},
+    salonT: {},
+    autreT: {},
+    Lits:
+    {
+      Lits: [
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Simple"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit King-size"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Lit Superposé"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapé lit"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Canapé lit double"
+        },
+        {
+          checked: false,
+          quantite: 0,
+          name: "Futon"
+        }
+
+      ]
+    }
+
   
   });
 
@@ -88,9 +171,10 @@ export default function CustomizedSteppers() {
     setActiveStep((prevActiveStep) => prevActiveStep - 7);
   };
   const saveHebergement = () => {
-    /*axios.post('/logement', formValue).then(response => {
-      
-    })*/
+    console.log(formValue.regles.regle)
+    axios.post('/logements', formValue).then(response => {
+      history.push('/')
+    })
   }
 
   const getStepContent = () => {
@@ -175,7 +259,10 @@ export default function CustomizedSteppers() {
             nextStep={nextStep}/>
         
        case 11:
-              return <PageCharte/>            
+              return <PageCharte
+              saveHebergement = {saveHebergement}
+              />     
+
     }
   }
 

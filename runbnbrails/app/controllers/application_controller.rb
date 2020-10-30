@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::API
     before_action :authorized
+    include Response
+    include ExceptionHandler
+  
 
   def encode_token(payload)
     JWT.encode(payload, 'runbnb2020')
   end
+
 
   def auth_header
     # { Authorization: 'Bearer <token>' }
@@ -22,7 +26,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def logged_in_user
+  def current_user
     if decoded_token
       user_id = decoded_token[0]['user_id']
       @user = User.find_by(id: user_id)
@@ -30,10 +34,11 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in?
-    !!logged_in_user
+    !!current_user
   end
 
   def authorized
     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
+   
 end

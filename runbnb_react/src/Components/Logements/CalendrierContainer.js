@@ -11,10 +11,12 @@ export default class CalendrierContainer extends Component {
   }
 
   dateRange = (range)=>{
+    console.log(range.range)
+    let dates = range.range
     this.setState({ date:range});
  
     let { formValue, setFormValue } = this.props;
-        formValue = {...formValue, date: range};
+        formValue = {...formValue,date:dates};
         setFormValue(formValue);
        
     console.log(formValue)
