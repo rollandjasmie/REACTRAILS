@@ -2,6 +2,7 @@ import React from 'react';
 import AjoutHebergements from "./Components/pages/AjoutHebergements";
 import Dashboard from "./Components/user/ShowUser"
 import EditProfil from "./Components/user/EditProfil"
+import PhotoLegende from "./Components/extranetphoto/PhotoLegende";
 import './App.css';
 import {
   BrowserRouter,
@@ -33,7 +34,10 @@ class App extends React.Component {
                       <Route path='/AjoutHebergements' component={AjoutHebergements} />  
                  
                       <Route exact path="/Dashboard" component={Dashboard} />
-                  
+
+
+                      <Route exact path="/PhotoLegende" component={PhotoLegende} />
+
                       <Route exact path="/EditProfil" component={EditProfil} />
                       <Route exact path="/details" component={Details} />
                       <Route exact path="/lnpm" component={NotFoundPage} />
