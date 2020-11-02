@@ -2,6 +2,9 @@ class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
 
     def create
+        puts "~"*24
+        puts params.inspect
+        puts "~"*24
         @logement = Logement.new(logement_params)
         @logement.user_id = current_user.id
         @logement.save
@@ -52,10 +55,10 @@ class LogementsController < ApplicationController
          @canape.save
 
          #autre controller new
-         @autre = Autre.new(autre_params)
+         @autre = Autrelit.new(autre_params)
          @autre.autre_id = @autre.id
          @autre.save
-         json_response(@autre, :created)   
+
           
     end
 
@@ -64,7 +67,7 @@ class LogementsController < ApplicationController
         
         if log=log.update(name:params[:name],types:params[:types],categorie:params[:categorie])
             render json: {
-                status:log
+                status: :log
             }
         else
            render json:{ 
@@ -96,13 +99,17 @@ class LogementsController < ApplicationController
         params.require(:date).permit( :startDate , :endDate)
     end
     def lits_params
-        params.require(:lits).permit( :name , :quantite, :checked)
+        params.require(:Lits ).permit( :name , :quantite, :checked)
     end
     def canapes_params
-        params.require(:canapes).permit( :name , :quantite, :checked)
+
+      params.require(canapes).permit(canapes:[ :name, :quantite], :checked)
+      
     end
     def autre_params
-        params.require(:autres).permit( :name , :quantite, :checked)
+        params.require(:autres).permit(:name , :quantite, :checked)
     end
 end
+
+
 

@@ -5,6 +5,8 @@ class CreateCanapes < ActiveRecord::Migration[6.0]
       t.integer :quantite
       t.boolean :checked
 
+      
+      t.string :canapes
       t.belongs_to :salon, index: true
       t.timestamps
     end
