@@ -14,7 +14,10 @@ componentDidMount(){
     axios.get(`/users/${user.id}`).then(response => { this.setState({
       user:response.data.user
     })
-      }
+    console.log(response);
+    console.log("sds")
+    console.log(this.state)
+  }
         )
 }
  

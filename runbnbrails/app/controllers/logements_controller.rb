@@ -1,5 +1,17 @@
 class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
+    def index
+        user = User.find(2)
+        logement = user.logements
+        indexa=[]
+        logement.each do |index|
+            indexa<<index
+        end
+                render json: {logement:indexa}
+                
+
+    end
+    
 
     def create
         @logement = Logement.new(logement_params)
