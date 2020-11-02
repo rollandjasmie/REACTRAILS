@@ -35,7 +35,7 @@ import { connect } from 'react-redux';
         onClose={handleClose}
       >
 
-        <MenuItem > <a href='/EditProfil'>My account</a></MenuItem>
+        <MenuItem > <a  className ="hover:no-underline"href='/EditProfil'>My account</a></MenuItem>
         <MenuItem onClick={() => logout()}>Déconnecter</MenuItem>
       </Menu>
     </div>

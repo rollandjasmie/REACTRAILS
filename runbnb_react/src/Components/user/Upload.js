@@ -3,7 +3,8 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import history from '../../history'
 
-
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 
  class Upload extends Component {
@@ -45,32 +46,31 @@ import history from '../../history'
       )
       history.push('/EditProfil')
   };
-  image=()=>{
-  }
+
   render() {
-      return (
-        <div className="page h-auto">
-          <div className="container h-auto">
-
-            <div className="img-holder">
+    return (
+      <div className="page">
+        <div className="container">  
+          <div className="img-holder">
               <img src={this.state.avatar} alt="" id="img" className="img" />
-            </div>
-            <input
-              type="file"
-              accept="image/*"
-              name="image-upload"
-              id="input"
-              onChange={this.imageHandler}
-              multiple={true}
-            />
-            <div className="label h-auto">
-              <label className="image-upload" htmlFor="input">
-                <i className="material-icons">Mettre à jour </i>
-              </label>
-            </div>
-
+          </div>
+          <input
+            type="file"
+            accept="image/*"
+            name="image-upload"
+            id="input"
+            onChange={this.imageHandler}
+            multiple={true}
+          />
+          <div className="label">
+            <label className="image-upload" htmlFor="input">              
+              <IconButton color="primary" aria-label="upload picture" component="span">
+              <PhotoCamera />
+              </IconButton>
+            </label>
           </div>
         </div>
+      </div>
       );
     }
 }

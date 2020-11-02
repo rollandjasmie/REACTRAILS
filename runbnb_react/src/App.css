@@ -100,7 +100,7 @@ left:60vh;}
   overflow: hidden;
 }
 .h{
-  font-size: 14px;
+  font-size: 14px; 
 }
 
 .field{
@@ -123,7 +123,7 @@ left:60vh;}
   margin: auto;
   width: 150px;
   height: 150px;
-  border: 3px black solid;
+  border: 3px rgb(191, 173, 173) solid;
   border-radius: 5px;
   margin-top: 1rem;
   overflow: hidden;
@@ -167,8 +167,9 @@ left:60vh;}
 }
 
 .juser{
+  width:390px;
   position: absolute;
-  top: 700px;
+  top: 850px;
 }
 
 .f{
@@ -178,3 +179,10 @@ left:60vh;}
   font-size: 11px;
   overflow: hidden;
 }
+*{
+  overflow-x: visible;
+  
+  
+}
+
+

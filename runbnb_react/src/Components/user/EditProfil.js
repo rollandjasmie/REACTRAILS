@@ -28,7 +28,7 @@ class EditProfile extends Component {
     render() {
 
         return (
-            < div className="h-full">
+            < div className="h">
                   <Navboard/>
                  <nav className="bg-blue-500">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,11 +40,11 @@ class EditProfile extends Component {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 no-underline">
 
-              <a className="no-underline" href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
+              <a  href="/Dashboard" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Tous les hébergements</a>
 
-              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
+              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Calendrier de tous les hébergements</a>
 
-              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Toutes les réservations</a>
+              <a href="" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:no-underline focus:outline-none focus:text-white focus:bg-gray-700">Toutes les réservations</a>
 
             </div>
           </div>
@@ -117,8 +117,7 @@ class EditProfile extends Component {
       </div>
     </div>
   </nav>
-
-     <div className="p-20 mt-15 flex ">
+  <div className="p-20 mt-15 flex ">
         <span className="sary ">
         
 
@@ -128,9 +127,9 @@ class EditProfile extends Component {
             <br></br>
             <hr></hr>
             <br></br>
-      <p className="w-full h-12 text-lg text-center text-gray-600 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
-
-
+      <p class="w-full h-12 text-lg text-center font-medium text-gray-500 overflow-hidden h">Obtenez plus de réservation en rassurant les voyageurs avec une identité confirmée. </p>  
+      <br></br>
+      <hr></hr>
    </span>  
 
 

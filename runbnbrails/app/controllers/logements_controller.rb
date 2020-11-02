@@ -48,10 +48,7 @@ class LogementsController < ApplicationController
         
 
     end
-
-
-
-
+    
     def update
         log = Logement.find_by(id:params[:id])
         

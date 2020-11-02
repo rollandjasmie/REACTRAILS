@@ -139,7 +139,7 @@ class Dashboard extends Component {
                           <thead>
                             <tr>
                               <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                {console.log(this.state.logement)}
+                                Id
                               </th>
                               <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Name
@@ -159,7 +159,7 @@ class Dashboard extends Component {
                           <tbody className="bg-white divide-y divide-gray-200">
                             <tr>
                               <td className="px-6 py-4 whitespace-no-wrap">
-                                <p>6019434</p>
+                                <p>{console.log(this.state.logement)}</p>
                               </td>
                               <td className="px-6 py-4 whitespace-no-wrap">
                                 <div className="flex items-center">
