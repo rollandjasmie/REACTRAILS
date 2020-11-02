@@ -172,8 +172,12 @@ export default function CustomizedSteppers() {
   };
   const saveHebergement = () => {
     console.log(formValue.regles.regle)
+    // [formValue, setFormValue]
+  
+    formValue={...formValue,Lits:null }
+    console.log(formValue)
     axios.post('/logements', formValue).then(response => {
-      history.push('/')
+      // history.push('/')
     })
   }
 
