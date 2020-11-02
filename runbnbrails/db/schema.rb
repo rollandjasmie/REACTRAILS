@@ -47,9 +47,22 @@ ActiveRecord::Schema.define(version: 2020_10_30_081857) do
     t.index ["logement_id"], name: "index_adresses_on_logement_id"
   end
 
-  create_table "autres", force: :cascade do |t|
+  create_table "autrelits", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantite"
+    t.boolean "checked"
+    t.bigint "autre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["autre_id"], name: "index_autrelits_on_autre_id"
+  end
+
+  create_table "autres", force: :cascade do |t|
+    t.string "title"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_autres_on_logement_id"
   end
 
   create_table "calendriers", force: :cascade do |t|
@@ -61,9 +74,23 @@ ActiveRecord::Schema.define(version: 2020_10_30_081857) do
     t.index ["logement_id"], name: "index_calendriers_on_logement_id"
   end
 
-  create_table "chambres", force: :cascade do |t|
+  create_table "canapes", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantite"
+    t.boolean "checked"
+    t.string "canapes"
+    t.bigint "salon_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["salon_id"], name: "index_canapes_on_salon_id"
+  end
+
+  create_table "chambres", force: :cascade do |t|
+    t.string "title"
+    t.bigint "logement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_chambres_on_logement_id"
   end
 
   create_table "conditions", force: :cascade do |t|
@@ -80,6 +107,16 @@ ActiveRecord::Schema.define(version: 2020_10_30_081857) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["logement_id"], name: "index_equipements_on_logement_id"
+  end
+
+  create_table "lits", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantite"
+    t.boolean "checked"
+    t.bigint "chambre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chambre_id"], name: "index_lits_on_chambre_id"
   end
 
   create_table "logements", force: :cascade do |t|
@@ -114,8 +151,11 @@ ActiveRecord::Schema.define(version: 2020_10_30_081857) do
   end
 
   create_table "salons", force: :cascade do |t|
+    t.string "title"
+    t.bigint "logement_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["logement_id"], name: "index_salons_on_logement_id"
   end
 
   create_table "users", force: :cascade do |t|

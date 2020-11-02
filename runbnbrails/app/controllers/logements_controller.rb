@@ -14,9 +14,18 @@ class LogementsController < ApplicationController
     
 
     def create
+        puts "~"*24
+        puts params.inspect
+        puts "~"*24
         @logement = Logement.new(logement_params)
-        @logement.user_id=current_user.id
+        @logement.user_id = current_user.id
         @logement.save
+
+        @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)
+        @salon = Salon.create(title: "Salon",logement_id: @logement.id)
+        @autre = Autre.create(title: "Autre espace",logement_id: @logement.id)
+
+
         #adresse controller new
         @adresse = Adresse.new(adresse_params)
         @adresse.logement_id = @logement.id
@@ -44,17 +53,33 @@ class LogementsController < ApplicationController
          @cal = Calendrier.new(cal_params)
          @cal.logement_id = @logement.id
          @cal.save
-         json_response(@cal, :created)   
-        
+         json_response(@cal, :created)
 
+         #lits controller new
+         @lits = Lit.new(lits_params)
+         @lits.chambre_id = @chambre.id
+         @lits.save
+          
+
+         #canapes controller new
+         @canape = Canape.new(canapes_params)
+         @canape.salon_id = @salon.id
+         @canape.save
+
+         #autre controller new
+         @autre = Autrelit.new(autre_params)
+         @autre.autre_id = @autre.id
+         @autre.save
+
+          
     end
-    
+
     def update
         log = Logement.find_by(id:params[:id])
         
         if log=log.update(name:params[:name],types:params[:types],categorie:params[:categorie])
             render json: {
-                status:log
+                status: :log
             }
         else
            render json:{ 
@@ -85,4 +110,18 @@ class LogementsController < ApplicationController
     def cal_params
         params.require(:date).permit( :startDate , :endDate)
     end
+    def lits_params
+        params.require(:Lits ).permit( :name , :quantite, :checked)
+    end
+    def canapes_params
+
+      params.require(canapes).permit(canapes:[ :name, :quantite], :checked)
+      
+    end
+    def autre_params
+        params.require(:autres).permit(:name , :quantite, :checked)
+    end
 end
+
+
+
