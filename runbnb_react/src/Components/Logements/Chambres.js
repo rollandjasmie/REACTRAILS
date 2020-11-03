@@ -13,6 +13,7 @@ import '../../App.css';
       const [smShow, setSmShow] = useState(false);
       const [lgShow, setLgShow] = useState(false);
       const  [ lgshowautre, setlgshowautre] = useState(false);
+
       let [Che, setCH] = useState(
       );
       
@@ -64,6 +65,7 @@ import '../../App.css';
               <Formik
             
                   initialValues={props.formValue.Lits}    
+
                     onSubmit={values => {
                       // same shape as initial values
                       let { formValue, setFormValue } =props;
@@ -71,7 +73,7 @@ import '../../App.css';
                       formValue = {...formValue, Lits: values};
 
                       setFormValue(formValue);
-                      console.log(values);
+
                       console.log("formValue");
                       console.log(formValue);
                       setSmShow(false)
@@ -181,7 +183,6 @@ import '../../App.css';
                       {values[value].map((item, index) => {
                         return (
                           <>
-
                           <div className="w-full">                       
 
                                 <label className="flex" >
@@ -265,7 +266,6 @@ import '../../App.css';
                       {values[value].map((item, index) => {
                         return (
                           <>
-
                            <div className="w-full">
 
                              <label className="flex">

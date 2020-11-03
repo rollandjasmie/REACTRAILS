@@ -175,6 +175,10 @@ left:60vh;}
 .f{
   font-size: 14px;
 }
+.kel{
+  font-size: 11px;
+  overflow: hidden;
+}
 *{
   overflow-x: visible;
   
