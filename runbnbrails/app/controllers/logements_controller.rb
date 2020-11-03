@@ -115,7 +115,7 @@ class LogementsController < ApplicationController
     end
     def canapes_params
 
-      params.require(canapes).permit(canapes:[ :name, :quantite], :checked)
+      params.require(:canapes).permit(canapes:[ :name, :quantite], :checked)
       
     end
     def autre_params
