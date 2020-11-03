@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
-
-import './HomePage.css';
-import Navbarextra from './Navbar/Navbarextra';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-
-class Details extends React.Component{
-    render(){
-      return(
-        <Formik>
-            <div className="w-full bg-white">
-              <div className="h-24">
-                <Navbarextra/>
-                </div> 
-                 <div className="flex w-full h-16 bg-blue-500">
+class Navbarextra2 extends Component {
+    render() {
+  
+      return (
+          <>
+          <header className="text-gray-700 bg-white">
+          <div className="flex w-full h-16 bg-blue-500" >
                     <div className="navex h-full w-1/2 flex justify-center">
                         <h1 className="text-md text-white pt-4 ">Accueil</h1>
                     </div>
@@ -41,13 +34,14 @@ class Details extends React.Component{
                         <h1 className="text-md text-white text-center pt-4 ">Commentaire  clients</h1>
                     </div>
                    
-                 </div>       
-                  
-                
-          </div>  
-        </Formik>
-      )
+                 </div>  
+          </header>
+        
+        
+          </>
+        )
     }
-  }
+}
 
-export default Details;
+
+export default Navbarextra2;
