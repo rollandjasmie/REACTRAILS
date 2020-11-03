@@ -1,7 +1,7 @@
 class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
     def index
-        user = User.find(2)
+        user = User.find(1)
         logement = user.logements
         indexa=[]
         logement.each do |index|
@@ -14,9 +14,7 @@ class LogementsController < ApplicationController
     
 
     def create
-        puts "~"*24
-        puts params.inspect
-        puts "~"*24
+        
         @logement = Logement.new(logement_params)
         @logement.user_id = current_user.id
         @logement.save
@@ -42,35 +40,59 @@ class LogementsController < ApplicationController
         @condition.save
 
         #equipement controller new
-        @equipement = Equipement.create(title: params[:title],logement_id:@logement.id)
+        @equipement = Equipement.new(title:params[:equipement])
+        @equipement.logement_id=@logement.id
+        @equipement.save
 
          #regle controller new
          @regle = Regle.new(regle_params)
          @regle.logement_id = @logement.id
          @regle.save
 
+        #image controller new
+        # image = params[:photo]
+        # photo=Photo.new(photo:image)
+        # photo.logemenent_id=@logement.id
+        # photo.save!
+        # puts '$'*200
+        # puts params[:photo]
+        # puts '$'*200
+        
+
+
+        
          #calendrier controller new
          @cal = Calendrier.new(cal_params)
          @cal.logement_id = @logement.id
          @cal.save
-         json_response(@cal, :created)
 
-         #lits controller new
-         @lits = Lit.new(lits_params)
-         @lits.chambre_id = @chambre.id
-         @lits.save
-          
+        lits = params[:Lits]
+        lits.each do |lit|
+               @lits = Lit.new(name:lit["name"],quantite:lit["quantite"],checked:lit["checked"])
+               @lits.chambre_id = @chambre.id
+               @lits.save
+            
+        end
 
-         #canapes controller new
-         @canape = Canape.new(canapes_params)
-         @canape.salon_id = @salon.id
-         @canape.save
+        canapes = params[:canapes]
+        canapes.each do |canape|
+            @lits = Canape.new(name:canape["name"],quantite:canape["quantite"],checked:canape["checked"])
+            @lits.salon_id = @chambre.id
+            @lits.save 
+        end
+        
+        autres = params[:autres]
+        autres.each do |autre|
+            @lits = Autrelit.new(name:autre["name"],quantite:autre["quantite"],checked:autre["checked"])
+            @lits.autre_id = @chambre.id
+            @lits.save 
+        end
 
-         #autre controller new
-         @autre = Autrelit.new(autre_params)
-         @autre.autre_id = @autre.id
-         @autre.save
-
+        render json:{
+            lit:@lits,
+            canape:@canape,
+            autre:@autre
+        }
           
     end
 
@@ -110,17 +132,7 @@ class LogementsController < ApplicationController
     def cal_params
         params.require(:date).permit( :startDate , :endDate)
     end
-    def lits_params
-        params.require(:Lits ).permit( :name , :quantite, :checked)
-    end
-    def canapes_params
 
-      params.require(canapes).permit(canapes:[ :name, :quantite], :checked)
-      
-    end
-    def autre_params
-        params.require(:autres).permit(:name , :quantite, :checked)
-    end
 end
 
 
