@@ -45,6 +45,7 @@
     "reactstrap": "^8.6.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "rn-fetch-blob": "^0.12.0",
     "styled-components": "^5.2.0",
     "tailwindcss": "^1.9.5",
     "yup": "^0.29.3"

@@ -43,7 +43,7 @@ class Localisation extends React.Component {
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                 Pays
               </label>
-              <Field name="pays" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Pays" />
+              <Field name="pays" value='La Réunion' className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Pays" />
               { errors.pays && touched.pays ? (
                 <div className="text-red-600 text-sm font-bold">{errors.pays}</div>
               ) : null }
