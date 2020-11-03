@@ -7,10 +7,11 @@ import '../../App.css';
 
 
 
-export default class Conditions extends React.Component {
- 
 
-  render() {
+export default class Conditions extends React.Component {
+
+
+  render() {    
     return (
       <>
        <p className="text-2ml font-bold  px-5 py-5 ">Quels équipements proposez-vous ?</p>
@@ -33,27 +34,28 @@ export default class Conditions extends React.Component {
        }}
         >
           <Form>
+              
             <div className="w-full flex py-5"    >
-              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold">
+              <div className="w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold " >
                 1 jours
                 <Field className="hidden"  type="radio" name="conditions" value="1 jours" />
-              </label>
-              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold">
+              </div>
+              <div className="w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold " >
                 7 jours
                 <Field className="hidden" type="radio" name="conditions" value="1 jours" />
-              </label>
-              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
-              hover:text-white hover:font-bold">
+              </div>
+              <div className="w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold " >
                 14 jours
                 <Field className="hidden" type="radio" name="conditions" value="1 jours" />
-              </label>
-              <label className=" w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500
-               hover:text-white hover:font-bold">
+              </div>
+              <div className="w-1/2  py-2 border border-orange-500 text-orange-500 text-center hover:bg-orange-500 
+              hover:text-white hover:font-bold " >    
                 30 jours
                 <Field className="hidden" type="radio" name="conditions" value="1 jours" />
-              </label>
+              </div>
             </div>
             <div className="flex items-end justify-end my-5">
               <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-1" onClick={this.props.previousStep}>Précedent</button>

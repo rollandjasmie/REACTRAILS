@@ -34,7 +34,11 @@ import history from '../../history';
 
 export default function CustomizedSteppers() {
 
+<<<<<<< HEAD
   const [activeStep, setActiveStep] = React.useState(3);
+=======
+  const [activeStep, setActiveStep] = React.useState(7);
+>>>>>>> iantsa
 
 
   const [formValue, setFormValue] = React.useState({
