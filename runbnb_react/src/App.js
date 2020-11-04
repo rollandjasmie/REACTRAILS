@@ -40,11 +40,11 @@ class App extends React.Component {
                       <Route exact path="/details" component={Details} />
                       <Route exact path="/lnpm" component={NotFoundPage} />
                       <Route exact path="/extraheb" component={Extraheb} />
+                      <Route exact path="/modifierpiece" component={Modifierpiece} />
                 </>
                 
               ) : 
               <>
-                  <Route exact path="/extraheb" component={Extraheb} />
                   <Route exact path='/' component={HomePage} />
                   <Route exact path="/details" component={Details}/>
                   <Route exact path="/signin" component={SignIn} />
