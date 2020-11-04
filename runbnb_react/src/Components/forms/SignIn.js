@@ -4,6 +4,8 @@ import Navbarin from './Navbar/Navbarin';
 import { connect } from 'react-redux';
 import { userLoginAttempt } from '../../redux/Auth/auth.action';
 
+
+
 class SignIn extends Component {
       
     constructor(props) {
@@ -23,7 +25,9 @@ class SignIn extends Component {
       const {name, value} = event.target
       this.setState({
         [name]: value
+        
       })
+      
     };
     
     handleSubmit = (event) => {
@@ -86,6 +90,7 @@ class SignIn extends Component {
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city" >
                         Numéro de téléphone
                         </label>
+                    
                         <input  className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Téléphone "onChange={this.handleChange}   name="mobile" value={mobile} />
                            <label className="block tracking-wide text-gray-500 text-xs my-3 " for="grid-city">
@@ -95,7 +100,7 @@ class SignIn extends Component {
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
                         Date de naissance 
                         </label>
-                        <input  className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
+                        <input   type="date" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Date de naissance "onChange={this.handleChange}    name="date_of_birth" value={date_of_birth} />
 
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
