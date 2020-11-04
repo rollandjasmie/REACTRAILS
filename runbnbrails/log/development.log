@@ -18182,6 +18182,7 @@ Processing by ActiveStorage::DiskController#show as PNG
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
 
 
+<<<<<<< HEAD
   [1m[35m (3442.2ms)[0m  [1m[35mCREATE DATABASE "runbnbrails_development" ENCODING = 'unicode'[0m
   [1m[35m (878.4ms)[0m  [1m[35mCREATE DATABASE "runbnbrails_test" ENCODING = 'unicode'[0m
   [1m[35m (158.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
@@ -18315,6 +18316,130 @@ Completed 200 OK in 72ms (Views: 56.1ms | ActiveRecord: 0.0ms | Allocations: 224
 Started GET "/favicon.ico" for ::1 at 2020-11-04 10:36:56 +0300
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+=======
+  [1m[35m (53.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1318294706029596750)[0m
+  [1m[35m (31.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCalendriers (20201029104736)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (991.4ms)[0m  [1m[35mCREATE TABLE "calendriers" ("id" bigserial primary key, "startDate" timestamp, "endDate" timestamp, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (46.0ms)[0m  [1m[35mCREATE  INDEX  "index_calendriers_on_logement_id" ON "calendriers"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029104736"]]
+  [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChambres (20201029132526)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (132.8ms)[0m  [1m[35mCREATE TABLE "chambres" ("id" bigserial primary key, "title" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCREATE  INDEX  "index_chambres_on_logement_id" ON "chambres"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132526"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSalons (20201029132534)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (114.2ms)[0m  [1m[35mCREATE TABLE "salons" ("id" bigserial primary key, "title" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (34.3ms)[0m  [1m[35mCREATE  INDEX  "index_salons_on_logement_id" ON "salons"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029132534"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAutres (20201029133711)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (104.5ms)[0m  [1m[35mCREATE TABLE "autres" ("id" bigserial primary key, "title" character varying, "logement_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE  INDEX  "index_autres_on_logement_id" ON "autres"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029133711"]]
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLits (20201029181504)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (90.5ms)[0m  [1m[35mCREATE TABLE "lits" ("id" bigserial primary key, "name" character varying, "quantite" integer, "checked" boolean, "chambre_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (36.4ms)[0m  [1m[35mCREATE  INDEX  "index_lits_on_chambre_id" ON "lits"  ("chambre_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029181504"]]
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCanapes (20201029181742)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (94.2ms)[0m  [1m[35mCREATE TABLE "canapes" ("id" bigserial primary key, "name" character varying, "quantite" integer, "checked" boolean, "canapes" character varying, "salon_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (35.1ms)[0m  [1m[35mCREATE  INDEX  "index_canapes_on_salon_id" ON "canapes"  ("salon_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029181742"]]
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAutrelits (20201029181802)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (115.9ms)[0m  [1m[35mCREATE TABLE "autrelits" ("id" bigserial primary key, "name" character varying, "quantite" integer, "checked" boolean, "autre_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (100.8ms)[0m  [1m[35mCREATE  INDEX  "index_autrelits_on_autre_id" ON "autrelits"  ("autre_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201029181802"]]
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20201030081857)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (116.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (63.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (249.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (40.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (45.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201030081857"]]
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20201103130252)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (131.5ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "photo" json, "legend" character varying, "logement_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_46fc14a14f"
+FOREIGN KEY ("logement_id")
+  REFERENCES "logements" ("id")
+)[0m
+  [1m[35m (38.8ms)[0m  [1m[35mCREATE  INDEX  "index_photos_on_logement_id" ON "photos"  ("logement_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201103130252"]]
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (14.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1318294706029596750)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (27.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "first_name", "adresse", "mobile", "date_of_birth", "sexe", "urgence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "r@gmail.com"], ["password_digest", "$2a$12$8c/30IVg97M3RDpf9aENRuB5oJ3BQs1DaJbaSxHi81fBCez1nskfe"], ["name", "Run"], ["first_name", "bnb"], ["adresse", "Tana"], ["mobile", "+261390987634"], ["date_of_birth", "12/09/92"], ["sexe", "homme"], ["urgence", "119"], ["created_at", "2020-11-04 06:32:50.844149"], ["updated_at", "2020-11-04 06:32:50.844149"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2020-11-04 09:50:00 +0300
+  [1m[35m (22.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"test1", "first_name"=>"test1", "email"=>"test1@gmail.com", "mobile"=>"261332211166", "date_of_birth"=>"2020-11-11", "password"=>"[FILTERED]", "erros"=>nil, "user"=>{"email"=>"test1@gmail.com", "name"=>"test1", "first_name"=>"test1", "mobile"=>"261332211166", "date_of_birth"=>"2020-11-11"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `create'
+[31mUnpermitted parameters: :erros, :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "name", "first_name", "mobile", "date_of_birth", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "test1@gmail.com"], ["password_digest", "$2a$12$HHRnl8TyY9dcXTkwbuZvDuBVT3LcuZHzB1BbOmr5jNjRo1mE60mGy"], ["name", "test1"], ["first_name", "test1"], ["mobile", "261332211166"], ["date_of_birth", "2020-11-11"], ["created_at", "2020-11-04 06:50:02.274551"], ["updated_at", "2020-11-04 06:50:02.274551"]]
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[35m (56.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test1@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.73ms)
+Completed 200 OK in 566ms (Views: 60.2ms | ActiveRecord: 187.2ms | Allocations: 13329)
+
+
+Started POST "/login" for ::1 at 2020-11-04 09:50:02 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"test1@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test1@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 242ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1050)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.ZKUW0VDd7cRuuA_ofq49jh50pApBapAQ3CfG7PsjL40" for ::1 at 2020-11-04 09:50:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.ZKUW0VDd7cRuuA_ofq49jh50pApBapAQ3CfG7PsjL40"):
   
 actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -18339,3 +18464,246 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/show" for ::1 at 2020-11-04 09:52:55 +0300
+Started GET "/logements" for ::1 at 2020-11-04 09:52:55 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LogementsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 54ms (Views: 2.5ms | ActiveRecord: 18.3ms | Allocations: 11730)
+
+
+  [1m[36mActiveStorage::Attachment Load (18.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 200 OK in 140ms (Views: 2.7ms | ActiveRecord: 79.3ms | Allocations: 19571)
+
+
+Started POST "/login" for ::1 at 2020-11-04 10:03:28 +0300
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"test1@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test1@gmail.com"}}
+  [1m[36mUser Load (30.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.76ms)
+Completed 200 OK in 433ms (Views: 1.8ms | ActiveRecord: 31.6ms | Allocations: 1271)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.ZKUW0VDd7cRuuA_ofq49jh50pApBapAQ3CfG7PsjL40" for ::1 at 2020-11-04 10:03:29 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.ZKUW0VDd7cRuuA_ofq49jh50pApBapAQ3CfG7PsjL40"):
+>>>>>>> 66b02b601494e042623af79ae7acbbb7bf5793c2
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
+Started GET "/logements" for ::1 at 2020-11-04 10:04:17 +0300
+Processing by LogementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 5ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 1598)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:04:17 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (11.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.54ms)
+Completed 200 OK in 66ms (Views: 3.0ms | ActiveRecord: 12.8ms | Allocations: 3319)
+
+
+Started GET "/logements" for ::1 at 2020-11-04 10:11:18 +0300
+Started GET "/users/show" for ::1 at 2020-11-04 10:11:18 +0300
+Processing by LogementsController#index as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 404 Not Found in 79ms (Views: 8.0ms | ActiveRecord: 16.9ms | Allocations: 4191)
+
+
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.38ms)
+Completed 200 OK in 165ms (Views: 7.6ms | ActiveRecord: 13.0ms | Allocations: 5200)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:11:31 +0300
+Started GET "/logements" for ::1 at 2020-11-04 10:11:31 +0300
+Processing by UsersController#show as HTML
+Processing by LogementsController#index as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 11ms (Views: 2.7ms | ActiveRecord: 5.6ms | Allocations: 2499)
+
+
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.55ms)
+Completed 200 OK in 21ms (Views: 3.1ms | ActiveRecord: 1.6ms | Allocations: 4971)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:13:30 +0300
+Started GET "/logements" for ::1 at 2020-11-04 10:13:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+Processing by LogementsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 18ms (Views: 2.3ms | ActiveRecord: 3.2ms | Allocations: 2852)
+
+
+  [1m[36mActiveStorage::Attachment Load (6.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 33ms (Views: 6.0ms | ActiveRecord: 9.5ms | Allocations: 5725)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:13:52 +0300
+Started GET "/logements" for ::1 at 2020-11-04 10:13:52 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 3772)
+
+
+Processing by LogementsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 404 Not Found in 7ms (Views: 3.6ms | ActiveRecord: 1.6ms | Allocations: 1534)
+
+
+Started GET "/logements" for ::1 at 2020-11-04 10:15:32 +0300
+Processing by LogementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 6ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 1554)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:15:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 200 OK in 385ms (Views: 3.3ms | ActiveRecord: 0.8ms | Allocations: 3305)
+
+
+Started GET "/logements" for ::1 at 2020-11-04 10:16:34 +0300
+Started GET "/users/show" for ::1 at 2020-11-04 10:16:34 +0300
+Processing by LogementsController#index as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 14ms (Views: 6.4ms | ActiveRecord: 1.8ms | Allocations: 3869)
+
+
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.57ms)
+Completed 200 OK in 19ms (Views: 4.6ms | ActiveRecord: 6.1ms | Allocations: 4941)
+
+
+>>>>>>> 66b02b601494e042623af79ae7acbbb7bf5793c2

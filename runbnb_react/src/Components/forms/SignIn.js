@@ -3,6 +3,9 @@ import axios from '../../axios'
 import Navbarin from './Navbar/Navbarin';
 import { connect } from 'react-redux';
 import { userLoginAttempt } from '../../redux/Auth/auth.action';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/material.css'
+
 
 class SignIn extends Component {
       
@@ -23,7 +26,9 @@ class SignIn extends Component {
       const {name, value} = event.target
       this.setState({
         [name]: value
+        
       })
+      
     };
     
     handleSubmit = (event) => {
@@ -60,7 +65,7 @@ class SignIn extends Component {
               <div className="  w-2/6 py-10 ">
                 <div className=" w-11/12 bg-gray-100 border rounded ">
                 
-                    <form onSubmit={this.handleSubmit} className=" px-10">
+                <form onSubmit={this.handleSubmit} className=" px-10">
                       <h1 className="block tracking-wide text-gray-700 text-xl font-bold mb-2 my-5">Créer un profil partenaire</h1>
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-2" for="grid-city" >
                          Nom
@@ -88,11 +93,19 @@ class SignIn extends Component {
                         <label  className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city" >
                         Numéro de téléphone
                         </label>
-                        <input required type="tel" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
+                        <PhoneInput
+                        
+                        required
+                          country={'us'}
+                          name="mobile"
+                          value={mobile}
+                          onChange={mobile => this.setState({ mobile })}
+                        />
+                        {/* <input required type="tel" className="w-full appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3
                          px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Téléphone "onChange={this.handleChange}   name="mobile" value={mobile} />
                            <label className="block tracking-wide text-gray-500 text-xs my-3 " for="grid-city">
                            Entrez une numéro de téléphone valide
-                        </label>
+                        </label> */}
 
                         <label className="block tracking-wide text-gray-700 text-base font-bold mb-2 my-8" for="grid-city">
                         Date de naissance 
