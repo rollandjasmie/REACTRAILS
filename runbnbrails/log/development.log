@@ -18182,3 +18182,430 @@ Processing by ActiveStorage::DiskController#show as PNG
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
 
 
+Started POST "/login" for ::1 at 2020-11-04 10:15:29 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 303ms (Views: 1.4ms | ActiveRecord: 4.6ms | Allocations: 8162)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-11-04 10:15:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/show" for ::1 at 2020-11-04 10:15:32 +0300
+Started GET "/logements" for ::1 at 2020-11-04 10:15:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Processing by LogementsController#index as HTML
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mLogement Load (0.7ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/logements_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.7ms)
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+Completed 200 OK in 86ms (Views: 22.1ms | ActiveRecord: 24.4ms | Allocations: 29839)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 120ms (Views: 7.8ms | ActiveRecord: 26.8ms | Allocations: 38178)
+
+
+Started GET "//rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--525a3bfda3141dcfbcb0f31f1af2e01dd5aeacf8/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png" for ::1 at 2020-11-04 10:15:32 +0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--525a3bfda3141dcfbcb0f31f1af2e01dd5aeacf8", "filename"=>"Capture d’écran de 2020-11-02 15-04-40"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (2.4ms) [0m[34mGenerated URL for file at key: ukdz6uwf4ttny8jcf5954l33b22t (http://localhost:4000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png)[0m
+Redirected to http://localhost:4000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms | Allocations: 3040)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png" for ::1 at 2020-11-04 10:15:32 +0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Capture d%3Fecran de 2020-11-02 15-04-40.png\"; filename*=UTF-8''Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7", "filename"=>"Capture d’écran de 2020-11-02 15-04-40"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 2610)
+
+
+Started GET "/users/show" for ::1 at 2020-11-04 10:15:35 +0300
+Started GET "/users/1" for ::1 at 2020-11-04 10:15:35 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.42ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 9.0ms | ActiveRecord: 2.8ms | Allocations: 4913)
+
+
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/show" for ::1 at 2020-11-04 10:15:35 +0300
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.31ms)
+Completed 200 OK in 60ms (Views: 15.6ms | ActiveRecord: 15.2ms | Allocations: 11585)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 32ms (Views: 2.9ms | ActiveRecord: 8.2ms | Allocations: 5835)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png" for ::1 at 2020-11-04 10:15:36 +0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Capture d%3Fecran de 2020-11-02 15-04-40.png\"; filename*=UTF-8''Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDc6MjA6MzIuNDMzWiIsInB1ciI6ImJsb2Jfa2V5In19--f60f10f40c1e737c844ce8644908e05118e41fb7", "filename"=>"Capture d’écran de 2020-11-02 15-04-40"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for ::1 at 2020-11-04 11:00:36 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"r@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"r@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 309ms (Views: 1.5ms | ActiveRecord: 4.4ms | Allocations: 8162)
+
+
+Started GET "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M" for ::1 at 2020-11-04 11:00:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.qlzF4WpmHJxAX3PAnhxSzOb_mjcc99Yj4lOZ5qXnh-M"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/show" for ::1 at 2020-11-04 11:00:42 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+Started GET "/logements" for ::1 at 2020-11-04 11:00:42 +0300
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Processing by LogementsController#index as HTML
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "featured_image"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:4:in `index'
+  [1m[36mLogement Load (5.8ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/logements_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.29ms)
+Completed 200 OK in 86ms (Views: 9.8ms | ActiveRecord: 40.0ms | Allocations: 24783)
+
+
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 200 OK in 137ms (Views: 2.7ms | ActiveRecord: 48.1ms | Allocations: 39299)
+
+
+Started GET "//rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--525a3bfda3141dcfbcb0f31f1af2e01dd5aeacf8/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png" for ::1 at 2020-11-04 11:00:42 +0300
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--525a3bfda3141dcfbcb0f31f1af2e01dd5aeacf8", "filename"=>"Capture d’écran de 2020-11-02 15-04-40"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (2.3ms) [0m[34mGenerated URL for file at key: ukdz6uwf4ttny8jcf5954l33b22t (http://localhost:4000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDg6MDU6NDIuNjY2WiIsInB1ciI6ImJsb2Jfa2V5In19--377603eeddd8a879ebdaa19c1e35e942a704d234/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png)[0m
+Redirected to http://localhost:4000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDg6MDU6NDIuNjY2WiIsInB1ciI6ImJsb2Jfa2V5In19--377603eeddd8a879ebdaa19c1e35e942a704d234/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms | Allocations: 3043)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDg6MDU6NDIuNjY2WiIsInB1ciI6ImJsb2Jfa2V5In19--377603eeddd8a879ebdaa19c1e35e942a704d234/Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Capture+d%253Fecran+de+2020-11-02+15-04-40.png%22%3B+filename%2A%3DUTF-8%27%27Capture%2520d%25E2%2580%2599%25C3%25A9cran%2520de%25202020-11-02%252015-04-40.png" for ::1 at 2020-11-04 11:00:42 +0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Capture d%3Fecran de 2020-11-02 15-04-40.png\"; filename*=UTF-8''Capture%20d%E2%80%99%C3%A9cran%20de%202020-11-02%2015-04-40.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhkV3RrZWpaMWQyWTBkSFJ1ZVRocVkyWTFPVFUwYkRNellqSXlkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpGcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpsSUdRbE0wWmxZM0poYmlCa1pTQXlNREl3TFRFeExUQXlJREUxTFRBMExUUXdMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyRndkSFZ5WlNVeU1HUWxSVElsT0RBbE9Ua2xRek1sUVRsamNtRnVKVEl3WkdVbE1qQXlNREl3TFRFeExUQXlKVEl3TVRVdE1EUXROREF1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjAtMTEtMDRUMDg6MDU6NDIuNjY2WiIsInB1ciI6ImJsb2Jfa2V5In19--377603eeddd8a879ebdaa19c1e35e942a704d234", "filename"=>"Capture d’écran de 2020-11-02 15-04-40"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 2610)
+
+
+Started POST "/logements" for ::1 at 2020-11-04 11:24:30 +0300
+Processing by LogementsController#create as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hebergement):
+  
+app/controllers/logements_controller.rb:118:in `logement_params'
+app/controllers/logements_controller.rb:18:in `create'
+Started POST "/logements" for ::1 at 2020-11-04 11:28:32 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"_json"=>[{"path"=>"Capture du 2020-10-06 00-24-38.png"}, {"path"=>"Capture du 2020-10-06 00-25-00.png"}], "logement"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 129)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hebergement):
+  
+app/controllers/logements_controller.rb:118:in `logement_params'
+app/controllers/logements_controller.rb:18:in `create'
+Started POST "/logements" for ::1 at 2020-11-04 11:31:59 +0300
+Processing by LogementsController#create as HTML
+  Parameters: {"hebergement"=>{"name"=>"mama", "types"=>"Maison / Villa", "categorie"=>"Chambre privé"}, "localisation"=>{"pays"=>"La Réunion", "ville"=>"sds", "adresse"=>"sds", "code"=>"12"}, "map"=>{"longitude"=>55.528864164364954, "latitude"=>-21.203317667222972}, "images"=>[{"path"=>"Capture du 2020-10-05 23-44-25.png"}], "Lits"=>[{"checked"=>false, "quantite"=>0, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Simple"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit King-size"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Superposé"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapé lit double"}, {"checked"=>false, "quantite"=>0, "name"=>"Futon"}], "canapes"=>[{"checked"=>false, "quantite"=>0, "name"=>" Canapés"}, {"checked"=>false, "quantite"=>0, "name"=>"Canapés lits"}], "autres"=>[{"checked"=>false, "quantite"=>0, "name"=>"Lit Simple"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Double"}, {"checked"=>false, "quantite"=>0, "name"=>"Lit Famille"}], "equipement"=>{"title"=>["Bain amous /jacuzzi", "Connexion wifi gratuit"]}, "regles"=>{"regle"=>["Animaux  admisdomestique", "Enfant bienvenus"], "arrive1"=>"15:30", "arrive2"=>"16:30", "depart1"=>"10:31", "depart2"=>"11:31"}, "conditions"=>{"conditions"=>""}, "date"=>{"startDate"=>"", "endDate"=>""}, "logement"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[36mLogement Create (0.9ms)[0m  [1m[32mINSERT INTO "logements" ("name", "categorie", "types", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "mama"], ["categorie", "Chambre privé"], ["types", "Maison / Villa"], ["user_id", 1], ["created_at", "2020-11-04 08:31:59.650594"], ["updated_at", "2020-11-04 08:31:59.650594"]]
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:22:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:22:in `create'
+  [1m[36mChambre Create (0.4ms)[0m  [1m[32mINSERT INTO "chambres" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Chambre"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.696473"], ["updated_at", "2020-11-04 08:31:59.696473"]]
+  ↳ app/controllers/logements_controller.rb:22:in `create'
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:22:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:23:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:23:in `create'
+  [1m[36mSalon Create (0.4ms)[0m  [1m[32mINSERT INTO "salons" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Salon"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.731940"], ["updated_at", "2020-11-04 08:31:59.731940"]]
+  ↳ app/controllers/logements_controller.rb:23:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:23:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[36mAutre Create (0.5ms)[0m  [1m[32mINSERT INTO "autres" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Autre espace"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.764678"], ["updated_at", "2020-11-04 08:31:59.764678"]]
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:24:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mLogement Load (0.4ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[36mAdresse Create (0.8ms)[0m  [1m[32mINSERT INTO "adresses" ("pays", "ville", "adresse", "code", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["pays", "La Réunion"], ["ville", "sds"], ["adresse", "sds"], ["code", "12"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.803959"], ["updated_at", "2020-11-04 08:31:59.803959"]]
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:30:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:35:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:35:in `create'
+  [1m[36mMap Create (0.4ms)[0m  [1m[32mINSERT INTO "maps" ("latitude", "longitude", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["latitude", -21.203317667222972], ["longitude", 55.528864164364954], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.843650"], ["updated_at", "2020-11-04 08:31:59.843650"]]
+  ↳ app/controllers/logements_controller.rb:35:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:35:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:40:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:40:in `create'
+  [1m[36mCondition Create (0.5ms)[0m  [1m[32mINSERT INTO "conditions" ("conditions", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conditions", ""], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.880046"], ["updated_at", "2020-11-04 08:31:59.880046"]]
+  ↳ app/controllers/logements_controller.rb:40:in `create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:40:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:45:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:45:in `create'
+  [1m[36mEquipement Create (0.6ms)[0m  [1m[32mINSERT INTO "equipements" ("title", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "{\"Bain amous /jacuzzi\",\"Connexion wifi gratuit\"}"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.922936"], ["updated_at", "2020-11-04 08:31:59.922936"]]
+  ↳ app/controllers/logements_controller.rb:45:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:45:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:50:in `create'
+  [1m[36mLogement Load (0.2ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:50:in `create'
+  [1m[36mRegle Create (0.5ms)[0m  [1m[32mINSERT INTO "regles" ("regle", "arrive1", "arrive2", "depart1", "depart2", "logement_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["regle", "{\"Animaux  admisdomestique\",\"Enfant bienvenus\"}"], ["arrive1", "15:30"], ["arrive2", "16:30"], ["depart1", "10:31"], ["depart2", "11:31"], ["logement_id", 48], ["created_at", "2020-11-04 08:31:59.960745"], ["updated_at", "2020-11-04 08:31:59.960745"]]
+  ↳ app/controllers/logements_controller.rb:50:in `create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:50:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:67:in `create'
+  [1m[36mLogement Load (0.3ms)[0m  [1m[34mSELECT "logements".* FROM "logements" WHERE "logements"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:67:in `create'
+  [1m[36mCalendrier Create (0.7ms)[0m  [1m[32mINSERT INTO "calendriers" ("logement_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["logement_id", 48], ["created_at", "2020-11-04 08:32:00.001062"], ["updated_at", "2020-11-04 08:32:00.001062"]]
+  ↳ app/controllers/logements_controller.rb:67:in `create'
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:67:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.4ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Double"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.044718"], ["updated_at", "2020-11-04 08:32:00.044718"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.4ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Simple"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.064366"], ["updated_at", "2020-11-04 08:32:00.064366"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.5ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit King-size"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.087343"], ["updated_at", "2020-11-04 08:32:00.087343"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.4ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.3ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Superposé"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.109530"], ["updated_at", "2020-11-04 08:32:00.109530"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.4ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Canapé lit"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.130063"], ["updated_at", "2020-11-04 08:32:00.130063"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.5ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Canapé lit double"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.152737"], ["updated_at", "2020-11-04 08:32:00.152737"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mChambre Load (0.3ms)[0m  [1m[34mSELECT "chambres".* FROM "chambres" WHERE "chambres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[36mLit Create (0.4ms)[0m  [1m[32mINSERT INTO "lits" ("name", "quantite", "checked", "chambre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Futon"], ["quantite", 0], ["checked", false], ["chambre_id", 34], ["created_at", "2020-11-04 08:32:00.178332"], ["updated_at", "2020-11-04 08:32:00.178332"]]
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:73:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[36mSalon Load (3.0ms)[0m  [1m[34mSELECT "salons".* FROM "salons" WHERE "salons"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[36mCanape Create (0.9ms)[0m  [1m[32mINSERT INTO "canapes" ("name", "quantite", "checked", "salon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", " Canapés"], ["quantite", 0], ["checked", false], ["salon_id", 34], ["created_at", "2020-11-04 08:32:00.229098"], ["updated_at", "2020-11-04 08:32:00.229098"]]
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons" WHERE "salons"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[36mCanape Create (0.4ms)[0m  [1m[32mINSERT INTO "canapes" ("name", "quantite", "checked", "salon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Canapés lits"], ["quantite", 0], ["checked", false], ["salon_id", 34], ["created_at", "2020-11-04 08:32:00.249707"], ["updated_at", "2020-11-04 08:32:00.249707"]]
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:81:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutre Load (1.4ms)[0m  [1m[34mSELECT "autres".* FROM "autres" WHERE "autres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutrelit Create (0.5ms)[0m  [1m[32mINSERT INTO "autrelits" ("name", "quantite", "checked", "autre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Simple"], ["quantite", 0], ["checked", false], ["autre_id", 34], ["created_at", "2020-11-04 08:32:00.291586"], ["updated_at", "2020-11-04 08:32:00.291586"]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutre Load (0.2ms)[0m  [1m[34mSELECT "autres".* FROM "autres" WHERE "autres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutrelit Create (0.4ms)[0m  [1m[32mINSERT INTO "autrelits" ("name", "quantite", "checked", "autre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Double"], ["quantite", 0], ["checked", false], ["autre_id", 34], ["created_at", "2020-11-04 08:32:00.313160"], ["updated_at", "2020-11-04 08:32:00.313160"]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutre Load (0.3ms)[0m  [1m[34mSELECT "autres".* FROM "autres" WHERE "autres"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mAutrelit Create (2.8ms)[0m  [1m[32mINSERT INTO "autrelits" ("name", "quantite", "checked", "autre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lit Famille"], ["quantite", 0], ["checked", false], ["autre_id", 34], ["created_at", "2020-11-04 08:32:00.333684"], ["updated_at", "2020-11-04 08:32:00.333684"]]
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/logements_controller.rb:88:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 200 OK in 714ms (Views: 2.9ms | ActiveRecord: 374.7ms | Allocations: 132164)
+
+

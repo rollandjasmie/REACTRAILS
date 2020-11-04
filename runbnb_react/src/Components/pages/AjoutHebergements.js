@@ -93,7 +93,8 @@ export default function CustomizedSteppers() {
 
     title: {},
     
-    photo:{},
+    photo:{
+    },
     regles: {
         regle: [],
         arrive1:'',
@@ -185,13 +186,15 @@ export default function CustomizedSteppers() {
     // console.log(formValue.photo);
 
     
-    // let images = new FormData(formValue.photo);
-    // images.append('photo', formValue.photo);
+    let images = new FormData();
+     images.append('photo', formValue.photo);
+
    
     const form = {
        hebergement: formValue.hebergement,
       localisation: formValue.localisation,
       map: formValue.map,
+      images: formValue.photo,
       Lits: formValue.Lits.Lits,
       canapes: formValue.canapes.canapes,
       autres: formValue.autres.autres,
@@ -201,7 +204,7 @@ export default function CustomizedSteppers() {
       date: formValue.date,
      }
     axios.post('/logements',form).then(response => {
-      history.push('/Dashboard')
+      // history.push('/Dashboard')
     })
   }
 

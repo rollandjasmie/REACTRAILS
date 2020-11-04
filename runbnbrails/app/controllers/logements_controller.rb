@@ -50,13 +50,13 @@ class LogementsController < ApplicationController
          @regle.save
 
         #image controller new
-        # image = params[:photo]
-        # photo=Photo.new(photo:image)
-        # photo.logemenent_id=@logement.id
-        # photo.save!
-        # puts '$'*200
-        # puts params[:photo]
-        # puts '$'*200
+        image = params[:photo]
+        photo=Photo.new(photo:image)
+        photo.logemenent_id=@logement.id
+        photo.save!
+        puts '$'*200
+        puts params[:photo]
+        puts '$'*200
         
 
 
