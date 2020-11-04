@@ -46,7 +46,7 @@ export default function CustomizedSteppers() {
       categorie: '',
     },
     localisation:{
-      pays: '',
+      pays: 'La Réunion',
       ville: '',
       adresse:'',
       code: '',
@@ -71,44 +71,41 @@ export default function CustomizedSteppers() {
 
       ]
     },
-    autres:{
+    autres: {
       autres: [
         {
           checked: false,
-          quantite: 0,                                                                                                                                                
-          name: "Lit Simple",
+          quantite: 0,
+          name: "Lit Simple"
         },
         {
           checked: false,
           quantite: 0,
-          name: "Lit Double",
+          name: "Lit Double"
         },
         {
           checked: false,
           quantite: 0,
           name: "Lit Famille"
-        },
+        }
       ]
     },
 
-    title: [],                                                                                                                                                                                
+    title: {},
     
-    photo:[],
+    photo:{},
     regles: {
         regle: [],
         arrive1:'',
         arrive2:'',
         depart1:'',
-        depart2:'',                                                                                                                                                           
+        depart2:'',
       },
     date:{
        startDate:"",
        endDate:"",
     },
     conditions: {},
-    chambreT: {},
-    salonT: {},
-    autreT: {},
     Lits:
     {
       Lits: [
@@ -172,10 +169,39 @@ export default function CustomizedSteppers() {
   let map1 = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 7);
   };
+  // let li1 = null;
+  // let li2 = null;
+  // let lit3 = null;
+  // let lit = Object.values(formValue.Lits.Lits).map((el,id) => {
+  //   id ++
+  //   li1 = el
+  // })
+  // console.log(li1);
+  // formValue.Lits.map((index) => console.log(index.name)) 
   const saveHebergement = () => {
-    console.log(formValue.regles.regle)
-    axios.post('/logements', formValue).then(response => {
-      history.push('/')
+    // // [formValue, setFormValue]
+
+    
+    // console.log(formValue.photo);
+
+    
+    // let images = new FormData(formValue.photo);
+    // images.append('photo', formValue.photo);
+   
+    const form = {
+       hebergement: formValue.hebergement,
+      localisation: formValue.localisation,
+      map: formValue.map,
+      Lits: formValue.Lits.Lits,
+      canapes: formValue.canapes.canapes,
+      autres: formValue.autres.autres,
+      equipement: formValue.title,
+      regles: formValue.regles,
+      conditions: formValue.conditions,
+      date: formValue.date,
+     }
+    axios.post('/logements',form).then(response => {
+      history.push('/Dashboard')
     })
   }
 

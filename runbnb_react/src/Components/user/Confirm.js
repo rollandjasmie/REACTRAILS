@@ -64,9 +64,9 @@ componentDidMount(){
                 <ListItemText primary="Numero De Tel" secondary={this.state.user.mobile} />
               </ListItem>
                  <hr></hr>
-              <ListItem>
+              {/* <ListItem>
                 <ListItemText primary="Piece"  />
-              </ListItem>
+              </ListItem> */}
                  <hr></hr>
                 <ListItem>
                 <ListItemText primary="Adresse" secondary={this.state.user.adresse} />
