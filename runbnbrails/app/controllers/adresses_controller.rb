@@ -1,9 +1,7 @@
 class AdressesController < ApplicationController
       before_action :authorized, only: [:auto_login]
 
-  def show
-  end
-
+ 
   def update
     log = Logement.find_by(id:params[:longement_id])
     adresse= log.adresse
@@ -12,7 +10,7 @@ class AdressesController < ApplicationController
           render json:{
             adresse:@adresse
           }
-        
+      
       else
         
       end

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
 
-  resources :logements
+  resources :logements 
+
+  get '/logements/:logement_id/adresses',to:"adresses#show"
   put "/logements/:longement_id/adresse",to:"adresses#update"
   put "/avatar",to:"avatars#create"
   put '/logements/:longement_id/map',to:"maps#update"

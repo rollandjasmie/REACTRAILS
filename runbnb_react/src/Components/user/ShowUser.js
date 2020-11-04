@@ -24,7 +24,8 @@ class Dashboard extends Component {
       this.state = {
         selection : 1,
         avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
-        logement:null
+        logement:[],
+        adresse:[]
       };
       this.handleChange = this.handleChange.bind(this); 
     }
@@ -40,10 +41,12 @@ class Dashboard extends Component {
       }
     })
     axios.get('/logements').then(response =>{
-      this.setState({logement:response.data.logement})
-         console.log(this.state)
-    }
+      this.setState({logement:response.data.logement,
+        adresse:response.data.adresse})
+      }
       )
+      console.log(this.state)
+  
   }
     handleChange(event, index, value) {
       //set selection to the value selected
@@ -55,7 +58,21 @@ class Dashboard extends Component {
   }
 
   render(){
-    const { user } = this.props;
+      const { user } = this.props;
+      const { logement, adresse } = this.state;
+
+      let hebergements = [];
+
+      logement.map(log => {
+        return hebergements.push({...log});
+      })
+
+      hebergements.map(hebergement => {
+        hebergement.adresse = adresse.find(adr => adr.logement_id === hebergement.id)
+      })
+
+      console.log(hebergements);
+
       return (
         <>
           <Navboard />
@@ -155,11 +172,12 @@ class Dashboard extends Component {
                               </th>
                               <th className="px-6 py-3 bg-gray-50"></th>
                             </tr>
-                          </thead>
+                          </thead>  
+                               { hebergements && hebergements.map(hebergement => (
                           <tbody className="bg-white divide-y divide-gray-200">
                             <tr>
                               <td className="px-6 py-4 whitespace-no-wrap">
-                                <p>{console.log(this.state.logement)}</p>
+                                {hebergement.id}
                               </td>
                               <td className="px-6 py-4 whitespace-no-wrap">
                                 <div className="flex items-center">
@@ -167,14 +185,16 @@ class Dashboard extends Component {
                                     <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt=""></img>
                                   </div>
                                   <div className="ml-4">
-                                    <div className="text-sm leading-5 font-medium text-gray-900">
-                                      Jane Cooper
+                                    <div key={hebergement.id} className="text-sm leading-5 font-medium text-gray-900">
+                                        {hebergement.name}
                                     </div>
                                   </div>
                                 </div>
                               </td>
                               <td className="px-6 py-4 whitespace-no-wrap">
-                                <div className="text-sm leading-5 text-gray-900" >Regional finland</div>
+                                <div className="text-sm leading-5 text-gray-900" >
+                                  { hebergement.adresse.adresse }
+                                  </div>
                               </td>
                               <td className="px-6 py-4 whitespace-no-wrap">
                                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -189,6 +209,7 @@ class Dashboard extends Component {
                               </td>
                             </tr>
                           </tbody>
+                        ))}  
                         </table>
                       </div>
                     </div>

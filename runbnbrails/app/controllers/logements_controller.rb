@@ -1,26 +1,27 @@
 class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
     def index
-        user = User.find(2)
+        user = User.find(current_user.id)
         logement = user.logements
         indexa=[]
-        logement.each do |index|
-            indexa<<index
-        end
-                render json: {logement:indexa}
-                
+        adresses=[]
+                logement.each do |index|
+                    indexa<<index
+                    adresse = index.adresse
+                    adresses << adresse
 
+    end     
+  
+
+                render json: {logement:indexa,
+                adresse:adresses}            
     end
     
-
     def create
-        puts "~"*24
-        puts params.inspect
-        puts "~"*24
+       
         @logement = Logement.new(logement_params)
         @logement.user_id = current_user.id
         @logement.save
-
         @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)
         @salon = Salon.create(title: "Salon",logement_id: @logement.id)
         @autre = Autre.create(title: "Autre espace",logement_id: @logement.id)
@@ -114,8 +115,7 @@ class LogementsController < ApplicationController
         params.require(:Lits ).permit( :name , :quantite, :checked)
     end
     def canapes_params
-
-      params.require(canapes).permit(canapes:[ :name, :quantite], :checked)
+      params.require(:canapes).permit( :name, :quantite, :checked)
       
     end
     def autre_params
