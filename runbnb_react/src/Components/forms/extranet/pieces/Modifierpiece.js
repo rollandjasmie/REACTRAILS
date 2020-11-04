@@ -28,7 +28,7 @@ function Modifierpiece(){
       return(
         <Formik>
             <>
-            <div className="h-24">
+            <div className="">
                 <Navbarextra/>
             </div> 
             <div className="h-24">
@@ -40,7 +40,7 @@ function Modifierpiece(){
             </label>
             </NavLink> 
         
-            <div className="w-full bg-white px-5 ">
+            <div className="w-full px-5 ">
               <div className="">
                <h1 className="w-2/3 text-xl font-bold text-gray-700">Pièces et espaces</h1>
                 <h2 className=" text-sm font-medium text-gray-500 py-4" >Ajouter ou modifier les espaces à la disposition des voyageurs et indiquer quels sont les espaces partagés  </h2>
@@ -146,43 +146,50 @@ function Modifierpiece(){
                             <Modal.Body >
                                 <div className="py-5">
                                 <div className="w-full flex px-5">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                         Chambre
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                     Salle de bain entière : Toilette, lavabo, douce et baignoire
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                     Demi-salle de bain : Toilette et lavabo
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                     Cuisine entière
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                     Kitchenette : un espace compact pour préparer à manger
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                  Salon
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
                                     Espace repas
                                     </label>
                                     <IncrementeComponent/>
@@ -216,47 +223,20 @@ function Modifierpiece(){
                             <Modal.Body >
                                 <div className="py-5">
                                 <div className="w-full flex px-5">
-                                    <label className="w-3/4">
-                                        Chambre
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
+                                        Canapés
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Salle de bain entière : Toilette, lavabo, douce et baignoire
+                                    <label className="w-3/4 flex">
+                                        <input type="checkbox" className=" mr-3"></input>
+                                        Canapés lits
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Demi-salle de bain : Toilette et lavabo
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Cuisine entière
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Kitchenette : un espace compact pour préparer à manger
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                 Salon
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Espace repas
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
+                              
                                 </div>   
                             </Modal.Body>
                             <Modal.Footer>
@@ -286,47 +266,28 @@ function Modifierpiece(){
                             <Modal.Body >
                                 <div className="py-5">
                                 <div className="w-full flex px-5">
-                                    <label className="w-3/4">
-                                        Chambre
+                                    <label className="w-3/4 flex">
+                                    <input type="checkbox" className=" mr-3"></input>
+                                    Lit Simple
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Salle de bain entière : Toilette, lavabo, douce et baignoire
+                                    
+                                    <label className="w-3/4 flex">
+                                    <input type="checkbox" className=" mr-3"></input>
+                                    Lit Double
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
                                 <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Demi-salle de bain : Toilette et lavabo
+                                    <label className="w-3/4 flex">
+                                    <input type="checkbox" className=" mr-3"></input>
+                                    Lit Famille
                                     </label>
                                     <IncrementeComponent/>
                                 </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Cuisine entière
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Kitchenette : un espace compact pour préparer à manger
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                 Salon
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
-                                <div className="w-full flex px-5 py-2">
-                                    <label className="w-3/4">
-                                    Espace repas
-                                    </label>
-                                    <IncrementeComponent/>
-                                </div>
+                                
                                 </div>   
                             </Modal.Body>
                             <Modal.Footer>
