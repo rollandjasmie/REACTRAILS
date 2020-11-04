@@ -11,40 +11,40 @@ import Pin from './pin';
 const MAPBOX_TOKEN ="pk.eyJ1Ijoicm9sbGFuZGphc21pZSIsImEiOiJja2drZjM1dGowNnR0MnFwY2V2dHB4cGltIn0.KGbcbcVaTYQhASyG17Q5rQ";
 
 
-const Map = (props) => {
-  const [viewport, setViewport] = useState({
-    longitude:55.53817922704148,
-    latitude:-21.121661209928707,
+let Map = (props) => {
+  let [viewport, setViewport] = useState({
+    longitude: props.state.longitude,
+    latitude: props.state.latitude,
     zoom: 8.56
   });
-  const mapRef = useRef();
-  const handleViewportChange = useCallback(
+  let mapRef = useRef();
+  let handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
-    []
-  );
-
-  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
-  const handleGeocoderViewportChange = useCallback(
-    (newViewport) => {
-      const geocoderDefaultOverrides = { transitionDuration: 1000 };
-
-      return handleViewportChange({
-        ...newViewport,
-        ...geocoderDefaultOverrides
-      });
-    },
-    [handleViewportChange]
-  );
-
- 
-  const [position, setPosition] = useState({
-    longitude: 55.53817922704148,
-    latitude: -21.121661209928707
+    [],
+    );
+    
+    // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
+    let handleGeocoderViewportChange = useCallback(
+      (newViewport) => {
+        let geocoderDefaultOverrides = { transitionDuration: 1000 };
+        
+        return handleViewportChange({
+          ...newViewport,
+          ...geocoderDefaultOverrides
+        });
+      },
+      [handleViewportChange]
+      );
+      
+      
+      let [position, setPosition] = useState({
+        longitude: props.state.longitude,
+        latitude: props.state.latitude
   });
- 
-  const onMarkerDragStart = event => {
-    const longitude = event.lngLat[0];
-    const latitude = event.lngLat[1];
+  
+  let onMarkerDragStart = event => {
+    let longitude = event.lngLat[0];
+    let latitude = event.lngLat[1];
 
     setPosition({
       longitude: longitude,
@@ -55,9 +55,9 @@ const Map = (props) => {
       longitude: longitude,
       latitude: latitude
     })
-    console.log(props.state)
-
+    
   };
+  
   return (
     <div>
       <MapGL

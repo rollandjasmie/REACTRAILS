@@ -1,9 +1,30 @@
 class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
+    def index
+        user = User.find(2)
+        logement = user.logements
+        indexa=[]
+        logement.each do |index|
+            indexa<<index
+        end
+                render json: {logement:indexa}
+                
+
+    end
+    
 
     def create
+        puts "~"*24
+        puts params.inspect
+        puts "~"*24
         @logement = Logement.new(logement_params)
+        @logement.user_id = current_user.id
         @logement.save
+
+        @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)
+        @salon = Salon.create(title: "Salon",logement_id: @logement.id)
+        @autre = Autre.create(title: "Autre espace",logement_id: @logement.id)
+
 
         #adresse controller new
         @adresse = Adresse.new(adresse_params)
@@ -27,20 +48,38 @@ class LogementsController < ApplicationController
          @regle = Regle.new(regle_params)
          @regle.logement_id = @logement.id
          @regle.save
-         json_response(@regle, :created)
-        
 
+         #calendrier controller new
+         @cal = Calendrier.new(cal_params)
+         @cal.logement_id = @logement.id
+         @cal.save
+         json_response(@cal, :created)
+
+         #lits controller new
+         @lits = Lit.new(lits_params)
+         @lits.chambre_id = @chambre.id
+         @lits.save
+          
+
+         #canapes controller new
+         @canape = Canape.new(canapes_params)
+         @canape.salon_id = @salon.id
+         @canape.save
+
+         #autre controller new
+         @autre = Autrelit.new(autre_params)
+         @autre.autre_id = @autre.id
+         @autre.save
+
+          
     end
-
-
-
 
     def update
         log = Logement.find_by(id:params[:id])
         
         if log=log.update(name:params[:name],types:params[:types],categorie:params[:categorie])
             render json: {
-                status:log
+                status: :log
             }
         else
            render json:{ 
@@ -66,6 +105,23 @@ class LogementsController < ApplicationController
         params.require(:conditions).permit(:conditions)
     end
     def regle_params
-        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2,regle: [])
+        params.require(:regles).permit(:arrive1, :arrive2, :depart1, :depart2, regle: [])
+    end
+    def cal_params
+        params.require(:date).permit( :startDate , :endDate)
+    end
+    def lits_params
+        params.require(:Lits ).permit( :name , :quantite, :checked)
+    end
+    def canapes_params
+
+      params.require(:canapes).permit(canapes:[ :name, :quantite], :checked)
+      
+    end
+    def autre_params
+        params.require(:autres).permit(:name , :quantite, :checked)
     end
 end
+
+
+

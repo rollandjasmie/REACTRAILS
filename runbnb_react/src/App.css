@@ -91,3 +91,98 @@ top: 0.1rem;}
 .sp{top: 1rem;
 left:60vh;}
 
+
+.sary{
+  position :absolute;
+  left: 10px;
+  width: 390px;
+  height: 450px;
+  overflow: hidden;
+}
+.h{
+  font-size: 14px; 
+}
+
+.field{
+  position :absolute;
+  left: 600px;
+}
+.larg{
+  width: 450px;
+}
+
+
+.heading {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.img-holder {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: 3px rgb(191, 173, 173) solid;
+  border-radius: 5px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+#input[type="file"] {
+  display: none;
+}
+
+.label {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image-upload {
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  color: white;
+  border-radius: 10px;
+  color :blue ;
+  text-align: center;
+  cursor: pointer;
+}
+
+.gg{
+  width: 333px;
+  height: 333px;
+  border: 1px rgb(27, 22, 22)  dotted;
+  margin-left: 22px;
+  overflow: hidden;
+  margin-top: 44px;
+}
+
+.juser{
+  width:390px;
+  position: absolute;
+  top: 850px;
+}
+
+.f{
+  font-size: 14px;
+}
+.kel{
+  font-size: 11px;
+  overflow: hidden;
+}
+*{
+  overflow-x: visible;
+  
+  
+}
+
+

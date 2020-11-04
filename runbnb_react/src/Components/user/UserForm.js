@@ -49,16 +49,16 @@ export class UserForm extends Component {
           );
           case 2:
             return (
+          
               <FormUserDetails
               prevStep={this.prevStep}
               nextStep={this.nextStep}
-              
+            
+             
             />
           );
 
-    
-      default:
-        (console.log('votre profil'))
+  
     }
     
   }

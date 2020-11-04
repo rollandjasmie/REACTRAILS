@@ -35,8 +35,11 @@ import history from '../../history';
 export default function CustomizedSteppers() {
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 346748ef59f56da54041e21908f815f9b072eb1a
   const [activeStep, setActiveStep] = React.useState(0);
 
 

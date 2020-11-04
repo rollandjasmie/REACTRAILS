@@ -46,17 +46,16 @@ continue = e => {
 
       return (
 <>
-           <div className='float:rigth'>       
-              <TextField
-                placeholder="Nom"
-                label={'Nom'}
+           <div className='foutu-overflow'>       
+              <TextField 
+            
+                label={' Nom'}
                 onChange={(e) => {this.setState({name: e.target.value})}}
                 defaultValue={this.state.user.name}
                 margin="normal"
                 fullWidth
               />
                <TextField
-                placeholder="Prénom"
                 label={'Prénom'}
                 onChange={(e) => {this.setState({first_name: e.target.value})}}
                 defaultValue={this.state.user.first_name}
@@ -64,8 +63,18 @@ continue = e => {
                 fullWidth
               />
               <br />
+
               <TextField
-                placeholder="Sexe"
+            
+            label={'Prénom'}
+            onChange={(e) => {this.setState({name: e.target.value})}}
+            defaultValue={this.state.user.name}
+            margin="normal"
+            fullWidth
+          />
+              <TextField
+              
+              
                 label="Sexe"
                 onChange={(e) => {this.setState({sexe: e.target.value})}}
                 defaultValue={this.state.user.sexe}
@@ -74,7 +83,7 @@ continue = e => {
               />
               <br />
               <TextField
-                placeholder="DateDeNaissance"
+             
                 label="Date de naissance"
                 onChange={(e) => {this.setState({date_of_birth: e.target.value})}}
                 defaultValue={this.state.user.date_of_birth}
@@ -83,7 +92,7 @@ continue = e => {
               />
               <br />
               <TextField
-                placeholder="Email"
+        
                 label="Email"
                 onChange={(e) => {this.setState({email: e.target.value})}}
                 defaultValue={this.state.user.email}
@@ -93,7 +102,7 @@ continue = e => {
               <br />
       
               <TextField
-                placeholder="Numero de Télephone"
+          
                 label="Numero de Télephone"
                 onChange={(e) => {this.setState({mobile: e.target.value})}}
                 defaultValue={this.state.user.mobile}
@@ -102,8 +111,8 @@ continue = e => {
               />
               <br />
               <TextField
-                placeholder=" Piece"
-                label=" Piece"
+           
+                label=" Piece d'identité"
                 onChange={(e) => {this.setState({piece: e.target.value})}}
                 defaultValue="rien"
                 margin="normal"
@@ -111,7 +120,7 @@ continue = e => {
               />
               <br />
               <TextField
-                placeholder=" Numero d'urgence"
+       
                 label="Numero d'urgence"
                 onChange={(e) => {this.setState({urgence: e.target.value})}}
                 defaultValue={this.state.user.urgence}
@@ -119,6 +128,7 @@ continue = e => {
                 fullWidth
               />
               <br />
+              <br/>
               <Button
                 color="primary"
                 variant="contained"
