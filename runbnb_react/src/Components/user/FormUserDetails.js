@@ -110,7 +110,7 @@ continue = e => {
                 fullWidth
               />
               <br />
-              <TextField
+              {/* <TextField
            
                 label=" Piece d'identité"
                 onChange={(e) => {this.setState({piece: e.target.value})}}
@@ -118,7 +118,7 @@ continue = e => {
                 margin="normal"
                 fullWidth
               />
-              <br />
+              <br /> */}
               <TextField
        
                 label="Numero d'urgence"

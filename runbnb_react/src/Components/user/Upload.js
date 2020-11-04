@@ -40,6 +40,7 @@ import PhotoCamera from '@material-ui/icons/PhotoCamera';
     let formData = new FormData(); 
     formData.append('featured_image', e.target.files[0]);
     console.log(formData)
+    console.log(e.target.files[0]);
     axios.put("/avatar", formData).then(response=>{
        console.log(response)
         }   

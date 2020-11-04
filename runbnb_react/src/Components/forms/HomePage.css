@@ -6,3 +6,5 @@
     background-size: cover;
     background-position: 50% 48%;
 height: 50vh;}
+
+.navex:hover{background-color: rgba(250, 250, 250, 0.3);}

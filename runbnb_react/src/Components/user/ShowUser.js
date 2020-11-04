@@ -6,6 +6,8 @@ import Navboard from '../forms/Navbar/Navboard';
 import { connect } from 'react-redux'
 import axios from 'axios'
 import icone from '../../NotFoundPage/NotFoundPage'
+import { NavLink } from 'react-router-dom';
+import Extraheb from '../forms/extranet/Extraheb';
 
 
 
@@ -205,7 +207,9 @@ class Dashboard extends Component {
                                 Admin
                               </td>
                               <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                              <NavLink to="/extraheb">
+                                <label class="text-indigo-600 hover:text-indigo-900 cursor-pointer">Edit</label>
+                                </NavLink> 
                               </td>
                             </tr>
                           </tbody>

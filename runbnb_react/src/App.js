@@ -15,6 +15,8 @@ import Signup from "./Components/forms/Signup";
 import { connect } from 'react-redux';
 import Details from './Components/forms/Details'
 import NotFoundPage from './NotFoundPage/NotFoundPage';
+import Extraheb from './Components/forms/extranet/Extraheb';
+import Modifierpiece from './Components/forms/extranet/pieces/Modifierpiece';
 
 
 class App extends React.Component {
@@ -37,16 +39,19 @@ class App extends React.Component {
                       <Route exact path="/EditProfil" component={EditProfil} />
                       <Route exact path="/details" component={Details} />
                       <Route exact path="/lnpm" component={NotFoundPage} />
-
+                      <Route exact path="/extraheb" component={Extraheb} />
                 </>
                 
               ) : 
-                <>
+              <>
+                  <Route exact path="/extraheb" component={Extraheb} />
                   <Route exact path='/' component={HomePage} />
                   <Route exact path="/details" component={Details}/>
                   <Route exact path="/signin" component={SignIn} />
                   <Route exact path="/signup" component={Signup} />
                   <Route exact path="/l" component={NotFoundPage} />
+                  <Route exact path="/modifierpiece" component={Modifierpiece} />
+                 
                 </>
                  
             }

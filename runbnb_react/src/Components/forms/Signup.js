@@ -7,9 +7,9 @@ import { userLoginAttempt } from '../../redux/Auth/auth.action';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string()
-        .required('Le marque ne doit pas être vide'),
+        .required('Le champ ne doit pas être vide'),
     password: Yup.string()
-        .required('Le model ne doit pas être vide')
+        .required('Le champ ne doit pas être vide')
 });
 
 class Signup extends React.Component{
