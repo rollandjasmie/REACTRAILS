@@ -17,7 +17,7 @@ import PhotoCamera from '@material-ui/icons/PhotoCamera';
         
         this.setState({
           avatar: `http://localhost:4000/${response.data.avatar}` })
-        console.log(response)
+        console.log(this.state)
       }
     })
   }

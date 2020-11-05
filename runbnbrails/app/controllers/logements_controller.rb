@@ -1,24 +1,27 @@
 class LogementsController < ApplicationController
     before_action :authorized, only: [:auto_login]
     def index
-        user = User.find(1)
+        user = User.find(current_user.id)
         logement = user.logements
         indexa=[]
-        logement.each do |index|
-            indexa<<index
-        end
-                render json: {logement:indexa}
-                
+        adresses=[]
+                logement.each do |index|
+                    indexa<<index
+                    adresse = index.adresse
+                    adresses << adresse
 
+    end     
+  
+
+                render json: {logement:indexa,
+                adresse:adresses}            
     end
     
-
     def create
-        
+       
         @logement = Logement.new(logement_params)
         @logement.user_id = current_user.id
         @logement.save
-
         @chambre = Chambre.create(title:"Chambre",logement_id: @logement.id)
         @salon = Salon.create(title: "Salon",logement_id: @logement.id)
         @autre = Autre.create(title: "Autre espace",logement_id: @logement.id)
@@ -50,13 +53,13 @@ class LogementsController < ApplicationController
          @regle.save
 
         #image controller new
-        image = params[:photo]
-        photo=Photo.new(photo:image)
-        photo.logemenent_id=@logement.id
-        photo.save!
-        puts '$'*200
-        puts params[:photo]
-        puts '$'*200
+        # image = params[:photo]
+        # photo=Photo.new(photo:image)
+        # photo.logemenent_id=@logement.id
+        # photo.save!
+        # puts '$'*200
+        # puts params[:photo]
+        # puts '$'*200
         
 
 
@@ -136,7 +139,6 @@ class LogementsController < ApplicationController
     def cal_params
         params.require(:date).permit( :startDate , :endDate)
     end
-
 end
 
 

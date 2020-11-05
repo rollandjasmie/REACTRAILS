@@ -206,7 +206,7 @@ export default function CustomizedSteppers() {
       date: formValue.date,
      }
     axios.post('/logements',form).then(response => {
-      // history.push('/Dashboard')
+      history.push('/Dashboard')
     })
   }
 
