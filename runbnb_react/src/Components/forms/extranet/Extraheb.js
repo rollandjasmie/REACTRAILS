@@ -7,6 +7,7 @@ import Navbarextra2 from '../Navbar/Navbarextra2';
 import { NavLink } from 'react-router-dom';
 import Affichage from './photo/Affichage';
 import AffichagePiece from './pieces/AffichagePiece';
+import Affichageequip from './equipement/Affichageequip';
 
 
 
@@ -69,6 +70,10 @@ class Extraheb extends React.Component{
 
               <div className="px-5  ">
                 <AffichagePiece/>
+              </div>
+              
+              <div className="px-5  ">
+                <Affichageequip/>
               </div>
           </div>  
         </Formik>

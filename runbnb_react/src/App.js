@@ -17,6 +17,8 @@ import Details from './Components/forms/Details'
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import Extraheb from './Components/forms/extranet/Extraheb';
 import Modifierpiece from './Components/forms/extranet/pieces/Modifierpiece';
+import Modifierequip from './Components/forms/extranet/equipement/Modifierequip';
+
 
 
 class App extends React.Component {
@@ -40,17 +42,18 @@ class App extends React.Component {
                       <Route exact path="/details" component={Details} />
                       <Route exact path="/lnpm" component={NotFoundPage} />
                       <Route exact path="/extraheb" component={Extraheb} />
+                      <Route exact path="/modifierpiece" component={Modifierpiece} />
+                      <Route exact path="/modifierequip" component={Modifierequip} />
                 </>
                 
               ) : 
               <>
-                  <Route exact path="/extraheb" component={Extraheb} />
+                
                   <Route exact path='/' component={HomePage} />
                   <Route exact path="/details" component={Details}/>
                   <Route exact path="/signin" component={SignIn} />
                   <Route exact path="/signup" component={Signup} />
                   <Route exact path="/l" component={NotFoundPage} />
-                  <Route exact path="/modifierpiece" component={Modifierpiece} />
                  
                 </>
                  

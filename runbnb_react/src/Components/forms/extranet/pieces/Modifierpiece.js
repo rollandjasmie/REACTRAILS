@@ -313,7 +313,31 @@ function Modifierpiece(){
               <span className="plus font-bold text-2xl">+</span><span className="mx-3">Autres espaces</span>  
               </label>            
             </div>
-              
+            <div className="mx-5 py-5">
+               <h1 className="w-2/3 text-xl font-bold text-gray-700">Exterieur</h1>
+                <h2 className=" text-sm font-medium text-gray-700 py-4" >Avec qui ces espaces sont-ils partagés ? </h2>
+                <h3 className=" text-sm font-medium text-gray-500" >Incluez toutes les personnes susceptibles d'y se retrouver </h3>
+            </div>
+                <div className="px-5 mx-5">
+                    <div className="flex">
+                    <label className="text-sm text-gray-600">
+                        <input type="checkbox" className="pt-5 mx-2"></input>
+                        Moi
+                    </label>
+                    </div>
+                    <div className="flex">
+                    <label className="text-sm text-gray-600">
+                        <input type="checkbox" className="pt-5 mx-2"></input>
+                        Famille, ami, ou colocataire
+                    </label>
+                    </div>
+                    <div className="flex">
+                    <label className="text-sm text-gray-600">
+                        <input type="checkbox" className="pt-5 mx-2"></input>
+                        Moi
+                    </label>
+                    </div>
+              </div> 
          
           </> 
         </Formik>
