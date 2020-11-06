@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :logements
   put "/logements/:longement_id/adresse",to:"adresses#update"
+  put "/avatar",to:"avatars#create"
   put '/logements/:longement_id/map',to:"maps#update"
   put '/logements/:longement_id/conditions',to:"conditions#upadte"
 

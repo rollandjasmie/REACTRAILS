@@ -175,10 +175,26 @@ left:60vh;}
 .f{
   font-size: 14px;
 }
+.kel{
+  font-size: 11px;
+  overflow: hidden;
+}
 *{
   overflow-x: visible;
   
   
+}
+
+---------------------------------------
+
+.img-holderz {
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  border: 3px rgb(191, 173, 173) solid;
+  border-radius: 5px;
+  margin-top: 1rem;
+  overflow: hidden;
 }
 
 

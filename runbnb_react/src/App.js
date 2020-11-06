@@ -3,7 +3,9 @@ import AjoutHebergements from "./Components/pages/AjoutHebergements";
 import Dashboard from "./Components/user/ShowUser"
 import EditProfil from "./Components/user/EditProfil"
 import PhotoLegende from "./Components/extranetphoto/PhotoLegende";
+import OrdrePhoto from "./Components/extranetphoto/OrdrePhoto"
 import './App.css';
+
 import {
   BrowserRouter,
   Switch,
@@ -35,6 +37,7 @@ class App extends React.Component {
                  
                       <Route exact path="/Dashboard" component={Dashboard} />
 
+                      <Route exact path="/OrdrePhoto" component={OrdrePhoto} />
 
                       <Route exact path="/PhotoLegende" component={PhotoLegende} />
 

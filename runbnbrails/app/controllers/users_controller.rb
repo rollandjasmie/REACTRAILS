@@ -1,10 +1,22 @@
 class UsersController < ApplicationController
       before_action :authorized, only: [:auto_login]
     def show
-        show= User.find_by(id:params[:id])
-        render json:{
-            user:show
-        }
+        show= User.find_by(id:current_user.id)
+        puts'*'*500
+        puts show.id
+        puts"*"*500
+        atta = show.featured_image.attached?
+        if atta 
+            avatar = rails_blob_path(show.featured_image)
+            render json:{
+                user:show,avatar:avatar,photo:atta
+            }
+        else 
+            render json:{
+                user:show,photo:atta
+            }
+        end
+        
     end
       
 
@@ -38,7 +50,7 @@ class UsersController < ApplicationController
         end
     end
     def update
-        @users =User.find_by(id:params[:id])
+        @users =User.find_by(id:current_user.id)
        @users.update(user_params)
         render json:{
             user: @users
@@ -53,7 +65,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:id,:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password)
+        params.permit(:id,:name,:first_name,:adresse,:mobile,:date_of_birth,:sexe,:urgence,:email, :password,:featured_image)
     end
 
 

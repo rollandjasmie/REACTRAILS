@@ -34,7 +34,7 @@ import history from '../../history';
 
 export default function CustomizedSteppers() {
 
-  const [activeStep, setActiveStep] = React.useState(3);
+  const [activeStep, setActiveStep] = React.useState(0);
 
 
   const [formValue, setFormValue] = React.useState({
@@ -69,27 +69,27 @@ export default function CustomizedSteppers() {
 
       ]
     },
-    autres: {
+    autres:{
       autres: [
         {
           checked: false,
-          quantite: 0,
-          name: "Lit Simple"
+          quantite: 0,                                                                                                                                                
+          name: "Lit Simple",
         },
         {
           checked: false,
           quantite: 0,
-          name: "Lit Double"
+          name: "Lit Double",
         },
         {
           checked: false,
           quantite: 0,
           name: "Lit Famille"
-        }
+        },
       ]
     },
 
-    title: [],
+    title: [],                                                                                                                                                                                
     
     photo:[],
     regles: {
@@ -97,7 +97,7 @@ export default function CustomizedSteppers() {
         arrive1:'',
         arrive2:'',
         depart1:'',
-        depart2:'',
+        depart2:'',                                                                                                                                                           
       },
     date:{
        startDate:"",
